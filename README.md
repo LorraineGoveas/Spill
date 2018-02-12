@@ -21,7 +21,7 @@ MERN is a combination of four technological platforms: MongoDB, Express, React, 
 ## Create a frontend with Create-React-App
   * `create-react-app spill`
   * `cd spill`
-  * `npm start'
+  * `npm start`
   * Visit http://localhost/3000 and bask in the glory!
 
 ## Create a local MongoDB instance
