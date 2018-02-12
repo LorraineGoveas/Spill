@@ -7,7 +7,7 @@ MERN is a combination of four technological platforms: MongoDB, Express, React, 
 ## Install dependencies
   * First off, we need [Node](https://nodejs.org/en/) and its package manager, npm. 
   * Run `npm install`
-  * 'npm install -g create-react-app' (might need sudo)
+  * `npm install -g create-react-app` (might need sudo)
   * `npm install --save express`
   * [Install MongoDB](https://docs.mongodb.com/v3.0/installation/)
 
@@ -31,14 +31,14 @@ MERN is a combination of four technological platforms: MongoDB, Express, React, 
 ## Make the Express middleware
   
   * Make a file called `app.js`, and put this in it:
-  `
+  ```javascript
   var express = require('express');
   var app = express();
   var port = 4200;
   app.listen(port, function(){
   console.log('hello world');
   })
-  `
+  ```
   * Exit the file and run `node app`
 
 ## Boom
