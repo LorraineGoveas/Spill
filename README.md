@@ -19,9 +19,9 @@ MERN is a combination of four technological platforms: MongoDB, Express, React, 
   * Now you have a branch. This branch is where your work lives before it's ready for us to see it. It's where you do all your funky, broken things, before they even get pushed to dev. Dev is for code that is production-ready but not yet live--it is not Your Branch. There are many branches, but this one is yours. 
 
 ## Create a frontend with Create-React-App
-  * 'create-react-app spill'
-  * 'cd spill'
-  * 'npm start'
+  * `create-react-app spill`
+  * `cd spill`
+  * `npm start'
   * Visit http://localhost/3000 and bask in the glory!
 
 ## Create a local MongoDB instance
