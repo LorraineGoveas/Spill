@@ -46,5 +46,5 @@ MERN is a combination of four technological platforms: MongoDB, Express, React, 
 You now have a working installation of Node.js, a React frontend, a local instance of MongoDB, and an Express app to interact with your Node.js computation. Nice job! 
 
 ## Commit and push
-  * To **YOUR BRANCH.** 
+  * To **YOUR BRANCH.** albertsBranch 
   * Pull the changes into dev. There are probably merge conflicts! Please resolve them with your team.
