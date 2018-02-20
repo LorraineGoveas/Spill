@@ -34,7 +34,6 @@ render((
         <Route path="/lorraine" component={Lorraine}/>
         <Route path="/albert" component={Albert}/>
         <Route path="/harpreet" component={Harpreet}/>
-
         <Route component={NotFound}/>
       </Switch>
     </App>

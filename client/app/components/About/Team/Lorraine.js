@@ -1,23 +1,31 @@
 import React, { Component } from 'react';
 
 export class Lorraine extends Component {
-  render() {    
-    return (      
+  render() {
+    return (
       <div>
-        <h1> <div>Lorraine</div> </h1>
+        <h1> <div>{this.props.name}</div> </h1>
 
         <h3>Role:</h3>
-        <div>ROLE</div>
+        <div> {this.props.role} </div>
 
         <h3> Experience with Role: </h3>
-        <div>EXPERIENCE</div>
+        <div>{this.props.experience}</div>
 
         <h3> Goals after Graduation: </h3>
-        <div>GOALS</div>
-
+        <div>{this.props.goals}</div>
+        
         <h3> Hobbies outside of school: </h3>
-        <div>HOBBIES</div>
+        <div>{this.props.hobbies}</div>
       </div>
     );
   }
+}
+
+Lorraine.defaultProps = {
+  name: "Lorraine",
+  role: "",
+  experience: "",
+  goals: "",
+  hobbies: ""
 }
