@@ -27,13 +27,13 @@ render((
     <App>
       <Switch>
         <Route exact path="/" component={Home}/>
-        <Route path="/about" component={About}/>
-        <Route path="/peter" component={Peter}/>
-        <Route path="/sid" component={Sid}/>
-        <Route path="/alaric" component={Alaric}/>        
-        <Route path="/lorraine" component={Lorraine}/>
-        <Route path="/albert" component={Albert}/>
-        <Route path="/harpreet" component={Harpreet}/>
+        <Route path="/team/about" component={About}/>
+        <Route path="/team/peter" component={Peter}/>
+        <Route path="/team/sid" component={Sid}/>
+        <Route path="/team/alaric" component={Alaric}/>        
+        <Route path="/team/lorraine" component={Lorraine}/>
+        <Route path="/team/albert" component={Albert}/>
+        <Route path="/team/harpreet" component={Harpreet}/>
         <Route component={NotFound}/>
       </Switch>
     </App>

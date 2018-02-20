@@ -23,7 +23,7 @@ export class Sid extends Component {
 }
 
 Sid.defaultProps = {
-  name: "Sid",
+  name: "Sid Bola",
   role: "Back-end Lead",
   experience: "Intermediate",
   goals: "Begin work as a mobile dev",

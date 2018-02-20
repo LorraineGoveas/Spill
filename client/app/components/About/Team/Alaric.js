@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
 export class Alaric extends Component {
-  
   render() {
     return (
       <div>
@@ -30,10 +29,3 @@ Alaric.defaultProps = {
   goals: "To become an iOS Developer",
   hobbies: "Long distance running"
 }
-
-
-
-
-
-
-

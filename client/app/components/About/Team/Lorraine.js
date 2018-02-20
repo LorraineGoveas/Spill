@@ -23,9 +23,9 @@ export class Lorraine extends Component {
 }
 
 Lorraine.defaultProps = {
-  name: "Lorraine",
-  role: "",
-  experience: "",
-  goals: "",
-  hobbies: ""
+  name: "Lorraine Goveas",
+  role: "Back-end",
+  experience: "Novice",
+  goals: "Go on a vacation",
+  hobbies: "Exercise and Traveling with my family"
 }

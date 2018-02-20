@@ -23,7 +23,7 @@ export class Peter extends Component {
 }
 
 Peter.defaultProps = {
-  name: "Peter",
+  name: "Peter Mutch",
   role: "",
   experience: "",
   goals: "",
