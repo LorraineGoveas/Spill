@@ -24,8 +24,8 @@ export class Peter extends Component {
 
 Peter.defaultProps = {
   name: "Peter Mutch",
-  role: "",
-  experience: "",
-  goals: "",
-  hobbies: ""
+  role: "Team Lead",
+  experience: "Intermediate",
+  goals: "Biomedical Software Engineer",
+  hobbies: "Rock Climbing"
 }
