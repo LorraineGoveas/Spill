@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-export class About extends Component {
+export class Albert extends Component {
   render() {
     return (
       <div>
@@ -22,10 +22,10 @@ export class About extends Component {
   }
 }
 
-About.defaultProps = {
-  name: "Name",
-  role: "Empty",
-  experience: "Empty",
-  goals: "Empty",
-  hobbies: "Empty"
+Albert.defaultProps = {
+  name: "Albert Fernandez Saucedo",
+  role: "Front-end",
+  experience: "Novice",
+  goals: "Continue to learn and play with all the new technoligies!",
+  hobbies: "Reading, Gaming, and Building things!"
 }
