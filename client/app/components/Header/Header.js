@@ -1,18 +1,45 @@
 import React from 'react';
+import styled from 'styled-components'
 
 import { Link } from 'react-router-dom';
 
+const HeaderNavbar = styled.div`
+    color: blue;
+`
+
+const NavbarList = styled.ul`
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+`
+
+const NavbarItem = styled.li`
+    float: left;
+`
+const StyledLink = styled(Link)`
+    display: block;
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+    text-align: center;
+    &:hover {
+        color: #8cb8ff;
+    }
+`
+
 const Header = () => (
   <header>
-    <Link to="/">Home</Link>
 
-    <nav><Link to="/team/about">About The Team</Link></nav>
-    <nav> <Link to="/team/peter">Peter</Link></nav>
-    <nav> <Link to="/team/sid">Sid</Link></nav>
-    <nav> <Link to="/team/alaric">Alaric</Link></nav>        
-    <nav> <Link to="/team/harpreet">Harpreet</Link></nav>
-    <nav> <Link to="/team/lorraine">Lorraine</Link></nav>
-    <nav> <Link to="/team/albert">Albert</Link></nav>
+    <HeaderNavbar>
+        <NavbarList>
+            <NavbarItem><StyledLink to="/">Home</StyledLink></NavbarItem>
+            <NavbarItem><StyledLink to="/team/about">About</StyledLink></NavbarItem>
+        </NavbarList>
+    </HeaderNavbar>
+
+
     <hr />
   </header>
 );
