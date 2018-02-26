@@ -1,7 +1,8 @@
 @import 'https://fonts.googleapis.com/css?family=Amiri';
 
+
 h1 {
-  color: #333;
+  color: red;
   text-decoration: underline;
 }
 .about-me {
