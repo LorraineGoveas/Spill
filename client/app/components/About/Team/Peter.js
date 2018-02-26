@@ -11,8 +11,8 @@ export class Peter extends Component {
 
         <CenterPage>
             <div>
-          <img src={"/assets/img/peterProfileImage.jpg"} alt={"Peter"}
-               width={"200"} heigth={"200"}/>
+          <img src={this.props.image_src} alt={this.props.alt}
+               width={this.props.width} height={this.props.height}/>
 
         <h1><div>{this.props.name}</div> </h1>
 
@@ -33,6 +33,10 @@ export class Peter extends Component {
 }
 
 Peter.defaultProps = {
+    image_src: "/assets/img/peterProfileImage.jpg",
+    alt: "Peter",
+    height: "240",
+    width: "220",
   name: "Peter Mutch",
   role: "Team Lead",
   experience: "Intermediate",

@@ -10,8 +10,8 @@ export class Sid extends Component {
     return (
         <CenterPage>
       <div>
-          <img src={"/assets/img/sidProfileImage.jpg"} alt={"Sid"}
-               width={"200"} heigth={"200"}/>
+          <img src={this.props.image_src} alt={this.props.alt}
+               width={this.props.width} height={this.props.height}/>
         <h1> <div>{this.props.name}</div> </h1>
 
         <h3>Role:</h3>
@@ -31,6 +31,10 @@ export class Sid extends Component {
 }
 
 Sid.defaultProps = {
+  image_src: "/assets/img/sidProfileImage.jpg",
+    alt: "Sid",
+    height: "240",
+    width: "240",
   name: "Sid Bola",
   role: "Back-end Lead",
   experience: "Intermediate",

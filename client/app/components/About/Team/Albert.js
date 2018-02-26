@@ -10,8 +10,8 @@ export class Albert extends Component {
     return (
         <CenterPage>
       <div>
-          <img src={"/assets/img/albertProfileImage.jpg"} alt={"Albert"}
-               width={"200"} heigth={"200"}/>
+          <img src={this.props.image_src} alt={this.props.alt}
+               width={this.props.width} height={this.props.height} />
         <h1> <div>{this.props.name}</div> </h1>
 
         <h3>Role:</h3>
@@ -31,6 +31,10 @@ export class Albert extends Component {
 }
 
 Albert.defaultProps = {
+  image_src: "/assets/img/albertProfileImage.jpg",
+    alt: "Albert",
+    height: "240",
+    width: "200",
   name: "Albert Fernandez Saucedo",
   role: "Front-end",
   experience: "Novice",

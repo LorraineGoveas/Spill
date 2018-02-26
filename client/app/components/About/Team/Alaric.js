@@ -11,8 +11,8 @@ export class Alaric extends Component {
         <CenterPage>
       <div>
 
-          <img src={"/assets/img/alaricProfileImage.jpg"} alt={"Alaric"}
-               width={"200"} heigth={"200"} />
+          <img src={this.props.image_src} alt={this.props.alt}
+               width={this.props.width} height={this.props.height} />
         <h1> <div>{this.props.name}</div> </h1>
 
         <h3>Role:</h3>
@@ -32,6 +32,10 @@ export class Alaric extends Component {
 }
 
 Alaric.defaultProps = {
+    image_src: "/assets/img/alaricProfileImage.jpg",
+    alt: "Alaric",
+    height: "240",
+    width: "200",
   name: "Alaric Gonzales",
   role: "Front-end Lead",
   experience: "Novice",
