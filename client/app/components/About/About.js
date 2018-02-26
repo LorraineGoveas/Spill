@@ -5,9 +5,10 @@ import styled from 'styled-components'
 
 const TeamList = styled.ul`
     list-style-type: none;
-    margin: 0;
+    margin: 100
     padding: 0;
     width: 200px;
+    align: center;
 `
 
 const TeamItem = styled.li`

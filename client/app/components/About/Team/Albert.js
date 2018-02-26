@@ -1,9 +1,17 @@
 import React, { Component } from 'react';
+import style from 'styled-components';
+
+const CenterPage = style.div`
+    text-align: center;
+`
 
 export class Albert extends Component {
   render() {
     return (
+        <CenterPage>
       <div>
+          <img src={"/assets/img/albertProfileImage.jpg"} alt={"Albert"}
+               width={"200"} heigth={"200"}/>
         <h1> <div>{this.props.name}</div> </h1>
 
         <h3>Role:</h3>
@@ -17,7 +25,7 @@ export class Albert extends Component {
         
         <h3> Hobbies outside of school: </h3>
         <div>{this.props.hobbies}</div>
-      </div>
+      </div></CenterPage>
     );
   }
 }
@@ -26,6 +34,6 @@ Albert.defaultProps = {
   name: "Albert Fernandez Saucedo",
   role: "Front-end",
   experience: "Novice",
-  goals: "Continue to learn and play with all the new technoligies!",
+  goals: "Continue to learn and play with all the new technologies!",
   hobbies: "Reading, Gaming, and Building things!"
 }

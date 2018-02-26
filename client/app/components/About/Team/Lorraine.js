@@ -1,9 +1,17 @@
 import React, { Component } from 'react';
+import style from 'styled-components';
+
+const CenterPage = style.div`
+    text-align: center;
+`
 
 export class Lorraine extends Component {
   render() {
     return (
+        <CenterPage>
       <div>
+          <img src={"/assets/img/lorraineProfileImage.jpg"} alt={"Lorraine"}
+               width={"200"} heigth={"200"} />
         <h1> <div>{this.props.name}</div> </h1>
 
         <h3>Role:</h3>
@@ -17,7 +25,7 @@ export class Lorraine extends Component {
         
         <h3> Hobbies outside of school: </h3>
         <div>{this.props.hobbies}</div>
-      </div>
+      </div></CenterPage>
     );
   }
 }
