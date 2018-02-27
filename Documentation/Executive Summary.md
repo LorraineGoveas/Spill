@@ -1,4 +1,4 @@
-#Executive Summary
+# Executive Summary
 
 Reporting environmental issues is hard to do, and finding out about them is even harder! The EPA manages big issues, but small neighborhood concerns often slip under their radar. City- and county-level websites are often poorly designed and hard to navigate, and it can be difficult for private citizens to be sure their concerns are being addressed.
 
