@@ -16,7 +16,7 @@
 
 <br><br><br><br><br><br>
 <br>
- Peter Mutch (peter2mutch@gmail.com), Sid Bolas, Alaric Gonzales, Lorraine Goveas, Albert, Sandhu Harpreet 
+ Peter Mutch (peter2mutch@gmail.com), Sid Bolas, Alaric Gonzales, Lorraine Goveas, Albert Fernandez Saucedo, Sandhu Harpreet 
 
 <br><br>
 
@@ -227,7 +227,7 @@ Spill will be competitive in the current market by providing a superior interact
 
 **Frontend Lead**: Alaric Gonzales
 
-Lorraine Goveas, Albert, Sandhu Harpreet
+Lorraine Goveas, Albert Fernandez Saucedo, Sandhu Harpreet
 
 <br><br><br><br><br><br><br><br><br><br><br><br><br> <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
