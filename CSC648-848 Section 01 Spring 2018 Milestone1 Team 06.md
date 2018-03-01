@@ -16,7 +16,7 @@
 
 <br><br><br><br><br><br>
 <br>
- Peter Mutch (peter2mutch@gmail.com), Sid Bolas, Alaric Gonzales, Lorraine Goveas, Albert Fernandez Saucedo, Sandhu Harpreet 
+ Peter Mutch (peter2mutch@gmail.com), Satjit Bola, Alaric Gonzales, Lorraine Goveas, Albert Fernandez Saucedo, Sandhu Harpreet 
 
 <br><br>
 
@@ -223,7 +223,7 @@ Spill will be competitive in the current market by providing a superior interact
 
 **Team Lead**: Peter Mutch (peter2mutch@gmail.com)
 
-**Backend Lead**: Sid Bolas
+**Backend Lead**: Satjit Bolas
 
 **Frontend Lead**: Alaric Gonzales
 
