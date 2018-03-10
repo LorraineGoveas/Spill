@@ -16,13 +16,15 @@ module.exports = {
     ]
   },
 
+
+
   output: {
     path: helpers.root('dist'),
     publicPath: '/'
   },
 
   resolve: {
-    extensions: ['.js', '.json', '.css', '.scss', '.html'],
+    extensions: ['.js', '.json', '.css', '.scss', '.html', '.webpack.js'],
     alias: {
       'app': 'client/app'
     }
