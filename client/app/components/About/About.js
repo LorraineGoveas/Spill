@@ -62,9 +62,9 @@ export class About extends Component {
                 <div>
 
                     <img src={this.getMember(this.selectedMember).image_src}
-                        alt={this.getMember('Sid Bola').img_alt}
+                        alt={this.getMember(this.selectedMember).img_alt}
                         width={this.getMember(this.selectedMember).img_width}
-                        height={this.getMember('Sid Bola').img_height} />
+                        height={this.getMember(this.selectedMember).img_height} />
 
                     <h1> <div>{this.getMember(this.selectedMember).name}</div> </h1>
 
