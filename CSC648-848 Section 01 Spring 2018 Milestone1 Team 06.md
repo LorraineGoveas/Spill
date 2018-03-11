@@ -15,9 +15,12 @@
 <br>
 
 <br><br><br><br><br><br>
-<br>
- Peter Mutch (peter2mutch@gmail.com), Satjit Bola, Alaric Gonzales, Lorraine Goveas, Albert Fernandez Saucedo, Sandhu Harpreet 
-
+ <br><center>Peter Mutch (peter2mutch@gmail.com)</center>
+  <br><center>Satjit Bola</center>
+  <br><center>Alaric Gonzales</center>
+  <br><center>Lorraine Goveas</center>
+  <br><center>Albert Fernandez Saucedo</center>
+  <br><center>Sandhu Harpreet </center>
 <br><br>
 
 ## Executive Summary
@@ -31,74 +34,54 @@ Spill is made by a team of six students from San Francisco State University stud
 
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
-## Use Cases
+# Use Cases
 
 ------
 
-### 1. Report an issue
+## 1. Report an issue
 
 - **Who**:
     - Registered User
 - **Skill Level**:
     - Basic
 - **Process**:
-    - Gollum is a neighborhood dad who is concerned about broken glass he saw on the street corner by his favorite park. He opens Spill and tries to **post** a photo he took earlier that day, and finds he must create an **account** to do so. He creates an account and posts the **photo**, marks its **location**, and writes a short **comment** about it. Later, after the city cleans up the corner, he’ll visit his post and mark it as **resolved**. 
-
+    - Gollum is a neighborhood dad who is concerned about broken glass he saw on the street corner by his favorite park. He opens Spill and tries to post a photo he took earlier that day, and finds he must create an account to do so. He does so and posts the photo, marking its location, and posting a short comment about it. 
 
 ------
 
-### 2. Look for new issues in any location
+## 2. Search for an issue
 - **Who**:
-    - Unregistered / registered User
+    - Registered / Unregistered User
 - **Skill Level**:
     - Basic
 - **Process**:
-    - Arwen, who is concerned about the environment and wants to know what new challenges it is facing, wants to find out what the most recent **issues** are, no matter where. She opens the website and, instead of issues in a specific location, chooses to see **new** issues that have been reported to Spill, no matter where they are. 
+    - Open the website. User searches for a location to retrieve data on.King Solomon is interested in seeing what environmental problems there are in Miami,  Florida. King Solomon opens Spill and searches for Miami, Florida and sees a report of environmental problems that have been reported in Miami. Joe opens the website and wants to see what type of  pollution problems have been reported. Joe searches for  pollution on the website and sees a report of all of the pollution problems that have been reported for that day.
 
 ------
 
-### 3. Check an issue for updates
+## 3. Check for updates on an issue
 - **Who**:
-    - Unregister/Register User
+    - Registered User
 - **Skill Level**:
     - Basic
 - **Process**:
-    - Gollum wants to check in on the **report** he made in our first use case. He opens the app, finds the report he made, and checks to see if it has been **updated**. He finds the incident hasn’t been **resolved** but is **marked** for cleanup next week. Satisfied, he decides to go back to the park next weekend.
+    - John opens the app and checks nearby issues. John finds the incident he is interested in and checks it for an further updates. He finds the incident hasn’t been resolved but is still pending. He would like to leave comment for the agency responsible for the clean up.
 
 ------
 
-### 4. Resolve issues
+## 4. Resolve issues
 - **Who**:
     - City Employee
 - **Process**:
-    - Galadriel, a municipal employee, opens the website and sees all of the issues that have been reported in the **city** where she works. She leaves a **comment** on one **report** to ask a question about the **issue**. She sees a different **report** about another **issue** that has already been dealt with, and marks it as **resolved**.
+    - Galadriel, a municipal employee, opens the website and sees all of the issues that have been reported in her city. She leaves a comment on one report to ask a question about the issue. She sees another issue that has already been dealt with, and marks it as resolved.
 
 ------
 
-### 5. View issues by category
-- **Who**: 
-    - Guest User   	 
-- **Process**:
-    - Aragorn is writing a research paper about the environmental impacts of pollution, and wants to see all of the pollution incidents that have been reported. Instead of viewing all recent issues or all issues specific to a location, he instead views reports by **category**, and can further refine his view of reports if needed.
-
-    
-------
-
-### 6. Upvotes existing issue
-- **Who**: 
-    - Registered User
-- **Skill**: 
-    - Basic
-- **Process**:
-    - Frodo understands that not all **reported issues** are significant, and wants to show which issues are most important to him. He logs into his **account**, finds an **issue** about a chemical spill on his street, and **upvotes** it to show that he wants this to get more attention. This will now show that more users are being affected by that **issue** and **prioritize** it in some views of all issues. 
-
-------
-
-### 7. Removes post from website
+## 5. Remove post from website
 - **Who**:
     - Admin
 - **Process**:
-    - Samwise sees an inappropriate or inaccurate **post** that has made its way onto the website. As an **administrator**, it is his responsibility to keep the website safe for all ages while still serving valid content. Using the **admin module**, he locates the **post**, removes it from the website, and an email is sent to the **user** to alert him/her of the events that just transpired. 
+    - Samwise sees an inappropriate or inaccurate post that has been made itself onto the website. As an admin, it is his responsibility to keep the website safe for all ages while still serving valid content. Using the admin module, he locates the post, removes it from the website, and a message is sent to the user to alert him/her of the events that just transpired. 
 
     <br><br><br><br><br><br><br><br><br>
 
