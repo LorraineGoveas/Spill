@@ -10,10 +10,18 @@
 
 
 <br><br><br>
-<br>
+<br><center>
 ### Revision History:
 <br>
 
+| Date | Comments | 
+|:----------:|:-----------:|
+| |                                                                 |                                                                                                                                                                                                                                                                                                              
+| |                                                                 |
+| |                                                                 |
+| |                                                                 |
+| |                                                                 |
+</center>
 <br><br><br><br><br><br>
  <br><center>Peter Mutch (peter2mutch@gmail.com)</center>
   <br><center>Satjit Bola</center>
@@ -87,49 +95,44 @@ Spill is made by a team of six students from San Francisco State University stud
 
 ## Data Definitions
 
-**User**: Any person who uses the website
+**Unregistered User**: A person who utilizes the website that is not registered with the database. This user can only access the website as “read-only”. This type of user has the least amount of privileges.
 
-**Unregistered User**: A person who utilizes the website but has not created an account. This user can only access the website as “read-only”. This type of user has the lowest level of privileges.
+**Registered User**: A person who utilizes the website that is registered with the database. This user is granted special privileges such as posting a new post, editing a previous post submitted by the same user, or deleting a previously created post, as well as all features available to unregistered users.
 
-**Registered User**: A person who utilizes the website and has created an account. This user is granted can post a new issue, edit issues they have posted, delete their old posts, and do everything an unregistered user can.
+**Admin**: A registered user with special permissions geared toward keeping the website running as intended and removing inappropriate content. Site admins are also responsible for tracking and removing/merging multiple posts about the same post.
 
-**Admin**: A registered user with special permissions geared toward keeping the website running as intended and removing inappropriate content. Site admins are also responsible for tracking and removing/merging multiple posts about the same issue.
+**Issue**: A user report of an issue they noticed. May include an image, location, time posted, username of postee, and description of the issue.
 
-**Post**: A user report of an issue. Posts can include a location, date, the reporter’s username, description of the issue, and/or images or video.
+**Status**: The current state of an issue. An issue can be verified, in progress, planned, resolved, or locked.
 
-**Status**: This refers to the state at which an issue is currently. An issue can be verified, in progress, planned, or resolved.
+>**Verified**: In this state, the issue has been approved by an as an accurate representation of a real-world issue.
 
-**Verified**: In this state, the post has been approved by an as an accurate representation of a real-world issue. 
+>**Planned**: In this state, the issue is planned for cleanup or resolution but is not being actively treated.
 
-**In Progress**: In this state, the post has been accepted by an admin and is displayed on the main website. 
+>**In Progress**: In this state, the issue is being actively cleaned, treated, or otherwise handled.
 
-**Planned**: In this state, the issue is planned for cleanup or resolution but is not being actively treated.
+>**Resolved**: In this state, the issue has been resolved by the appropriate authorities/facilities. The issue is changed from in progress to resolved by an admin or the user who originally submitted it.
 
-**Resolved**: In this state, the issue has been resolved by the appropriate authorities/facilities. The post is changed from in progress to resolved by an admin or the user who originally submitted it.
+>**Locked**: In this state, only admins can make changes to the post. The locked state is used for any posts that have been previously verified but now has complications. 
 
-**Locked**: In this state, only admins can make changes to the post.
+**Agency**: The establishment, company, or government branch in charge of resolving or fixing the post in question
 
-**Agency**: The establishment, company, or branch Government in charge of resolving or fixing the issue in question
+**Comment**: A text message posted by a registered user on an issue 
 
-**Comment**: A text message a registered user adds to a post
+**User Profile**: User picture, username and activity. Can be edited by user in the user panel
 
-**User Profile**: Username and email. Username is displayed visibly to everyone, email is only visible to admins. 
+**User Panel**: Allows the user to view and update their profile and account information and settings
 
-**User Panel**: See the user’s posts, up-votes, and edit profile
+**Admin Panel**: Allows administrators to help mediate content submitted by users on the website
 
-**Admin Panel**: The resource used by administrators to help mediate content submitted by users on the website
-
-**User Record**: A record in the database that stores a registered user’s name and e-mail address
-
-**Issue Record**: A record in the database that stores an issue’s location, status, and short description of the issue.
 
 <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 ## List of Functional Requirements
 
-1. **Users** shall be able to search for **incidents** by location.
+1. **Unregistered Users** shall be able to search for **incidents** by location.
 
-6. **Users** shall be able to view **incident** reports.
+6. **Unregistered Users** shall be able to view **incident** reports.
 
 1. **Registered Users** shall be able to **post** a report of an **incident**.
 
@@ -177,15 +180,8 @@ Spill is made by a team of six students from San Francisco State University stud
 
 ## Competitive Analysis
 
+![Competitive Analysis](dist/assets/img/CompetitiveAnalysisTable.jpg)
 
-| Feature | US EPA | Ireland EPA | Broward.org | **Spill (Future Product)** |
-|:----------:|:-----------:|:----------------:|:----------------:|:-----------------------------:|
-|Text Search| + | + | + | **+** |
-|Interactive Map | + | + | + | **++** |
-|Online Complaint Form | + | + | + | **+** |
-|reCaptcha/check | + | + | + | **+** |
-| Image Uploading | - | - | + | **+** |
-**+** : feature exists | **++**: Superior |  **-**: feature does exist 
 
 Spill will be competitive in the current market by providing a superior interactive map and user image uploading. Spill's interactive map shall allow for local, regional, or national views as desired, and filter results according to user queries. Spill's user focus will allow users to view issues most relevant to them. Spill's voting mechanic will allow users to prioritize incidents which they believe are relevant to other users, which will enable Agencies to take proper actions accordingly. Spill's image uploading functionality will provide additional information, allowing Agencies and users to have a clearer understanding of the incident. 
 
@@ -210,7 +206,7 @@ Spill will be competitive in the current market by providing a superior interact
 
 **Frontend Lead**: Alaric Gonzales
 
-Lorraine Goveas, Albert Fernandez Saucedo, Sandhu Harpreet
+**Team Members**: Lorraine Goveas, Albert Fernandez Saucedo, Sandhu Harpreet
 
 <br><br><br><br><br><br><br><br><br><br><br><br><br> <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
