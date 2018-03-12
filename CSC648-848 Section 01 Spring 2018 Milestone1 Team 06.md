@@ -3,26 +3,19 @@
 ### <center> SW Engineering CSC648/848 
 ### <center> Section 01 Spring 2018
 ### <center>**Team 06**
-<br>
 ### <center> Milestone 1
 ### <center> 2/28/2018
 <br>
-
-
-<br><br><br>
-<br><center>
+<center>
 ### Revision History:
 <br>
 
 | Date | Comments | 
 |:----------:|:-----------:|
-| |                                                                 |                                                                                                                                                                                                                                                                                                              
-| |                                                                 |
-| |                                                                 |
-| |                                                                 |
-| |                                                                 |
+|3-11-2018 | Revised according to feedback from Dragutin Petkovic, CEO |                                                                                                                                                                                                                                                                                                              
+
 </center>
-<br><br><br><br><br><br>
+<br>
  <br><center>Peter Mutch (peter2mutch@gmail.com)</center>
   <br><center>Satjit Bola</center>
   <br><center>Alaric Gonzales</center>
@@ -53,7 +46,7 @@ Spill is made by a team of six students from San Francisco State University stud
 - **Skill Level**:
     - Basic
 - **Process**:
-    - Gollum is a neighborhood dad who is concerned about broken glass he saw on the street corner by his favorite park. He opens Spill and tries to post a photo he took earlier that day, and finds he must create an account to do so. He does so and posts the photo, marking its location, and posting a short comment about it. 
+    - Gollum is a neighborhood dad who is concerned about broken glass he saw on the street corner by his favorite park. He opens Spill to post a photo he took earlier that day, and is asked to create an account. He does so and posts the photo, marks its location, and posts a short comment about it. 
 
 ------
 
@@ -63,7 +56,7 @@ Spill is made by a team of six students from San Francisco State University stud
 - **Skill Level**:
     - Basic
 - **Process**:
-    - Open the website. User searches for a location to retrieve data on.King Solomon is interested in seeing what environmental problems there are in Miami,  Florida. King Solomon opens Spill and searches for Miami, Florida and sees a report of environmental problems that have been reported in Miami. Joe opens the website and wants to see what type of  pollution problems have been reported. Joe searches for  pollution on the website and sees a report of all of the pollution problems that have been reported for that day.
+    - King Solomon is interested in seeing what environmental problems there are in San Francisco, California. He opens Spill, searches for San Francisco, and sees a variety of reports, particularly of litter in nearby parks. He wonders if there is this much litter in other cities, and starts a new search for litter. Now King Solomon can see reports of litter from anywhere, no matter how far. 
 
 ------
 
@@ -73,7 +66,7 @@ Spill is made by a team of six students from San Francisco State University stud
 - **Skill Level**:
     - Basic
 - **Process**:
-    - John opens the app and checks nearby issues. John finds the incident he is interested in and checks it for an further updates. He finds the incident hasn’t been resolved but is still pending. He would like to leave comment for the agency responsible for the clean up.
+    - John wants to know if the litter he reported last week has been cleaned up yet. He finds the report, and can see that although it hasn't been cleaned up yet, it is marked as In Progress. He leaves a comment asking when the work will be completed and thanks the municipal agency for taking care of his city. 
 
 ------
 
@@ -81,7 +74,7 @@ Spill is made by a team of six students from San Francisco State University stud
 - **Who**:
     - City Employee
 - **Process**:
-    - Galadriel, a municipal employee, opens the website and sees all of the issues that have been reported in her city. She leaves a comment on one report to ask a question about the issue. She sees another issue that has already been dealt with, and marks it as resolved.
+    - Galadriel, a municipal employee, has just been told that cleanup has finished on the banks of a local river. She searches for that river and sees a variety of posts regarding trash on the banks. She marks them as resolved. 
 
 ------
 
@@ -91,7 +84,7 @@ Spill is made by a team of six students from San Francisco State University stud
 - **Process**:
     - Samwise sees an inappropriate or inaccurate post that has been made itself onto the website. As an admin, it is his responsibility to keep the website safe for all ages while still serving valid content. Using the admin module, he locates the post, removes it from the website, and a message is sent to the user to alert him/her of the events that just transpired. 
 
-    <br><br><br><br><br><br><br><br><br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 ## Data Definitions
 
@@ -126,7 +119,7 @@ Spill is made by a team of six students from San Francisco State University stud
 **Admin Panel**: Allows administrators to help mediate content submitted by users on the website
 
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
 
 ## List of Functional Requirements
 
@@ -183,9 +176,9 @@ Spill is made by a team of six students from San Francisco State University stud
 ![Competitive Analysis](dist/assets/img/CompetitiveAnalysisTable.jpg)
 
 
-Spill will be competitive in the current market by providing a superior interactive map and user image uploading. Spill's interactive map shall allow for local, regional, or national views as desired, and filter results according to user queries. Spill's user focus will allow users to view issues most relevant to them. Spill's voting mechanic will allow users to prioritize incidents which they believe are relevant to other users, which will enable Agencies to take proper actions accordingly. Spill's image uploading functionality will provide additional information, allowing Agencies and users to have a clearer understanding of the incident. 
+Spill will be competitive in the current market by providing a superior interactive map and user image uploading. Spill's interactive map shall allow for local, regional, or national views as appropriate, and filter results according to user queries. Spill's user focus will allow users to view issues most relevant to them. Spill's image uploading functionality will provide additional information, allowing Agencies and users to have a clearer understanding of the incident. 
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br>
 
 ## High-Level System Architecture 
 
@@ -193,10 +186,9 @@ Spill will be competitive in the current market by providing a superior interact
 2. Spill will be hosted in Google Compute engine and use nginx as the server.
 2. Spill will be optimized for Google Chrome and Mozilla Firefox browsers, the most recent version and one version previous.
 3. The source code for Spill will be hosted on a GitHub repository and developed independently, collaboratively and simultaneously by all Team 06 developers. 
-4. Travis CI will be used to ensure continuous integration and help prevent build-breaking bugs being pushed to production.
-5. Map integrations will be handled by utilizing the Google Maps API.
+4. Map integrations will be handled by utilizing the Google Maps API.
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br> <br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br> <br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 ## Team:
 
@@ -208,7 +200,8 @@ Spill will be competitive in the current market by providing a superior interact
 
 **Team Members**: Lorraine Goveas, Albert Fernandez Saucedo, Sandhu Harpreet
 
-<br><br><br><br><br><br><br><br><br><br><br><br><br> <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 
 ## Checklist:
 
