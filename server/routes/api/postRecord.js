@@ -17,8 +17,6 @@ module.exports = (app) => {
     });
 
     app.get('/api/postRecords/:keyword/search', (req, res, next) => {
-
-
         PostRecord.find({"location_name": new RegExp(req.params.keyword)})
         .exec()
         .then((postRecord) => res.json(postRecord))
