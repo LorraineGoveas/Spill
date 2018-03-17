@@ -1,74 +1,87 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import styled from 'styled-components'
+import style from 'styled-components';
 
 
-const TeamList = styled.ul`
-    list-style-type: none;
-    margin: 100
-    padding: 0;
-    width: 200px;
-    align: center;
-`
-
-const TeamItem = styled.li`
-    display: block;
-    color: #000;
-    padding: 8px 16px;
-    text-decoration: none;
-`
-const StyledLink = styled(Link)`
-    display: block;
-    color: #000;
-    padding: 8px 16px;
-    text-decoration: none;
-    &:hover {
-        color: #8cb8ff;
-    }
+const CenterPage = style.div`
+    text-align: center;
 `
 
 export class About extends Component {
-  render() {
-    return (
-        <div>
 
-            <TeamList>
-                <TeamItem><StyledLink to="/team/peter">Peter</StyledLink></TeamItem>
-                <TeamItem><StyledLink to="/team/sid">Sid</StyledLink></TeamItem>
-                <TeamItem><StyledLink to="/team/alaric">Alaric</StyledLink></TeamItem>
-                <TeamItem><StyledLink to="/team/harpreet">Harpreet</StyledLink></TeamItem>
-                <TeamItem><StyledLink to="/team/lorraine">Lorraine</StyledLink></TeamItem>
-                <TeamItem><StyledLink to="/team/albert">Albert</StyledLink></TeamItem>
-            </TeamList>
+    constructor(props) {
+        super(props);
 
-        </div>
+        this.state = {
+          teamMembers: [],
+          selectedMember: String
+        };
+
+        this.selectedMember = 'Peter Mutch'
+    }
+
+    componentDidMount() {
+      fetch('/api/teamMembers')
+        .then(res => res.json())
+        .then(json => {
+          this.setState({
+            teamMembers: json
+          });
+        });
+    }
 
 
-        /*
-      <div>
-        <h1> <div>{this.props.name}</div> </h1>
+    getMember(name){
+        if (this.state.teamMembers[0]){
+            return this.state.teamMembers.find(function(member) {
+                return member.name === name
+            });
+        } else {
+            return "User Not Found";
+        }
+    }
 
-        <h3>Role:</h3>
-        <div> {this.props.role} </div>
+    switchMember(memberName){
+        this.selectedMember = memberName
+        this.forceUpdate()
+    }
 
-        <h3> Experience with Role: </h3>
-        <div>{this.props.experience}</div>
+    render() {
+        return (
+            <CenterPage>
 
-        <h3> Goals after Graduation: </h3>
-        <div>{this.props.goals}</div>
 
-        <h3> Hobbies outside of school: </h3>
-        <div>{this.props.hobbies}</div>
-      </div>
-      */
-    );
+            <button onClick={() => this.switchMember('Peter Mutch')}>Peter</button>
+            <button onClick={() => this.switchMember('Sid Bola')}>Sid</button>
+            <button onClick={() => this.switchMember('Alaric Gonzales')}>Alaric</button>
+            <button onClick={() => this.switchMember('Lorraine Goveas')}>Lorraine</button>
+            <button onClick={() => this.switchMember('Albert Fernandez Saucedo')}>Albert</button>
+            <button onClick={() => this.switchMember('Harpreet Singh')}>Harpreet</button>
+
+
+
+                <div>
+
+                    <img src={this.getMember(this.selectedMember).image_src}
+                        alt={this.getMember(this.selectedMember).img_alt}
+                        width={this.getMember(this.selectedMember).img_width}
+                        height={this.getMember(this.selectedMember).img_height} />
+
+                    <h1> <div>{this.getMember(this.selectedMember).name}</div> </h1>
+
+                    <h3>Role:</h3>
+                    <div>{this.getMember(this.selectedMember).role}</div>
+
+                    <h3> Experience with Role: </h3>
+                    <div>{this.getMember(this.selectedMember).experience}</div>
+
+                    <h3> Goals after Graduation: </h3>
+                    <div>{this.getMember(this.selectedMember).goals}</div>
+
+                    <h3> Hobbies outside of school: </h3>
+                    <div>{this.getMember(this.selectedMember).hobbies}</div>
+                </div>
+
+            </CenterPage>
+        );
   }
-}
-
-About.defaultProps = {
-  name: "Name",
-  role: "Empty",
-  experience: "Empty",
-  goals: "Empty",
-  hobbies: "Empty"
 }

@@ -9,6 +9,7 @@ module.exports = merge(commonConfig, {
     filename: 'js/[name].[hash].js',
     chunkFilename: '[id].[hash].chunk.js'
   },
+  
 
   plugins: [
     new webpack.optimize.UglifyJsPlugin({
