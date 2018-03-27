@@ -36,6 +36,7 @@ const Header = () => (
         <NavbarList>
             <NavbarItem><StyledLink to="/">Home</StyledLink></NavbarItem>
             <NavbarItem><StyledLink to="/team/about">About</StyledLink></NavbarItem>
+            <NavbarItem><StyledLink to="/search/results">Search</StyledLink></NavbarItem>
         </NavbarList>
     </HeaderNavbar>
 

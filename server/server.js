@@ -24,6 +24,7 @@ mongoose.connect(isDev ? config.db_dev : config.db, {
 });
 mongoose.Promise = global.Promise;
 
+
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
