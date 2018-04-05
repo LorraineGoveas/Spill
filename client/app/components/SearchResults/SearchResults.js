@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import style from 'styled-components';
+import { Map } from '../Map'
 
 const DataTable = style.table`
     width: 100%;
@@ -13,11 +14,14 @@ export class SearchResults extends Component {
 
         this.state = {
             places: [],
-            searchKey: ''
+            searchKey: '',
+            selectedPlaceLat: 37.3382,
+            selectedPlaceLng: -121.8863
         };
 
         this.searchSomething = this.searchSomething.bind(this);
         this.searchTextChanged = this.searchTextChanged.bind(this);
+        this.moveTheMap = this.moveTheMap.bind(this);
 
     }
 
@@ -41,9 +45,28 @@ export class SearchResults extends Component {
         });
     }
 
+    moveTheMap(lat, lng){
+
+        this.setState({
+            selectedPlaceLat: parseFloat(lat),
+            selectedPlaceLng: parseFloat(lng)
+        })
+
+    }
+
     render() {
+
+
         return (
             <div>
+
+                <Map
+                    center={{lat:this.state.selectedPlaceLat, lng:this.state.selectedPlaceLng}}
+                    zoom={12}
+                    containerElement={ <div style={{ height: `500px`, width: '500px' }} /> }
+                    mapElement={ <div style={{ height: `100%` }} /> }
+                />
+
                 <button onClick={this.searchSomething}>Search</button>
 
                 <input type="text" value={this.state.value}
@@ -52,6 +75,7 @@ export class SearchResults extends Component {
 
                 <DataTable>
                     <tr>
+                        <th>Select</th>
                         <th>Image</th>
                         <th>Name of Place</th>
                         <th>Address</th>
@@ -64,6 +88,7 @@ export class SearchResults extends Component {
 
                     {this.state.places.map((place, i) => (
                         <tr key={i}>
+                            <td><button onClick={() => this.moveTheMap(place.location_lat, place.location_lng)}>Select</button></td>
                             <td>{place.image_src}</td>
                             <td>{place.location_name}</td>
                             <td>{place.address}</td>
@@ -76,6 +101,8 @@ export class SearchResults extends Component {
                     ))}
 
                 </DataTable>
+
+
 
             </div>
         );
