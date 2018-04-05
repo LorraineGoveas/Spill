@@ -12,6 +12,7 @@ import App from './components/App/App';
 import NotFound from './components/App/NotFound';
 
 import Home from './components/Home/Home';
+import Map from './components/Map/Map.js';
 
 import { About } from './components/About/About';
 import { SearchResults } from './components/SearchResults/SearchResults'
