@@ -89,7 +89,7 @@ export class SearchResults extends Component {
                     {this.state.places.map((place, i) => (
                         <tr key={i}>
                             <td><button onClick={() => this.moveTheMap(place.location_lat, place.location_lng)}>Select</button></td>
-                            <td>{place.image_src}</td>
+                            <td><img src={place.image_src}/></td>
                             <td>{place.location_name}</td>
                             <td>{place.address}</td>
                             <td>{place.city}</td>
