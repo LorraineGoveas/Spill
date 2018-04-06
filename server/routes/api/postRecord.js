@@ -23,13 +23,11 @@ module.exports = (app) => {
         .catch((err) => next(err));
     });
 
-};
+    app.get('/api/postRecords/:keyword/:category/catSearch', (req, res, next) => {
+        PostRecord.find( { "location_name": new RegExp( req.params.keyword, "i" ), "type": req.params.category} )
+        .exec()
+        .then((postRecord) => res.json(postRecord))
+        .catch((err) => next(err));
+    });
 
-/*
-app.get('/api/postRecords/:keyword/search', (req, res, next) => {
-    PostRecord.find({"location_name": new RegExp(req.params.keyword)})
-    .exec()
-    .then((postRecord) => res.json(postRecord))
-    .catch((err) => next(err));
-});
-*/
+};
