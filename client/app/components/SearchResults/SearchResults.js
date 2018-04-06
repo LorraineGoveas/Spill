@@ -52,6 +52,10 @@ export class SearchResults extends Component {
         const keyword = this.state.searchKey
         const category = this.state.category
 
+        this.setState({
+            places: []
+        })
+
         if(category == ''){
             fetch(`/api/postRecords/${keyword}/search`)
             .then(res => res.json())
