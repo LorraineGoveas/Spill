@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import style from 'styled-components';
-import { Map } from '../Map'
+import { Map } from '../Map';
+import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
+
+
 
 const DataTable = style.table`
     width: 100%;
@@ -15,35 +18,61 @@ export class SearchResults extends Component {
         this.state = {
             places: [],
             searchKey: '',
+            category: '',
             selectedPlaceLat: 37.3382,
-            selectedPlaceLng: -121.8863
+            selectedPlaceLng: -121.8863,
+            dropDownOpen: false
         };
 
+        this.dropDownToggle = this.dropDownToggle.bind(this);
         this.searchSomething = this.searchSomething.bind(this);
+
         this.searchTextChanged = this.searchTextChanged.bind(this);
+        this.categoryTextChanged = this.categoryTextChanged.bind(this);
+
         this.moveTheMap = this.moveTheMap.bind(this);
 
+    }
+
+    dropDownToggle() {
+        this.setState({
+            dropDownOpen: !this.state.dropDownOpen
+        });
     }
 
     searchTextChanged(event) {
         this.setState({searchKey: event.target.value})
     }
 
+    categoryTextChanged(event) {
+        this.setState({category: event.target.value})
+    }
+
     searchSomething() {
         const keyword = this.state.searchKey
+        const category = this.state.category
 
-        this.setState({
-            places : []
-        })
-
-        fetch(`/api/postRecords/${keyword}/search`)
-        .then(res => res.json())
-        .then(json => {
-            this.setState({
-                places: json
+        if(category == ''){
+            fetch(`/api/postRecords/${keyword}/search`)
+            .then(res => res.json())
+            .then(json => {
+                this.setState({
+                    places: json
+                });
             });
-        });
+        } else {
+            fetch(`/api/postRecords/${keyword}/${category}/catSearch`)
+            .then(res => res.json())
+            .then(json => {
+                this.setState({
+                    places: json
+                });
+            });
+        }
+
     }
+
+
 
     moveTheMap(lat, lng){
 
@@ -72,6 +101,12 @@ export class SearchResults extends Component {
                 <input type="text" value={this.state.value}
                 onChange={this.searchTextChanged}
                 placeholder="Search.."></input>
+
+                <input type="text" value={this.state.value}
+                onChange={this.categoryTextChanged}
+                placeholder="Any Category.."></input>
+
+
 
                 <DataTable>
                     <tr>
