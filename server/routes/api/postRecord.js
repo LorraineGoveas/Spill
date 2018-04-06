@@ -16,15 +16,29 @@ module.exports = (app) => {
         .catch((err) => next(err));
     });
 
-    app.get('/api/postRecords/:keyword/search', (req, res, next) => {
+    app.get('/api/postRecords/:keyword/locSearch', (req, res, next) => {
         PostRecord.find( { "location_name": new RegExp( req.params.keyword, "i" ) } )
         .exec()
         .then((postRecord) => res.json(postRecord))
         .catch((err) => next(err));
     });
 
-    app.get('/api/postRecords/:keyword/:category/catSearch', (req, res, next) => {
+    app.get('/api/postRecords/:keyword/:category/catLocSearch', (req, res, next) => {
         PostRecord.find( { "location_name": new RegExp( req.params.keyword, "i" ), "type": req.params.category} )
+        .exec()
+        .then((postRecord) => res.json(postRecord))
+        .catch((err) => next(err));
+    });
+
+    app.get('/api/postRecords/:category/catSearch', (req, res, next) => {
+        PostRecord.find( {"type": req.params.category} )
+        .exec()
+        .then((postRecord) => res.json(postRecord))
+        .catch((err) => next(err));
+    });
+
+    app.get('/api/postRecords/allResults', (req, res, next) => {
+        PostRecord.find()
         .exec()
         .then((postRecord) => res.json(postRecord))
         .catch((err) => next(err));
