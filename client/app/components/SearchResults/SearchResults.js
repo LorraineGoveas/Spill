@@ -56,8 +56,24 @@ export class SearchResults extends Component {
             places: []
         })
 
-        if(category == ''){
-            fetch(`/api/postRecords/${keyword}/search`)
+        if(category == '' && keyword == ''){
+            fetch(`/api/postRecords/allResults`)
+            .then(res => res.json())
+            .then(json => {
+                this.setState({
+                    places: json
+                });
+            });
+        } else if (category == '' && keyword != ''){
+            fetch(`/api/postRecords/${keyword}/locSearch`)
+            .then(res => res.json())
+            .then(json => {
+                this.setState({
+                    places: json
+                });
+            });
+        } else if (category != '' && keyword == ''){
+            fetch(`/api/postRecords/${category}/catSearch`)
             .then(res => res.json())
             .then(json => {
                 this.setState({
@@ -65,7 +81,7 @@ export class SearchResults extends Component {
                 });
             });
         } else {
-            fetch(`/api/postRecords/${keyword}/${category}/catSearch`)
+            fetch(`/api/postRecords/${keyword}/${category}/catLocSearch`)
             .then(res => res.json())
             .then(json => {
                 this.setState({
