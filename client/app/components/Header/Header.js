@@ -1,48 +1,39 @@
 import React from 'react';
-import styled from 'styled-components'
+import { AppBar, Toolbar, Typography, Button, Grid} from 'material-ui';
+import { SearchField } from "./SearchField";
 
-import { Link } from 'react-router-dom';
+const Title = () => {
+	return(
+		<Button color='inherit' href="/">
+			<Typography variant="title" color="inherit" noWrap={"true"}>
+				Spill
+			</Typography>
+		</Button>
+	);
+};
 
-const HeaderNavbar = styled.div`
-    color: blue;
-`
-
-const NavbarList = styled.ul`
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
-`
-
-const NavbarItem = styled.li`
-    float: left;
-`
-const StyledLink = styled(Link)`
-    display: block;
-    color: white;
-    padding: 14px 16px;
-    text-decoration: none;
-    text-align: center;
-    &:hover {
-        color: #8cb8ff;
-    }
-`
-
-const Header = () => (
-  <header>
-
-    <HeaderNavbar>
-        <NavbarList>
-            <NavbarItem><StyledLink to="/">Home</StyledLink></NavbarItem>
-            <NavbarItem><StyledLink to="/team/about">About</StyledLink></NavbarItem>
-            <NavbarItem><StyledLink to="/search/results">Search</StyledLink></NavbarItem>
-        </NavbarList>
-    </HeaderNavbar>
-
-
-    <hr />
-  </header>
-);
+const HeaderContents = () => {
+	return(
+		<Toolbar>
+			<Grid
+				container
+				direction={"row"}
+				justify={"center"}
+				alignItems={"center"}
+			>
+				<Grid item xs={12} sm={2}><Title/></Grid>
+				<Grid item sm={9}><SearchField/></Grid>
+				<Grid item ><Button color='inherit' href="/user/userPanel">Account</Button></Grid>
+			</Grid>
+		</Toolbar>
+	);
+};
+const Header = () => {
+	return (
+		<AppBar position="static">
+			<HeaderContents/>
+		</AppBar>
+	);
+};
 
 export default Header;

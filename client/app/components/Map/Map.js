@@ -4,7 +4,7 @@ import { withGoogleMap, GoogleMap, Marker } from 'react-google-maps';
 class Map extends Component {
 
     constructor(){
-        super()
+        super();
         this.state = {
             map: null
         }
@@ -15,18 +15,13 @@ class Map extends Component {
     }
 
     mapLoaded(map){
-        if (this.state.map != null){
-            return
-        }
-
-        this.setState({
-            map: map
-        })
+        if (this.state.map != null){ return }
+        this.setState({map: map})
     }
 
     render(){
 
-        const markers = this.props.markers || []
+        const markers = this.props.markers || [];
 
         return (
             <div>
@@ -41,7 +36,6 @@ class Map extends Component {
                         )
                     )}
                 </GoogleMap>
-
             </div>
         )
     }
