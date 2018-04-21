@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from 'material-ui/styles';
-import classnames from 'classnames';
 import Card, { CardHeader, CardContent, CardActions } from 'material-ui/Card';
 import Avatar from 'material-ui/Avatar';
 import IconButton from 'material-ui/IconButton';
@@ -58,6 +57,8 @@ const list = [
         date: 'April 20, 2018',
         avatar_image: 'F',
         helperText: 'What would you like to post?',
+        defaultValue: '',
+        content: '',
     }
 ]; //end of default data
 
@@ -65,23 +66,38 @@ class CommentBox extends React.Component {
 
     constructor(props){
         super(props);
-    }
-    state = {
+
+    this.state = {
         expanded: false,
         multiline: 'textFieldTest',
         list: list,
+        content: '',
     };
 
-    handleExpandClick = () => {
-        this.setState({ expanded: !this.state.expanded });
+    this.handlePostClick = this.handlePostClick.bind(this);
+    this.handelCanclick = this.handleCancelClick(this);
+    }//end constructor
 
+
+    handlePostClick(id) {
+        alert("post clicked! : objectid: " + id);
+    }
+
+    handleCancelClick(id){
+        alert("cancel clicked : clearing comment box" );
+    }
+
+    handleChange = content => event => {
+        this.setState({
+            [content]: event.target.value,
+        });
     };
 
     render() {
         const { classes } = this.props;
 
         return (
-
+            <form className={classes.container} noValidate autoComplete="off">
             <div>
                 {this.state.list.map(item =>
                     <div key={item.commentBoxId}>
@@ -102,17 +118,19 @@ class CommentBox extends React.Component {
                     />
 
                     <CardContent>
-                        <form className={classes.container} noValidate autoComplete="off">
+
                         <TextField
                             id="multiline-static"
                             label={item.helperText}
                             multiline
                             rows="7"
-                            defaultValue=""
+                            defaultValue={item.defaultValue}
+                            value={this.state.content}
+                            onChange={this.handleChange('content')}
                             className={classes.textField}
                             margin="normal"
                         />
-                        </form>
+
                     </CardContent>
                     <CardActions className={classes.actions} disableActionSpacing>
                         <IconButton aria-label="Add to favorites">
@@ -122,10 +140,20 @@ class CommentBox extends React.Component {
                             <PinDropIcon />
                         </IconButton>
 
-                        <Button variant="raised" className={classes.button}>
+                        <Button
+                            variant="raised"
+                            className={classes.button}
+                            value={item.content}
+                            onClick={() => this.handleCancelClick(item.commentBoxId)}
+                        >
                             Cancel
                         </Button>
-                        <Button variant="raised" color="primary" className={classes.button}>
+                        <Button
+                            variant="raised"
+                            color="primary"
+                            className={classes.button}
+                            onClick={() => this.handlePostClick(item.commentBoxId)}
+                        >
                             Post
                         </Button>
 
@@ -134,9 +162,10 @@ class CommentBox extends React.Component {
                     </div>
                 )}
             </div>
-        );
-    }
-}
+            </form>
+        );//end return
+    }//end render
+}//end CommentBox
 
 CommentBox.propTypes = {
     classes: PropTypes.object.isRequired,
