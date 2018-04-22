@@ -1,165 +1,140 @@
-import React, { Component } from 'react';
-import style from 'styled-components';
+import React from 'react';
+import {Paper, Grid, Card, CardContent, Typography, Button} from 'material-ui';
 import { Map } from '../Map';
-import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
+
+const styles = {
+	TitleStyle: {
+		backgroundColor: "lightGray",
+		textAlign: "center",
+	},
+	ResultsPost: {
+		backgroundColor: "white",
+		color: "black",
+		textAlign: "center",
+	},
+};
+
+const SearchResult = () => {
+	const ResultPreview = () => (
+		<Grid container spacing={8}>
+			<Grid item xs={12}>
+				<Paper style={{padding: "10px"}}>
+					<Typography variant="subheading" align="center">Post Title</Typography>
+				</Paper>
+			</Grid>
+			<Grid item xs>
+				<Paper style={{padding: "10px"}}>
+					<Typography variant="caption" align="left">Preview of post</Typography>
+				</Paper>
+			</Grid>
+		</Grid>
+	);
+
+	const ResultButtons = () => (
+		<Grid container
+			  spacing={8}
+			  direction={"row"}
+			  justify={"flex-end"}
+			  alignItems={"center"}
+			  style={{margin: "auto"}}
+		>
+			<Grid item xs={5}> {/*Empty Space*/} </Grid>
+			<Grid item xs>
+				<Paper>
+					<Button variant="flat" color="default">View Post</Button>
+				</Paper>
+			</Grid>
+
+			<Grid item xs>
+				<Paper style={{padding: "10px"}}>Distance Miles</Paper>
+			</Grid>
+
+		</Grid>
+	);
+
+	return (
+		<Card>
+			<CardContent>
+				<Grid
+					container
+					spacing={16}
+					direction={'row'}
+					justify={'center'}
+					alignItems={'flex-start'}
+				>
+					<Grid item xs={12}><ResultPreview/></Grid>
+					<Grid item xs><ResultButtons/> </Grid>
+				</Grid>
+			</CardContent>
+		</Card>
+	)
+};
+
+// Hardcoded width and height for containerElement needs to be fixed
+const MapsContainer = (props) => (
+	<Map
+		center={{lat:props.latitude, lng:props.longitude}}
+		zoom={12}
+		containerElement={ <Card style={{ height: `500px`, width: '500px' }} /> }
+		mapElement={ <div style={{ height: `100%`, width: '100%' }} /> }
+	/>
+);
+
+const SearchResultsLabel = (props) => (
+	<Typography
+		variant="display1"
+		align="center"
+		style={{padding: "20px"}}>
+		Search Results for: <b>{props.searchInput}</b>
+	</Typography>
+);
+
+export class SearchResults extends React.Component{
+	constructor(props){
+		super(props);
+		this.state = {
+			places: [],
+			searchKey: '',
+			category: '',
+			selectedPlaceLatitude: 37.3382,
+			selectedPlaceLng: -121.8863,
+			dropDownOpen: false
+		}
+	}
 
 
+	//TODO: Populate other fields with data
+	render(){
+		const {selectedPlaceLatitude, selectedPlaceLng} = this.state;
+		const ResultsArea = () => (
+			<Grid container
+				  direction="column"
+				  justify={"center"}
+				  alignItems={"stretch"}
+				  spacing={8}>
+				<Grid item xs> <SearchResult/> </Grid>
+				<Grid item xs> <SearchResult/> </Grid>
+			</Grid>
+		);
 
-const DataTable = style.table`
-    width: 100%;
-    text-align: center;
-`
-
-export class SearchResults extends Component {
-
-    constructor(props){
-        super(props)
-
-        this.state = {
-            places: [],
-            searchKey: '',
-            category: '',
-            selectedPlaceLat: 37.3382,
-            selectedPlaceLng: -121.8863,
-            dropDownOpen: false
-        };
-
-        this.dropDownToggle = this.dropDownToggle.bind(this);
-        this.searchSomething = this.searchSomething.bind(this);
-
-        this.searchTextChanged = this.searchTextChanged.bind(this);
-        this.categoryTextChanged = this.categoryTextChanged.bind(this);
-
-        this.moveTheMap = this.moveTheMap.bind(this);
-
-    }
-
-    dropDownToggle() {
-        this.setState({
-            dropDownOpen: !this.state.dropDownOpen
-        });
-    }
-
-    searchTextChanged(event) {
-        this.setState({searchKey: event.target.value})
-    }
-
-    categoryTextChanged(event) {
-        this.setState({category: event.target.value})
-    }
-
-    searchSomething() {
-        const keyword = this.state.searchKey
-        const category = this.state.category
-
-        this.setState({
-            places: []
-        })
-
-        if(category == '' && keyword == ''){
-            fetch(`/api/postRecords/allResults`)
-            .then(res => res.json())
-            .then(json => {
-                this.setState({
-                    places: json
-                });
-            });
-        } else if (category == '' && keyword != ''){
-            fetch(`/api/postRecords/${keyword}/locSearch`)
-            .then(res => res.json())
-            .then(json => {
-                this.setState({
-                    places: json
-                });
-            });
-        } else if (category != '' && keyword == ''){
-            fetch(`/api/postRecords/${category}/catSearch`)
-            .then(res => res.json())
-            .then(json => {
-                this.setState({
-                    places: json
-                });
-            });
-        } else {
-            fetch(`/api/postRecords/${keyword}/${category}/catLocSearch`)
-            .then(res => res.json())
-            .then(json => {
-                this.setState({
-                    places: json
-                });
-            });
-        }
-
-    }
-
-
-
-    moveTheMap(lat, lng){
-
-        this.setState({
-            selectedPlaceLat: parseFloat(lat),
-            selectedPlaceLng: parseFloat(lng)
-        })
-
-    }
-
-    render() {
-
-
-        return (
-            <div>
-
-                <Map
-                    center={{lat:this.state.selectedPlaceLat, lng:this.state.selectedPlaceLng}}
-                    zoom={12}
-                    containerElement={ <div style={{ height: `500px`, width: '500px' }} /> }
-                    mapElement={ <div style={{ height: `100%` }} /> }
-                />
-
-                <button onClick={this.searchSomething}>Search</button>
-
-                <input type="text" value={this.state.value}
-                onChange={this.searchTextChanged}
-                placeholder="Search.."></input>
-
-                <input type="text" value={this.state.value}
-                onChange={this.categoryTextChanged}
-                placeholder="Any Category.."></input>
-
-
-
-                <DataTable>
-                    <tr>
-                        <th>Select</th>
-                        <th>Image</th>
-                        <th>Name of Place</th>
-                        <th>Address</th>
-                        <th>City</th>
-                        <th>State</th>
-                        <th>Zip</th>
-                        <th>Type of Incident</th>
-                        <th>Status</th>
-                    </tr>
-
-                    {this.state.places.map((place, i) => (
-                        <tr key={i}>
-                            <td><button onClick={() => this.moveTheMap(place.location_lat, place.location_lng)}>Select</button></td>
-                            <td><img src={place.image_src}/></td>
-                            <td>{place.location_name}</td>
-                            <td>{place.address}</td>
-                            <td>{place.city}</td>
-                            <td>{place.state}</td>
-                            <td>{place.zip}</td>
-                            <td>{place.type}</td>
-                            <td>{place.status}</td>
-                        </tr>
-                    ))}
-
-                </DataTable>
-
-
-
-            </div>
-        );
-    }
+		return(
+			<div>
+				<SearchResultsLabel searchInput={"Wind Damage"}/>
+				<Paper style={styles.ResultsPost}>
+					<Grid
+						container
+						direction="row"
+						justify="space-between"
+						alignItems="flex-start"
+						style={{padding: "10px"}}
+						spacing={16}>
+						<Grid item xs><ResultsArea/></Grid>
+						<Grid item xs>
+							<MapsContainer latitude={selectedPlaceLatitude} longitude={selectedPlaceLng}/>
+						</Grid>
+					</Grid>
+				</Paper>
+			</div>
+		);
+	}
 }

@@ -2,31 +2,42 @@ import React from 'react';
 import { render } from 'react-dom';
 
 import {
-  BrowserRouter as Router,
-  Route,
-  Link,
-  Switch
+	BrowserRouter as Router,
+	Route,
+	Link,
+	Switch
 } from 'react-router-dom'
 
 import App from './components/App/App';
 import NotFound from './components/App/NotFound';
-
 import Home from './components/Home/Home';
-import Map from './components/Map/Map.js';
-
 import { About } from './components/About/About';
 import { SearchResults } from './components/SearchResults/SearchResults'
+import { UserPanel } from './components/UserPanel/UserPanel';
+import Login from './components/UserPanel/Login';
+import SignUp from './components/SignUp/SignUp';
+import CommentsPreview from './components/UserPanel/Comments';
+import {MuiThemeProvider} from "material-ui/styles/index";
+import theme from './components/Theme';
 import './styles/styles.scss';
-
+// TODO: Move contents of Home to page called SignUp
+// TODO: Create Home Page according to updated spec
+// TODO: Update Header to have a Search Text Field at all times
 render((
-  <Router>
-    <App>
-      <Switch>
-        <Route exact path="/" component={Home}/>
-        <Route path="/team/about" component={About}/>
-        <Route path="/search/results" component={SearchResults}/>
-        <Route component={NotFound}/>
-      </Switch>
-    </App>
-  </Router>
+	<Router >
+		<MuiThemeProvider theme={theme}>
+			<App>
+				<Switch>
+					<Route exact path="/" component={Home}/>
+					<Route path="/team/about" component={About}/>
+					<Route path="/user/userPanel" component={UserPanel}/>
+					<Route path="/user/signUp" component={SignUp}/>
+					<Route path="/user/login" component={Login}/>
+					<Route path="/user/history" component={CommentsPreview}/>
+					<Route path="/search/results" component={SearchResults}/>
+					<Route component={NotFound}/>
+				</Switch>
+			</App>
+		</MuiThemeProvider>
+	</Router>
 ), document.getElementById('app'));

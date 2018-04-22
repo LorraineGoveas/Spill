@@ -1,48 +1,102 @@
 import React from 'react';
-import styled from 'styled-components'
+import { AppBar, Toolbar, Typography, Button, Grid, Modal} from 'material-ui';
+import { SearchField } from "./SearchField";
+import { LoginArea } from "./LoginArea";
 
-import { Link } from 'react-router-dom';
+const Title = (props) => {
+	return(
+		<Button color='inherit' href="/">
+			<Typography variant="title" color="inherit">
+				{props.label}
+			</Typography>
+		</Button>
+	);
+};
 
-const HeaderNavbar = styled.div`
-    color: blue;
-`
+// TODO: Compare user input with database login fields to see if it's valid
+function validateCredentials() {
+	return true;
+}
 
-const NavbarList = styled.ul`
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
-`
+class HeaderLayout extends React.Component {
+	constructor(props) {
+		super(props);
+		// TODO: isLoggedIn should be fetched from the database
+		this.state = {
+			isLoggedIn: false,
+			open: false
+		};
+		this.handleClose = this.handleClose.bind(this);
+		this.handleOpen = this.handleOpen.bind(this);
+		this.handleNextButton = this.handleNextButton.bind(this);
+	}
 
-const NavbarItem = styled.li`
-    float: left;
-`
-const StyledLink = styled(Link)`
-    display: block;
-    color: white;
-    padding: 14px 16px;
-    text-decoration: none;
-    text-align: center;
-    &:hover {
-        color: #8cb8ff;
-    }
-`
+	handleOpen() {this.setState({ open: true });};
 
-const Header = () => (
-  <header>
+	handleClose() {this.setState({ open: false });};
 
-    <HeaderNavbar>
-        <NavbarList>
-            <NavbarItem><StyledLink to="/">Home</StyledLink></NavbarItem>
-            <NavbarItem><StyledLink to="/team/about">About</StyledLink></NavbarItem>
-            <NavbarItem><StyledLink to="/search/results">Search</StyledLink></NavbarItem>
-        </NavbarList>
-    </HeaderNavbar>
+	handleNextButton(e) {
+		e.preventDefault();
+		if (validateCredentials()) {
+			this.setState({ isLoggedIn: true });
+			this.handleClose()
+		} else {
+			// TODO: Handle situation where user enters invalid login or password
+			console.log("Invalid Credentials not yet implemented")
+		}
+	}
 
+	render() {
+		const loginModalStyle= {
+			position: "absolute",
+			right: "0",
+			width: "250px",
+			marginTop: "50px"
+		};
 
-    <hr />
-  </header>
-);
+		const SignInButton = () => (
+			<Button color={"inherit"} onClick={this.handleOpen}> Sign In </Button>
+		);
+
+		const AccountButton = () => (
+			<Button color={"inherit"} href="/user/userPanel"> Account </Button>
+		);
+
+		// TODO: Present drop down menu when user clicks on AccountButton
+		const HeaderOption = () => (
+			<div>
+				{this.state.isLoggedIn ? AccountButton() : SignInButton()}
+				<Modal open={this.state.open} onClose={this.handleClose}>
+					<div style={loginModalStyle}>
+						<LoginArea handleNextButton={this.handleNextButton}/>
+					</div>
+				</Modal>
+			</div>
+		);
+
+		return(
+			<Toolbar>
+				<Grid
+					container
+					direction={"row"}
+					justify={"center"}
+					alignItems={"center"}
+				>
+					<Grid item xs={12} sm={2}><Title label={"Spill"}/></Grid>
+					<Grid item xs={9} sm={8}><SearchField/></Grid>
+					<Grid item xs={3} sm={2}><HeaderOption/></Grid>
+				</Grid>
+			</Toolbar>
+		)
+	}
+}
+
+const Header = () => {
+	return(
+		<AppBar position="static">
+			<HeaderLayout/>
+		</AppBar>
+	)
+};
 
 export default Header;
