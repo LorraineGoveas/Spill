@@ -16,6 +16,7 @@ import Map from './components/Map/Map.js';
 
 import { About } from './components/About/About';
 import { SearchResults } from './components/SearchResults/SearchResults'
+import { Registration } from './components/Registration/Registration'
 import './styles/styles.scss';
 
 render((
@@ -25,6 +26,7 @@ render((
         <Route exact path="/" component={Home}/>
         <Route path="/team/about" component={About}/>
         <Route path="/search/results" component={SearchResults}/>
+        <Route path="/register/registration" component={Registration}/>
         <Route component={NotFound}/>
       </Switch>
     </App>

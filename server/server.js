@@ -7,6 +7,8 @@ const path = require('path');
 const webpack = require('webpack');
 const webpackDevMiddleware = require('webpack-dev-middleware');
 const webpackHotMiddleware = require('webpack-hot-middleware');
+const session = require('express-session');
+const MongoStore = require('connect-mongo')(session);
 
 const config = require('../config/config');
 const webpackConfig = require('../webpack.config');
@@ -28,6 +30,16 @@ mongoose.Promise = global.Promise;
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+
+//use sessions for tracking logins
+app.use(session({
+  secret: 'work hard',
+  resave: true,
+  saveUninitialized: false,
+  store: new MongoStore({
+    mongooseConnection: mongoose.connection
+  })
+}));
 
 // API routes
 require('./routes')(app);
