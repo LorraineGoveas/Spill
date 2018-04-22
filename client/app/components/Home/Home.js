@@ -36,9 +36,10 @@ const LoginArea = () => {
 				</Grid>
 			</Grid>
 		</Card>
-
 	)
 };
+
+
 const Preview= () => {
 	return(
 		<Card>
@@ -55,7 +56,7 @@ class Home extends Component {
 		const previewItemSize = {xs: 12, sm: 4};
 		return (
 			<div>
-				<LoginArea/>
+				{/*<LoginArea/>*/}
 				<div style={{margin: "30px", padding: "10px"}}>
 					<Grid
 						container

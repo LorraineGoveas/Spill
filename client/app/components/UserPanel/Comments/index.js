@@ -36,7 +36,7 @@ const PostButton = (props) => {
 	return(
 		<Card>
 			<Button>
-				<Typography noWrap={"true"} variant={"caption"}>
+				<Typography variant={"caption"}>
 					{props.label}
 				</Typography>
 			</Button>
@@ -46,7 +46,7 @@ const PostButton = (props) => {
 
 const DistanceLabel = (props) => {
 	return(
-		<Typography noWrap={"true"} variant={"caption"}>{props.label}</Typography>
+		<Typography variant={"caption"}>{props.label}</Typography>
 	);
 };
 
@@ -58,7 +58,7 @@ const OptionsForPost = () => {
 			direction={"row"}
 			justify={"center"}
 			alignItems={"baseline"}
-			wrap={"nowrap"}
+
 		>
 			<Grid item xs> <PostButton label={"View Post"}/></Grid>
 			<Grid item xs> <DistanceLabel label={"7.2 hours ago"}/></Grid>
@@ -92,7 +92,6 @@ const CommentsPreview = () => {
 					direction={"row"}
 					justify={"flex-start"}
 					alignItems={"flex-start"}
-					wrap={"noWrap"}
 				>
 					<Grid item xs> <PostDetails/> </Grid>
 				</Grid>

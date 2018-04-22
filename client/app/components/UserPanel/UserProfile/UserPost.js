@@ -21,7 +21,7 @@ const PostButton = (props) => {
 	return(
 		<div>
 			<Button variant={"raised"} color={"secondary"}>
-				<Typography noWrap={"true"} variant={"caption"}>
+				<Typography variant={"caption"}>
 					{props.label}
 				</Typography>
 			</Button>
@@ -31,7 +31,7 @@ const PostButton = (props) => {
 
 const TimeSincePost = (props) => {
 	return(
-		<Typography noWrap={"true"} variant={"caption"}>{props.label}</Typography>
+		<Typography variant={"caption"}>{props.label}</Typography>
 	);
 };
 
@@ -43,7 +43,6 @@ const OptionsForPost = () => {
 			direction={"row"}
 			justify={"center"}
 			alignItems={"baseline"}
-			wrap={"nowrap"}
 		>
 			<Grid item xs> <PostButton label={"View Post"}/></Grid>
 			<Grid item xs> <TimeSincePost label={"5.2 hours ago"}/></Grid>
@@ -85,7 +84,6 @@ export const RecentPost = () => {
 					direction={"row"}
 					justify={"flex-start"}
 					alignItems={"flex-start"}
-					wrap={"noWrap"}
 				>
 					<Grid item xs> <PostContents/> </Grid>
 					<Grid item xs={4}> <PostImage/></Grid>
