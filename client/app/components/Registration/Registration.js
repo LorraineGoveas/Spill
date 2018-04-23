@@ -34,6 +34,17 @@ import style from 'styled-components';
 						
         </form>
 
+
+
+        <p>Comment</p>
+          <form action="">
+              <input type="text" name="comment" placeholder="Comment"/>
+              <input type="submit" value="Add Comment"/>
+
+
+
+          </form>
+
    	 </div>
 
 
