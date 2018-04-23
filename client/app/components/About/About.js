@@ -113,10 +113,10 @@ export class About extends Component {
 				<div style={{ margin: "30px" }}>
 					{value === 0 && <TabContainer>{this.getMember(selectedMember).name}</TabContainer>}
 					{value === 1 && <TabContainer>{this.getMember(selectedMember).name}</TabContainer>}
-					{value === 2 && <TabContainer>Alaric Gonzales</TabContainer>}
-					{value === 3 && <TabContainer>Lorraine Goveas</TabContainer>}
-					{value === 4 && <TabContainer>Albert Fernandez Saucedo</TabContainer>}
-					{value === 5 && <TabContainer>Harpreet Singh</TabContainer>}
+					{value === 2 && <TabContainer>{this.getMember(selectedMember).name}</TabContainer>}
+					{value === 3 && <TabContainer>{this.getMember(selectedMember).name}</TabContainer>}
+					{value === 4 && <TabContainer>{this.getMember(selectedMember).name}</TabContainer>}
+					{value === 5 && <TabContainer>{this.getMember(selectedMember).name}</TabContainer>}
 				</div>
 				<div>
 					<img src={this.getMember(selectedMember).image_src}
