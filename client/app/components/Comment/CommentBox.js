@@ -6,7 +6,6 @@ import PinDropIcon from '@material-ui/icons/PinDrop';
 class CommentBox extends React.Component {
 	render() {
 		return (
-
 			<div>
 				<Card>
 					<CardHeader

@@ -2,6 +2,7 @@ import React from 'react';
 import {Paper, Grid, Card, CardContent, Typography, Button} from 'material-ui';
 import { Map } from '../Map';
 
+//TODO: Add back SearchResults functionality from pre-styling
 const styles = {
 	TitleStyle: {
 		backgroundColor: "lightGray",
