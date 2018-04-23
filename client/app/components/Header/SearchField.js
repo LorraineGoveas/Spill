@@ -6,18 +6,18 @@ import Input, {InputLabel, InputAdornment} from 'material-ui/Input';
 
 class SearchField extends React.Component {
 	render() {
-		const SearchIcon = () => (
-			<Button size="large" href={"/search/results"}>
+		const SearchButton = () => (
+			<Button size="small" href={"/search/results"}>
 				<Search>Search</Search>
 			</Button>
 		);
 		return (
-			<Paper style={{height: "2.8em"}} >
+			<Paper>
 				<FormControl fullWidth>
 					<InputLabel>Search</InputLabel>
 					<Input endAdornment={
 						<InputAdornment>
-							<SearchIcon/>
+							<SearchButton/>
 						</InputAdornment>
 					}/>
 				</FormControl>

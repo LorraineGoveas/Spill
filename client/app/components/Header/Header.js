@@ -3,6 +3,7 @@ import { AppBar, Toolbar, Typography, Button, Grid, Modal} from 'material-ui';
 import { SearchField } from "./SearchField";
 import { LoginArea } from "./LoginArea";
 import {AccountPopover} from "./AccountPopover";
+
 const Title = (props) => {
 	return(
 		<Button color='inherit' href="/">
