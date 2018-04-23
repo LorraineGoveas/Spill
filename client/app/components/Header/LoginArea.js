@@ -10,10 +10,6 @@ const LoginField = (props) => {
 };
 
 const LoginArea = (props) => {
-	const handleCreateAccount = () => {
-		console.log("User pressed Create Account Button")
-	};
-
 	return(
 		<Card style={{
 				width: "100%",
@@ -39,7 +35,7 @@ const LoginArea = (props) => {
 					<Button size="small" variant="flat" onClick={props.handleNextButton}>
 						Next
 					</Button>
-					<Button size="small" variant="flat" onClick={handleCreateAccount} href={"/user/login"}>
+					<Button size="small" variant="flat" href={"/user/signUp"}>
 						Create Account
 					</Button>
 				</Grid>
