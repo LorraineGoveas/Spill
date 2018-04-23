@@ -4,6 +4,10 @@ import AddPhotoIcon from '@material-ui/icons/AddAPhoto';
 import PinDropIcon from '@material-ui/icons/PinDrop';
 
 class CommentBox extends React.Component {
+	constructor(props) {
+		super(props);
+
+	}
 	render() {
 		return (
 
@@ -39,7 +43,7 @@ class CommentBox extends React.Component {
 						</Grid>
 
 						<Grid item xs sm>
-							<Button variant="raised"> Cancel </Button>
+							<Button variant="raised" onClick={this.props.handleCancel}> Cancel </Button>
 						</Grid>
 
 						<Grid item xs sm >
