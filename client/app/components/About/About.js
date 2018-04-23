@@ -38,12 +38,17 @@ function TabContainer(props) {
 export class About extends Component {
 	constructor(props) {
 		super(props);
+
 		this.state = {
 			value: 0,
 			teamMembers: [],
 			selectedMember: "Peter Mutch"
 		};
+
 		this.handleChange = this.handleChange.bind(this);
+		this.getMember = this.getMember.bind(this);
+		this.switchMember = this.switchMember.bind(this);
+		this.getSelectedMember = this.getSelectedMember(this);
 	}
 
 	componentDidMount() {
@@ -72,10 +77,15 @@ export class About extends Component {
 		}
 	}
 
+	getSelectedMember(){
+		return this.state.selectedMember;
+	}
+
 	switchMember(memberName){
 		this.setState({
-			selectedMember: this.getMember(memberName)
+			selectedMember: memberName,
 		});
+
 		console.log("MEMBER: " + memberName);
 		console.log("ROLE: " + this.getMember(memberName).role); // TODO: Fix this, shouldn't be undefined
 		this.forceUpdate();
@@ -101,8 +111,8 @@ export class About extends Component {
 				{/*</div>*/}
 
 				<div style={{ margin: "30px" }}>
-					{value === 0 && <TabContainer>Peter Mutch</TabContainer>}
-					{value === 1 && <TabContainer>Sid Bola</TabContainer>}
+					{value === 0 && <TabContainer>{this.getMember(selectedMember).name}</TabContainer>}
+					{value === 1 && <TabContainer>{this.getMember(selectedMember).name}</TabContainer>}
 					{value === 2 && <TabContainer>Alaric Gonzales</TabContainer>}
 					{value === 3 && <TabContainer>Lorraine Goveas</TabContainer>}
 					{value === 4 && <TabContainer>Albert Fernandez Saucedo</TabContainer>}
