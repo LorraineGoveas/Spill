@@ -67,7 +67,6 @@ const SearchResult = (props) => {
 
 const SearchResultsLabel = (props) => {
 	if (!props.searchInput) {
-		console.log(" (!searchInput) SEARCH KEY IN RESULTS LABEL: ", props.searchInput);
 		return (
 			<Typography
 				variant="display1"
@@ -86,26 +85,26 @@ const SearchResultsLabel = (props) => {
 		</Typography>)
 
 };
+const MapCardStyle = {
+	position: "fixed",
+	right: "0",
+	top: "10em",
+	height: `22.5em`,
+	width: '22.5em',
+};
 
-function DisplayFetchedData(place, i) {
-	const {image_src, location_name, address, city, state, zip, type, status} = place;
-	return (
-		<div key={i}>
-			<SearchResult title={type} previewContent={(
-				<div>
-					<div><img src={image_src}/></div>
-					<div>{location_name}</div>
-					<div>{address}</div>
-					<div>{city}</div>
-					<div>{state}</div>
-					<div>{zip}</div>
-					<div>{type}</div>
-					<div>{status}</div>
-				</div>
-			)}/>
-		</div>
-	);
-}
+const MapElementStyle = {
+	height: `100%`,
+	width: '100%',
+};
+
+const MapsContainer = (props) => (
+	<Map
+		center={{lat:props.latitude, lng:props.longitude}}
+		zoom={12}
+		containerElement={ <Card style={MapCardStyle}/> }
+		mapElement={ <div style={MapElementStyle}/> }
+	/>);
 
 class SearchResults extends React.Component{
 	constructor(props){
@@ -121,6 +120,14 @@ class SearchResults extends React.Component{
 		this.initiateSearch = this.initiateSearch.bind(this);
 		this.searchTextChanged = this.searchTextChanged.bind(this);
 		this.categoryTextChanged = this.categoryTextChanged.bind(this);
+		this.moveTheMap = this.moveTheMap.bind(this);
+	}
+
+	moveTheMap(lat, lng) {
+		this.setState({
+				selectedPlaceLatitude: parseFloat(lat),
+				selectedPlaceLng: parseFloat(lng)
+			});
 	}
 
 	fetchAllResults() {
@@ -187,47 +194,48 @@ class SearchResults extends React.Component{
 		this.setState({category: event.target.value})
 	}
 
+	DisplayFetchedData(place, i) {
+		const {image_src, location_name, address, city, state, zip, type, status} = place;
+		return (
+			<div key={i}>
+				<SearchResult title={type} previewContent={(
+					<div onClick={() => { this.moveTheMap(place.location_lat, place.location_lng)}}>
+						<div><img src={image_src}/></div>
+						<div>{location_name}</div>
+						<div>{address}</div>
+						<div>{city}</div>
+						<div>{state}</div>
+						<div>{zip}</div>
+						<div>{type}</div>
+						<div>{status}</div>
+					</div>
+				)}/>
+			</div>
+		);
+	}
+
+
 	// TODO: Empty search causes terrible lag
 	render(){
 		const {selectedPlaceLatitude, selectedPlaceLng} = this.state;
-		const MapCardStyle = {
-			// display: "inline-block",
-			position: "fixed",
-			right: "0",
-			top: "10em",
-			height: `22.5em`,
-			width: '22.5em',
-		};
-
-		const MapElementStyle = {
-			height: `100%`,
-			width: '100%',
-
-		};
-		const MapsContainer = (props) => (
-			<Map
-				center={{lat:props.latitude, lng:props.longitude}}
-				zoom={12}
-				containerElement={ <Card style={MapCardStyle}/> }
-				mapElement={ <div style={MapElementStyle}/> }
-			/>);
-
-
 		return(
 			<div>
 				<form onSubmit={this.initiateSearch}>
 					<Typography style={{textAlign: "center", marginTop: "10px"}}>
 						Search
-						<input type={"text"} value={this.state.searchKey} onChange={this.searchTextChanged} />
-						<input type={"submit"} value={"Submit"} />
+						<input type={"text"}
+							   value={this.state.searchKey}
+							   onChange={this.searchTextChanged} />
+
+						<input type={"submit"}
+							   value={"Submit"} />
 					</Typography>
 				</form>
 
 				<SearchResultsLabel searchInput={this.state.searchKey.toLocaleString()}/>
 				<Paper style={styles.ResultsPost}>
 					<MapsContainer latitude={selectedPlaceLatitude} longitude={selectedPlaceLng}/>
-
-					{this.state.places.map(DisplayFetchedData)}
+					{this.state.places.map(this.DisplayFetchedData, this)}
 				</Paper>
 			</div>
 		);
