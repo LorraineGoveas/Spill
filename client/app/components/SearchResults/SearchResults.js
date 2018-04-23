@@ -2,12 +2,7 @@ import React from 'react';
 import {Paper, Grid, Card, CardContent, Typography, Button} from 'material-ui';
 import { Map } from '../Map';
 
-//TODO: Add back SearchResults functionality from pre-styling
 const styles = {
-	TitleStyle: {
-		backgroundColor: "lightGray",
-		textAlign: "center",
-	},
 	ResultsPost: {
 		color: "black",
 		textAlign: "center",
@@ -70,17 +65,49 @@ const SearchResult = (props) => {
 	)
 };
 
+const SearchResultsLabel = (props) => {
+	if (!props.searchInput) {
+		console.log(" (!searchInput) SEARCH KEY IN RESULTS LABEL: ", props.searchInput);
+		return (
+			<Typography
+				variant="display1"
+				align="center"
+				style={{padding: "20px"}}>
+				All Results
+			</Typography>
+		)
+	}
+	return (
+		<Typography
+			variant="display1"
+			align="center"
+			style={{padding: "20px"}}>
+			Search Results for: <b>{props.searchInput}</b>
+		</Typography>)
 
-const SearchResultsLabel = (props) => (
-	<Typography
-		variant="display1"
-		align="center"
-		style={{padding: "20px"}}>
-		Search Results for: <b>{props.searchInput}</b>
-	</Typography>
-);
+};
 
-export class SearchResults extends React.Component{
+function DisplayFetchedData(place, i) {
+	const {image_src, location_name, address, city, state, zip, type, status} = place;
+	return (
+		<div key={i}>
+			<SearchResult title={type} previewContent={(
+				<div>
+					<div><img src={image_src}/></div>
+					<div>{location_name}</div>
+					<div>{address}</div>
+					<div>{city}</div>
+					<div>{state}</div>
+					<div>{zip}</div>
+					<div>{type}</div>
+					<div>{status}</div>
+				</div>
+			)}/>
+		</div>
+	);
+}
+
+class SearchResults extends React.Component{
 	constructor(props){
 		super(props);
 		this.state = {
@@ -91,157 +118,120 @@ export class SearchResults extends React.Component{
 			selectedPlaceLng: -121.8863,
 			dropDownOpen: false
 		};
-
-		this.searchSomething = this.searchSomething.bind(this);
+		this.initiateSearch = this.initiateSearch.bind(this);
 		this.searchTextChanged = this.searchTextChanged.bind(this);
 		this.categoryTextChanged = this.categoryTextChanged.bind(this);
-
 	}
 
-	searchSomething() {
+	fetchAllResults() {
+		fetch(`/api/postRecords/allResults`)
+			.then(res => res.json())
+			.then(json => {
+				this.setState({
+					places: json
+				});
+			});
+	}
+
+	fetchResultsWithSearchKey(searchKey) {
+		fetch(`/api/postRecords/${searchKey}/locSearch`)
+			.then(res => res.json())
+			.then(json => {
+				this.setState({
+					places: json
+				});
+			});
+	}
+
+	fetchResultsWithCategory(category) {
+		fetch(`/api/postRecords/${category}/catSearch`)
+			.then(res => res.json())
+			.then(json => {
+				this.setState({
+					places: json
+				});
+			});
+	}
+
+	fetchResultsWithSearchAndCategory(searchKey, category) {
+		fetch(`/api/postRecords/${searchKey}/${category}/catLocSearch`)
+			.then(res => res.json())
+			.then(json => {
+				this.setState({
+					places: json
+				});
+			});
+	}
+
+	initiateSearch(event) {
 		const {searchKey, category} = this.state;
+		this.setState({places: []});
 
-		this.setState({
-			places: []
-		});
-
-		if(category == '' && searchKey == ''){
-			fetch(`/api/postRecords/allResults`)
-				.then(res => res.json())
-				.then(json => {
-					this.setState({
-						places: json
-					});
-				});
+		if (category == '' && searchKey == ''){
+			this.fetchAllResults()
 		} else if (category == '' && searchKey != ''){
-			fetch(`/api/postRecords/${searchKey}/locSearch`)
-				.then(res => res.json())
-				.then(json => {
-					this.setState({
-						places: json
-					});
-				});
+			this.fetchResultsWithSearchKey(searchKey)
 		} else if (category != '' && searchKey == ''){
-			fetch(`/api/postRecords/${category}/catSearch`)
-				.then(res => res.json())
-				.then(json => {
-					this.setState({
-						places: json
-					});
-				});
+			this.fetchResultsWithCategory(category)
 		} else {
-			fetch(`/api/postRecords/${searchKey}/${category}/catLocSearch`)
-				.then(res => res.json())
-				.then(json => {
-					this.setState({
-						places: json
-					});
-				});
+			this.fetchResultsWithSearchAndCategory(searchKey, category)
 		}
+		event.preventDefault();
 	}
 
 	searchTextChanged(event) {
-		this.setState({searchKey: event.target.value})
+		this.setState({searchKey: event.target.value});
 	}
 
 	categoryTextChanged(event) {
 		this.setState({category: event.target.value})
 	}
+
+	// TODO: Empty search causes terrible lag
 	render(){
 		const {selectedPlaceLatitude, selectedPlaceLng} = this.state;
 		const MapCardStyle = {
-			height: `25em`,
-			width: '25em'
+			// display: "inline-block",
+			position: "fixed",
+			right: "0",
+			top: "10em",
+			height: `22.5em`,
+			width: '22.5em',
 		};
 
 		const MapElementStyle = {
 			height: `100%`,
-			width: '100%'
-		};
+			width: '100%',
 
+		};
 		const MapsContainer = (props) => (
 			<Map
 				center={{lat:props.latitude, lng:props.longitude}}
 				zoom={12}
 				containerElement={ <Card style={MapCardStyle}/> }
 				mapElement={ <div style={MapElementStyle}/> }
-			/>
-		);
+			/>);
+
+
 		return(
 			<div>
-				<Button onClick={this.searchSomething}>Search</Button>
+				<form onSubmit={this.initiateSearch}>
+					<Typography style={{textAlign: "center", marginTop: "10px"}}>
+						Search
+						<input type={"text"} value={this.state.searchKey} onChange={this.searchTextChanged} />
+						<input type={"submit"} value={"Submit"} />
+					</Typography>
+				</form>
 
-				<SearchResultsLabel searchInput={"Wind Damage"}/>
-
+				<SearchResultsLabel searchInput={this.state.searchKey.toLocaleString()}/>
 				<Paper style={styles.ResultsPost}>
-					<Grid
-						container
-						direction="row"
-						justify="center"
-						alignItems="flex-start"
-						spacing={16}
-					>
-						<Grid item xs={7}><SearchResult/></Grid>
-						<Grid item xs={5} style={{alignSelf: "flex-end"}}>
-							<div >
-								<MapsContainer latitude={selectedPlaceLatitude} longitude={selectedPlaceLng}/>
-							</div>
-						</Grid>
+					<MapsContainer latitude={selectedPlaceLatitude} longitude={selectedPlaceLng}/>
 
-						<Grid item xs><SearchResult/></Grid>
-					</Grid>
+					{this.state.places.map(DisplayFetchedData)}
 				</Paper>
-
-				{this.state.places.map((place, i) =>
-					{
-						const {image_src, location_name, address, city, state, zip, type, status} = place;
-						return (
-							<div key={i}>
-								<SearchResult title={type} previewContent={location_name}/>
-								<div><Button onClick={() => this.moveTheMap(place.location_lat, place.location_lng)}>Select</Button></div>
-								<div><img src={image_src}/></div>
-								<div>{location_name}</div>
-								<div>{address}</div>
-								<div>{city}</div>
-								<div>{state}</div>
-								<div>{zip}</div>
-								<div>{type}</div>
-								<div>{status}</div>
-							</div>
-						)}
-				)}
 			</div>
 		);
 	}
 }
 
-/*
-						<div><Button onClick={() => this.moveTheMap(place.location_lat, place.location_lng)}>Select</Button></div>
-						<div><img src={place.image_src}/></div>
-						<div>{place.location_name}</div>
-						<div>{place.address}</div>
-						<div>{place.city}</div>
-						<div>{place.state}</div>
-						<div>{place.zip}</div>
-						<div>{place.type}</div>
-						<div>{place.status}</div>
- */
-
-/*
-
-				<SearchResultsLabel searchInput={"Wind Damage"}/>
-				<Paper style={styles.ResultsPost}>
-					<Grid
-						container
-						direction="row"
-						justify="space-between"
-						alignItems="flex-start"
-						style={{padding: "10px"}}
-						spacing={16}>
-						<Grid item xs><ResultsArea/></Grid>
-						<Grid item xs>
-							<MapsContainer latitude={selectedPlaceLatitude} longitude={selectedPlaceLng}/>
-						</Grid>
-					</Grid>
-				</Paper>
- */
+export { SearchResults }
