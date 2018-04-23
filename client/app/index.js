@@ -24,7 +24,6 @@ import CommentsPreview from './components/UserPanel/Comments';
 import {MuiThemeProvider} from "material-ui/styles/index";
 
 import theme from './components/Theme';
-import './styles/styles.scss';
 // TODO: Move contents of Home to page called SignUp
 // TODO: Create Home Page according to updated spec
 // TODO: Update Header to have a Search Text Field at all times

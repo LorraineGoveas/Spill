@@ -2,6 +2,7 @@ import React from 'react';
 import { AppBar, Toolbar, Typography, Button, Grid, Modal} from 'material-ui';
 import { SearchField } from "./SearchField";
 import { LoginArea } from "./LoginArea";
+import { AccountPopover } from "./AccountPopover";
 
 const Title = (props) => {
 	return(
@@ -27,11 +28,11 @@ class HeaderLayout extends React.Component {
 			open: false
 		};
 		this.handleClose = this.handleClose.bind(this);
-		this.handleOpen = this.handleOpen.bind(this);
+		this.handleSignInButton = this.handleSignInButton.bind(this);
 		this.handleNextButton = this.handleNextButton.bind(this);
 	}
 
-	handleOpen() {this.setState({ open: true });};
+	handleSignInButton() {this.setState({ open: true });};
 
 	handleClose() {this.setState({ open: false });};
 
@@ -51,21 +52,18 @@ class HeaderLayout extends React.Component {
 			position: "absolute",
 			right: "0",
 			width: "250px",
-			marginTop: "50px"
+			marginTop: "50px",
+			marginRight: "25px",
 		};
 
 		const SignInButton = () => (
-			<Button color={"inherit"} onClick={this.handleOpen}> Sign In </Button>
-		);
-
-		const AccountButton = () => (
-			<Button color={"inherit"} href="/user/userPanel"> Account </Button>
+			<Button color={"inherit"} onClick={this.handleSignInButton}> Sign In </Button>
 		);
 
 		// TODO: Present drop down menu when user clicks on AccountButton
 		const HeaderOption = () => (
 			<div>
-				{this.state.isLoggedIn ? AccountButton() : SignInButton()}
+				{this.state.isLoggedIn ? <AccountPopover/> : <SignInButton/>}
 				<Modal open={this.state.open} onClose={this.handleClose}>
 					<div style={loginModalStyle}>
 						<LoginArea handleNextButton={this.handleNextButton}/>
