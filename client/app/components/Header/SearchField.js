@@ -2,7 +2,7 @@ import React from 'react';
 import { Button } from 'material-ui';
 import { Search } from '@material-ui/icons';
 import { Paper,FormControl} from 'material-ui';
-import Input, {InputLabel, InputAdornment} from 'material-ui/input';
+import Input, {InputLabel, InputAdornment} from 'material-ui/Input';
 
 class SearchField extends React.Component {
 	render() {
