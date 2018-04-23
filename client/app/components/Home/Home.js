@@ -94,14 +94,6 @@ class Home extends Component {
 			bottom: "2.5rem",
 		};
 
-		// const AddPostButton = () => {
-		// 	return(
-		// 		<div >
-		// 			<Button style={AddPostButtonStyle} variant={"fab"} color={"secondary"} label={"add"}><AddIcon/></Button>
-		// 		</div>
-		// 	);
-		// };
-
 		return (
 			<div>
 				<div style={{margin: "30px", padding: "10px"}}>

@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3f6900e4-5fb3-4d4d-bb6a-b2293134207b" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/app/components/Comment/CommentBox.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/app/components/Comment/CommentBox.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/app/components/Header/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/app/components/Header/Header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/app/components/Header/SearchField.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/app/components/Header/SearchField.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/app/components/Home/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/app/components/Home/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/app/components/SearchResults/SearchResults.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/app/components/SearchResults/SearchResults.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/dist/" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -24,62 +21,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/app/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="46">
-              <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Home.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/app/components/Home/Home.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="785">
-              <caret line="130" column="36" lean-forward="true" selection-start-line="130" selection-start-column="36" selection-end-line="130" selection-end-column="36" />
+            <state relative-caret-position="800">
+              <caret line="35" column="25" lean-forward="true" selection-start-line="35" selection-start-column="25" selection-end-line="35" selection-end-column="25" />
               <folding>
-                <element signature="e#195#309#0" />
-                <element signature="e#208#303#0" />
-                <element signature="e#352#810#0" />
-                <element signature="e#409#591#0" />
-                <element signature="e#457#588#0" />
-                <element signature="e#606#800#0" />
                 <element signature="n#!!block;n#displayPreviews#0" />
-                <element signature="e#1010#1214#0" />
-                <element signature="e#1071#1205#0" />
-                <element signature="n#!!block;n#componentDidMount#0;n#Home#0" />
-                <element signature="n#!!block;n#componentWillUnmount#0;n#Home#0" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Header.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/app/components/Header/Header.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="223">
-              <caret line="27" column="23" lean-forward="true" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
-              <folding>
-                <element signature="e#266#413#0" />
-                <element signature="e#279#407#0" />
-                <element signature="e#316#395#0" />
-                <element signature="n#!!block;n#validateCredentials#0" />
-                <element signature="n#!!block;n#handleNextButton#0;n#HeaderLayout#0" />
-                <element signature="e#1102#1169#0" />
-                <element signature="e#1175#1311#0" />
-                <element signature="e#2310#2385#0" />
-                <element signature="e#2323#2380#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LoginArea.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/app/components/Header/LoginArea.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="486">
-              <caret line="26" column="33" selection-start-line="26" selection-start-column="33" selection-end-line="26" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -87,17 +36,62 @@
       <file leaf-file-name="SearchField.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/app/components/Header/SearchField.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="6" column="43" lean-forward="true" selection-start-line="6" selection-start-column="43" selection-end-line="6" selection-end-column="43" />
+            <state relative-caret-position="115">
+              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CommentBox.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/client/app/components/Comment/CommentBox.js">
+      <file leaf-file-name="LoginArea.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/app/components/Header/LoginArea.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="828">
-              <caret line="36" column="45" lean-forward="true" selection-start-line="36" selection-start-column="45" selection-end-line="36" selection-end-column="45" />
+            <state relative-caret-position="207">
+              <caret line="9" column="2" lean-forward="true" selection-start-line="9" selection-start-column="2" selection-end-line="9" selection-end-column="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SearchResults.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/client/app/components/SearchResults/SearchResults.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="359">
+              <caret line="54" column="12" lean-forward="true" selection-start-line="54" selection-start-column="12" selection-end-line="54" selection-end-column="12" />
+              <folding>
+                <element signature="e#0#26#0" />
+                <element signature="e#230#289#0" />
+                <element signature="e#1008#1023#0" />
+                <element signature="e#1036#1149#0" />
+                <element signature="e#1055#1138#0" />
+                <element signature="e#1154#1239#0" />
+                <element signature="e#1925#2067#0" />
+                <element signature="n#!!block;n#constructor#0;n#SearchResults#0" />
+                <element signature="e#2176#2321#0" />
+                <element signature="n#!!block;n#searchSomething#0;n#SearchResults#0" />
+                <element signature="e#2630#2649#0" />
+                <element signature="e#2689#2840#0" />
+                <element signature="e#2778#2834#0" />
+                <element signature="e#2799#2826#0" />
+                <element signature="e#2882#3043#0" />
+                <element signature="e#2981#3037#0" />
+                <element signature="e#3002#3029#0" />
+                <element signature="e#3085#3247#0" />
+                <element signature="e#3185#3241#0" />
+                <element signature="e#3206#3233#0" />
+                <element signature="e#3257#3433#0" />
+                <element signature="e#3367#3423#0" />
+                <element signature="e#3388#3415#0" />
+                <element signature="n#!!block;n#searchTextChanged#0;n#SearchResults#0" />
+                <element signature="n#!!block;n#categoryTextChanged#0;n#SearchResults#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Map.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/app/components/Map/Map.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="529">
+              <caret line="23" column="23" lean-forward="true" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -113,9 +107,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>noWrap</find>
-      <find>/user/history</find>
-      <find>AboutMeTheme</find>
       <find>About</find>
       <find>aboutmetheme</find>
       <find>nowrap</find>
@@ -143,6 +134,9 @@
       <find>Modal</find>
       <find>Paper</find>
       <find>handleSignInButton</find>
+      <find>searchKey</find>
+      <find>keyword</find>
+      <find>MapsContainer</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -172,13 +166,13 @@
         <option value="$PROJECT_DIR$/client/app/components/Home/DummyPreview.js" />
         <option value="$PROJECT_DIR$/client/app/components/Header/HeaderModal.js" />
         <option value="$PROJECT_DIR$/client/app/components/Header/LoginArea.js" />
-        <option value="$PROJECT_DIR$/client/app/components/SearchResults/SearchResults.js" />
         <option value="$PROJECT_DIR$/client/app/components/About/About.js" />
         <option value="$PROJECT_DIR$/client/app/components/Header/AccountPopover.js" />
-        <option value="$PROJECT_DIR$/client/app/components/Header/SearchField.js" />
         <option value="$PROJECT_DIR$/client/app/components/Header/Header.js" />
-        <option value="$PROJECT_DIR$/client/app/components/Home/Home.js" />
         <option value="$PROJECT_DIR$/client/app/components/Comment/CommentBox.js" />
+        <option value="$PROJECT_DIR$/client/app/components/Header/SearchField.js" />
+        <option value="$PROJECT_DIR$/client/app/components/Home/Home.js" />
+        <option value="$PROJECT_DIR$/client/app/components/SearchResults/SearchResults.js" />
       </list>
     </option>
   </component>
@@ -243,15 +237,7 @@
               <item name="client" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="Comment" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="csc648-team06" type="b2602c69:ProjectViewProjectNode" />
-              <item name="csc648-team06" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="Footer" type="462c0819:PsiDirectoryNode" />
+              <item name="Header" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="csc648-team06" type="b2602c69:ProjectViewProjectNode" />
@@ -275,6 +261,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="HbShouldOpenHtmlAsHb" value="" />
+    <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/alaricgonzales/Downloads/Spill/csc648-team06/client/app/components/Header/SearchField.js" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="javascript.nodejs.core.library.configured.version" value="9.11.1" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -320,12 +307,12 @@
       <workItem from="1519663734363" duration="2193000" />
       <workItem from="1524273363389" duration="10140000" />
       <workItem from="1524327634893" duration="171000" />
-      <workItem from="1524410157172" duration="40265000" />
+      <workItem from="1524410157172" duration="46657000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="61604000" />
+    <option name="totallyTimeSpent" value="67996000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1280" y="23" width="1280" height="1349" extended-state="0" />
@@ -382,14 +369,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/client/app/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" column="25" lean-forward="true" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/app/components/About/Team/Sid.js" />
     <entry file="file://$PROJECT_DIR$/client/public/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
@@ -618,13 +597,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/app/components/SearchResults/SearchResults.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="3" lean-forward="true" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/app/components/About/About.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="164">
@@ -632,24 +604,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/app/components/Header/LoginArea.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="486">
-          <caret line="26" column="33" selection-start-line="26" selection-start-column="33" selection-end-line="26" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/app/components/Header/AccountPopover.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="161">
           <caret line="7" column="17" lean-forward="true" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/app/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
         </state>
       </provider>
     </entry>
@@ -671,37 +629,89 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/app/components/Home/Home.js">
+    <entry file="file://$PROJECT_DIR$/client/app/components/Comment/CommentBox.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="785">
-          <caret line="130" column="36" lean-forward="true" selection-start-line="130" selection-start-column="36" selection-end-line="130" selection-end-column="36" />
-          <folding>
-            <element signature="e#195#309#0" />
-            <element signature="e#208#303#0" />
-            <element signature="e#352#810#0" />
-            <element signature="e#409#591#0" />
-            <element signature="e#457#588#0" />
-            <element signature="e#606#800#0" />
-            <element signature="n#!!block;n#displayPreviews#0" />
-            <element signature="e#1010#1214#0" />
-            <element signature="e#1071#1205#0" />
-            <element signature="n#!!block;n#componentDidMount#0;n#Home#0" />
-            <element signature="n#!!block;n#componentWillUnmount#0;n#Home#0" />
-          </folding>
+        <state relative-caret-position="621">
+          <caret line="27" column="33" lean-forward="true" selection-start-line="27" selection-start-column="33" selection-end-line="27" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/app/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" lean-forward="true" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/app/components/SignUp/SignUp.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="7" column="28" lean-forward="true" selection-start-line="7" selection-start-column="28" selection-end-line="7" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/app/components/Header/LoginArea.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="9" column="2" lean-forward="true" selection-start-line="9" selection-start-column="2" selection-end-line="9" selection-end-column="2" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/app/components/Header/SearchField.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="6" column="43" lean-forward="true" selection-start-line="6" selection-start-column="43" selection-end-line="6" selection-end-column="43" />
+        <state relative-caret-position="115">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/app/components/Comment/CommentBox.js">
+    <entry file="file://$PROJECT_DIR$/client/app/components/Map/Map.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="828">
-          <caret line="36" column="45" lean-forward="true" selection-start-line="36" selection-start-column="45" selection-end-line="36" selection-end-column="45" />
+        <state relative-caret-position="529">
+          <caret line="23" column="23" lean-forward="true" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/app/components/Home/Home.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="800">
+          <caret line="35" column="25" lean-forward="true" selection-start-line="35" selection-start-column="25" selection-end-line="35" selection-end-column="25" />
+          <folding>
+            <element signature="n#!!block;n#displayPreviews#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/app/components/SearchResults/SearchResults.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="359">
+          <caret line="54" column="12" lean-forward="true" selection-start-line="54" selection-start-column="12" selection-end-line="54" selection-end-column="12" />
+          <folding>
+            <element signature="e#0#26#0" />
+            <element signature="e#230#289#0" />
+            <element signature="e#1008#1023#0" />
+            <element signature="e#1036#1149#0" />
+            <element signature="e#1055#1138#0" />
+            <element signature="e#1154#1239#0" />
+            <element signature="e#1925#2067#0" />
+            <element signature="n#!!block;n#constructor#0;n#SearchResults#0" />
+            <element signature="e#2176#2321#0" />
+            <element signature="n#!!block;n#searchSomething#0;n#SearchResults#0" />
+            <element signature="e#2630#2649#0" />
+            <element signature="e#2689#2840#0" />
+            <element signature="e#2778#2834#0" />
+            <element signature="e#2799#2826#0" />
+            <element signature="e#2882#3043#0" />
+            <element signature="e#2981#3037#0" />
+            <element signature="e#3002#3029#0" />
+            <element signature="e#3085#3247#0" />
+            <element signature="e#3185#3241#0" />
+            <element signature="e#3206#3233#0" />
+            <element signature="e#3257#3433#0" />
+            <element signature="e#3367#3423#0" />
+            <element signature="e#3388#3415#0" />
+            <element signature="n#!!block;n#searchTextChanged#0;n#SearchResults#0" />
+            <element signature="n#!!block;n#categoryTextChanged#0;n#SearchResults#0" />
+          </folding>
         </state>
       </provider>
     </entry>
