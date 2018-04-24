@@ -7,37 +7,11 @@ import {SearchResults} from "../SearchResults/SearchResults";
 
 // HEADER
 class SearchField extends React.Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			places: [],
-			searchKey: '',
-			category: '',
-			selectedPlaceLatitude: 37.3382,
-			selectedPlaceLng: -121.8863,
-			dropDownOpen: false
-		};
-
-		this.searchSomething = this.searchSomething.bind(this);
-		this.searchTextChanged = this.searchTextChanged.bind(this);
-		this.categoryTextChanged = this.categoryTextChanged.bind(this);
+	search(){
+		console.log("Enter Button Pressed");
+        window.location.replace("/search/results");
 	}
-
-	searchSomething() {
-		const {searchKey, category} = this.state;
-		this.setState({
-			places: []
-		});
-	}
-
-	searchTextChanged(event) {
-		this.setState({searchKey: event.target.value})
-	}
-
-	categoryTextChanged(event) {
-		this.setState({category: event.target.value})
-	}
-
+	
 	render() {
 		const SearchFunct = () => {
 			return(
@@ -48,11 +22,11 @@ class SearchField extends React.Component {
 		};
 
 		return (
-			<Paper>
-				<FormControl fullWidth
-							 // style={{backgroundColor: "red"}}
-				>
-					<InputLabel> Search </InputLabel>
+			<Paper style={{height: "2.8em"}} >
+				<FormControl fullWidth onKeyPress={event =>{if(event.key === "Enter"){
+					this.search();
+				}}}>
+					<InputLabel>Search</InputLabel>
 					<Input endAdornment={
 						<InputAdornment>
 							<Button size="small" onClick={this.searchSomething} href={"/search/results"}>
