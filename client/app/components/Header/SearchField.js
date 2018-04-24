@@ -49,8 +49,13 @@ class SearchField extends React.Component {
 
 		return (
 			<Paper>
-				<FormControl fullWidth
-							 // style={{backgroundColor: "red"}}
+				<FormControl
+					fullWidth
+					onKeyPress={event => {
+						if (event.key === "Enter") {
+							window.location.replace("/search/results");
+						}
+					}}
 				>
 					<InputLabel> Search </InputLabel>
 					<Input endAdornment={

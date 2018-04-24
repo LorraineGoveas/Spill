@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {Typography, Grid, Card} from 'material-ui';
 import Tabs, {Tab} from 'material-ui/Tabs';
+import {aboutMeProfiles} from "./StoredAboutMe";
 
 const Topic = (props) => {
 	return(
@@ -29,12 +30,34 @@ const Topic = (props) => {
 };
 
 function TabContainer(props) {
-	return (
-		<Topic title={props.children}/>
-	);
+	return ( <Topic title={props.children}/>);
 }
 
-// TODO: AboutMe Style + Backend
+const Member = (props) => {
+	return (
+		<Typography>
+			<img src={aboutMeProfiles[props.value].image_src}
+				 alt={aboutMeProfiles[props.value].img_alt}
+				 width={aboutMeProfiles[props.value].img_width}
+				 height={aboutMeProfiles[props.value].img_height}
+				 style={{maxWidth: "400px", maxHeight: "400px"}}
+			/>
+			<h1>{aboutMeProfiles[props.value].name}</h1>
+
+			<h3>Role:</h3>
+			<div>{aboutMeProfiles[props.value].role}</div>
+
+			<h3> Experience with Role: </h3>
+			<div>{aboutMeProfiles[props.value].experience}</div>
+
+			<h3> Goals after Graduation: </h3>
+			<div>{aboutMeProfiles[props.value].goals}</div>
+
+			<h3> Hobbies outside of school: </h3>
+			<div>{aboutMeProfiles[props.value].hobbies}</div>
+		</Typography>
+	);
+}
 export class About extends Component {
 	constructor(props) {
 		super(props);
@@ -44,10 +67,11 @@ export class About extends Component {
 			selectedMember: "Peter Mutch"
 		};
 		this.handleChange = this.handleChange.bind(this);
+		this.fetchMembers = this.fetchMembers.bind(this);
 	}
 
-	componentDidMount() {
-		fetch('/api/teamMembers')
+	fetchMembers() {
+		fetch(`/api/teamMembers`)
 			.then(res => res.json())
 			.then(json => {
 				this.setState({
@@ -56,13 +80,29 @@ export class About extends Component {
 			});
 	}
 
+	componentDidMount() {
+		this.fetchMembers(); // Fetch all results
+	}
+
 	handleChange(event, value) {
 		this.setState({
 			value: value,
 		});
 	}
 
+	// getMember(name){
+	// 	this.state.teamMembers.map((m) => (console.log("MEMBER:" + m)));
+	// 	if (this.state.teamMembers[0]){
+	// 		return this.state.teamMembers.find(function(member) {
+	// 			return member.name === name
+	// 		});
+	// 	} else {
+	// 		return "User Not Found";
+	// 	}
+	// }
+
 	getMember(name){
+		this.state.teamMembers.map((m) => (console.log("MEMBER:" + m)));
 		if (this.state.teamMembers[0]){
 			return this.state.teamMembers.find(function(member) {
 				return member.name === name
@@ -76,6 +116,7 @@ export class About extends Component {
 		this.setState({
 			selectedMember: this.getMember(memberName)
 		});
+
 		console.log("MEMBER: " + memberName);
 		console.log("ROLE: " + this.getMember(memberName).role); // TODO: Fix this, shouldn't be undefined
 		this.forceUpdate();
@@ -83,6 +124,40 @@ export class About extends Component {
 
 	render() {
 		const {selectedMember, value} = this.state;
+
+		const members = [
+			{
+				value: 0,
+				name: "Peter",
+				fullName: "Peter Mutch"
+			},
+			{
+				value: 1,
+				name: "Sid",
+				fullName: "Sid Bola"
+			},
+			{
+				value: 2,
+				name: "Alaric",
+				fullName: "Alaric Gonzales"
+			},
+			{
+				value: 3,
+				name: "Lorraine",
+				fullName: "Lorraine Goveas"
+			},
+			{
+				value: 4,
+				name: "Albert",
+				fullName: "Albert Fernandez Saucedo"
+			},
+			{
+				value: 5,
+				name: "Harpreet",
+				fullName: "Harpreet Singh"
+			},
+		];
+
 		return (
 			<div style={{textAlign: "center"}}>
 				<Tabs
@@ -90,42 +165,22 @@ export class About extends Component {
 					scrollable={true}
 					scrollButtons="auto"
 					onChange={this.handleChange}
+					fullWidth
 				>
-					<Tab label={"Peter"} onClick={() => this.switchMember('Peter Mutch')}/>
-					<Tab label={"Sid"} onClick={() => this.switchMember('Sid Bola')}/>
-					<Tab label={"Alaric"} onClick={() => this.switchMember('Alaric Gonzales')}/>
-					<Tab label={"Lorraine"} onClick={() => this.switchMember('Lorraine Goveas')}/>
-					<Tab label={"Albert"} onClick={() => this.switchMember('Albert Fernandez Saucedo')}/>
-					<Tab label={"Harpreet"} onClick={() => this.switchMember('Harpreet Singh')}/>
+					{members.map((member) =>
+						(<Tab
+							key={member.value}
+							label={member.name}
+							onClick={() => this.switchMember(member.fullName)}/>), this)}
 				</Tabs>
-				{/*</div>*/}
 
 				<div style={{ margin: "30px" }}>
-					{value === 0 && <TabContainer>Peter Mutch</TabContainer>}
-					{value === 1 && <TabContainer>Sid Bola</TabContainer>}
-					{value === 2 && <TabContainer>Alaric Gonzales</TabContainer>}
-					{value === 3 && <TabContainer>Lorraine Goveas</TabContainer>}
-					{value === 4 && <TabContainer>Albert Fernandez Saucedo</TabContainer>}
-					{value === 5 && <TabContainer>Harpreet Singh</TabContainer>}
-				</div>
-				<div>
-					<img src={this.getMember(selectedMember).image_src}
-						 alt={this.getMember(selectedMember).img_alt}
-						 width={this.getMember(selectedMember).img_width}
-						 height={this.getMember(selectedMember).img_height} />
-					<h1> <div>{this.getMember(selectedMember).name}</div> </h1>
-
-					<h3>Role:</h3>
-					<div>{this.getMember(selectedMember).role}</div>
-
-					<h3> Experience with Role: </h3>
-					<div>{this.getMember(selectedMember).experience}</div>
-
-					<h3> Goals after Graduation: </h3>
-					<div>{this.getMember(selectedMember).goals}</div>
-
-					<h3> Hobbies outside of school: </h3>
-					<div>{this.getMember(selectedMember).hobbies}</div>
+					{value === 0 && <TabContainer><Member value={value}/></TabContainer>}
+					{value === 1 && <TabContainer><Member value={value}/></TabContainer>}
+					{value === 2 && <TabContainer><Member value={value}/></TabContainer>}
+					{value === 3 && <TabContainer><Member value={value}/></TabContainer>}
+					{value === 4 && <TabContainer><Member value={value}/></TabContainer>}
+					{value === 5 && <TabContainer><Member value={value}/></TabContainer>}
 				</div>
 
 			</div>

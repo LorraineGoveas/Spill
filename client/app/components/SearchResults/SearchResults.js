@@ -2,14 +2,27 @@ import React from 'react';
 import {Paper, Grid, Card, CardContent, Typography, Button} from 'material-ui';
 import { Map } from '../Map';
 
+// Component styles should all be in one area
 const styles = {
 	ResultsPost: {
 		color: "black",
 		textAlign: "center",
 	},
+	MapCardStyle: {
+		position: "fixed",
+		right: "0",
+		top: "10em",
+		height: `22.5em`,
+		width: '22.5em',
+	},
+	MapElementStyle: {
+		height: `100%`,
+		width: '100%',
+	}
 };
 
 const SearchResult = (props) => {
+	// Components specific to this parent component are created in scope
 	const ResultPreview = () => (
 		<Grid container spacing={8}>
 			<Grid item xs={12}>
@@ -65,6 +78,7 @@ const SearchResult = (props) => {
 	)
 };
 
+// Indicates what the user wrote in the search field
 const SearchResultsLabel = (props) => {
 	if (!props.searchInput) {
 		return (
@@ -85,26 +99,16 @@ const SearchResultsLabel = (props) => {
 		</Typography>)
 
 };
-const MapCardStyle = {
-	position: "fixed",
-	right: "0",
-	top: "10em",
-	height: `22.5em`,
-	width: '22.5em',
-};
 
-const MapElementStyle = {
-	height: `100%`,
-	width: '100%',
-};
-
+// This container holds the Google Maps component, which is required from the API
 const MapsContainer = (props) => (
 	<Map
 		center={{lat:props.latitude, lng:props.longitude}}
 		zoom={12}
-		containerElement={ <Card style={MapCardStyle}/> }
-		mapElement={ <div style={MapElementStyle}/> }
+		containerElement={ <Card style={styles.MapCardStyle}/> }
+		mapElement={ <div style={styles.MapElementStyle}/> }
 	/>);
+
 
 class SearchResults extends React.Component{
 	constructor(props){
@@ -123,6 +127,7 @@ class SearchResults extends React.Component{
 		this.moveTheMap = this.moveTheMap.bind(this);
 	}
 
+	// When the user clicks on a resulting search, Google Maps will navigate to that area
 	moveTheMap(lat, lng) {
 		this.setState({
 				selectedPlaceLatitude: parseFloat(lat),
@@ -130,6 +135,7 @@ class SearchResults extends React.Component{
 			});
 	}
 
+	// User enters empty search
 	fetchAllResults() {
 		fetch(`/api/postRecords/allResults`)
 			.then(res => res.json())
@@ -140,6 +146,7 @@ class SearchResults extends React.Component{
 			});
 	}
 
+	// User made specific search
 	fetchResultsWithSearchKey(searchKey) {
 		fetch(`/api/postRecords/${searchKey}/locSearch`)
 			.then(res => res.json())
@@ -170,6 +177,7 @@ class SearchResults extends React.Component{
 			});
 	}
 
+	// User clicked on the search button
 	initiateSearch(event) {
 		const {searchKey, category} = this.state;
 		this.setState({places: []});
@@ -194,7 +202,8 @@ class SearchResults extends React.Component{
 		this.setState({category: event.target.value})
 	}
 
-	DisplayFetchedData(place, i) {
+	// Displays when search results are returned
+	displayFetchedData(place, i) {
 		const {image_src, location_name, address, city, state, zip, type, status} = place;
 		return (
 			<div key={i}>
@@ -213,7 +222,6 @@ class SearchResults extends React.Component{
 			</div>
 		);
 	}
-
 
 	// TODO: Empty search causes terrible lag
 	render(){
@@ -235,7 +243,7 @@ class SearchResults extends React.Component{
 				<SearchResultsLabel searchInput={this.state.searchKey.toLocaleString()}/>
 				<Paper style={styles.ResultsPost}>
 					<MapsContainer latitude={selectedPlaceLatitude} longitude={selectedPlaceLng}/>
-					{this.state.places.map(this.DisplayFetchedData, this)}
+					{this.state.places.map(this.displayFetchedData, this)}
 				</Paper>
 			</div>
 		);
