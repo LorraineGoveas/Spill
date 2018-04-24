@@ -7,109 +7,81 @@ const CenterPage = style.div`
 `
 
 export class About extends Component {
-	constructor(props) {
-		super(props);
 
-		this.state = {
-			value: 0,
-			teamMembers: [],
-			selectedMember: "Peter Mutch"
-		};
+    constructor(props) {
+        super(props);
 
-		this.handleChange = this.handleChange.bind(this);
-		this.getMember = this.getMember.bind(this);
-		this.switchMember = this.switchMember.bind(this);
-		this.getSelectedMember = this.getSelectedMember(this);
-	}
+        this.state = {
+          teamMembers: [],
+          selectedMember: String
+        };
 
-	componentDidMount() {
-		fetch('/api/teamMembers')
-			.then(res => res.json())
-			.then(json => {
-				this.setState({
-					teamMembers: json
-				});
-			});
-	}
+        this.selectedMember = 'Peter Mutch'
+    }
 
-	handleChange(event, value) {
-		this.setState({
-			value: value,
-		});
-	}
+    componentDidMount() {
+      fetch('/api/teamMembers')
+        .then(res => res.json())
+        .then(json => {
+          this.setState({
+            teamMembers: json
+          });
+        });
+    }
 
-	getMember(name){
-		if (this.state.teamMembers[0]){
-			return this.state.teamMembers.find(function(member) {
-				return member.name === name
-			});
-		} else {
-			return "User Not Found";
-		}
-	}
 
-	getSelectedMember(){
-		return this.state.selectedMember;
-	}
+    getMember(name){
+        if (this.state.teamMembers[0]){
+            return this.state.teamMembers.find(function(member) {
+                return member.name === name
+            });
+        } else {
+            return "User Not Found";
+        }
+    }
 
-	switchMember(memberName){
-		this.setState({
-			selectedMember: memberName,
-		});
+    switchMember(memberName){
+        this.selectedMember = memberName
+        this.forceUpdate()
+    }
 
-		console.log("MEMBER: " + memberName);
-		console.log("ROLE: " + this.getMember(memberName).role); // TODO: Fix this, shouldn't be undefined
-		this.forceUpdate();
-	}
+    render() {
+        return (
+            <CenterPage>
 
-	render() {
-		const {selectedMember, value} = this.state;
-		return (
-			<div style={{textAlign: "center"}}>
-				<Tabs
-					value={value}
-					scrollable={true}
-					scrollButtons="auto"
-					onChange={this.handleChange}
-				>
-					<Tab label={"Peter"} onClick={() => this.switchMember('Peter Mutch')}/>
-					<Tab label={"Sid"} onClick={() => this.switchMember('Sid Bola')}/>
-					<Tab label={"Alaric"} onClick={() => this.switchMember('Alaric Gonzales')}/>
-					<Tab label={"Lorraine"} onClick={() => this.switchMember('Lorraine Goveas')}/>
-					<Tab label={"Albert"} onClick={() => this.switchMember('Albert Fernandez Saucedo')}/>
-					<Tab label={"Harpreet"} onClick={() => this.switchMember('Harpreet Singh')}/>
-				</Tabs>
-				{/*</div>*/}
 
-				<div style={{ margin: "30px" }}>
-					{value === 0 && <TabContainer>{this.getMember(selectedMember).name}</TabContainer>}
-					{value === 1 && <TabContainer>{this.getMember(selectedMember).name}</TabContainer>}
-					{value === 2 && <TabContainer>{this.getMember(selectedMember).name}</TabContainer>}
-					{value === 3 && <TabContainer>{this.getMember(selectedMember).name}</TabContainer>}
-					{value === 4 && <TabContainer>{this.getMember(selectedMember).name}</TabContainer>}
-					{value === 5 && <TabContainer>{this.getMember(selectedMember).name}</TabContainer>}
-				</div>
-				<div>
-					<img src={this.getMember(selectedMember).image_src}
-						 alt={this.getMember(selectedMember).img_alt}
-						 width={this.getMember(selectedMember).img_width}
-						 height={this.getMember(selectedMember).img_height} />
-					<h1> <div>{this.getMember(selectedMember).name}</div> </h1>
+            <button onClick={() => this.switchMember('Peter Mutch')}>Peter</button>
+            <button onClick={() => this.switchMember('Sid Bola')}>Sid</button>
+            <button onClick={() => this.switchMember('Alaric Gonzales')}>Alaric</button>
+            <button onClick={() => this.switchMember('Lorraine Goveas')}>Lorraine</button>
+            <button onClick={() => this.switchMember('Albert Fernandez Saucedo')}>Albert</button>
+            <button onClick={() => this.switchMember('Harpreet Singh')}>Harpreet</button>
 
-					<h3>Role:</h3>
-					<div>{this.getMember(selectedMember).role}</div>
 
-					<h3> Experience with Role: </h3>
-					<div>{this.getMember(selectedMember).experience}</div>
 
-					<h3> Goals after Graduation: </h3>
-					<div>{this.getMember(selectedMember).goals}</div>
+                <div>
 
-					<h3> Hobbies outside of school: </h3>
-					<div>{this.getMember(selectedMember).hobbies}</div>
-				</div>
+                    <img src={this.getMember(this.selectedMember).image_src}
+                        alt={this.getMember(this.selectedMember).img_alt}
+                        width={this.getMember(this.selectedMember).img_width}
+                        height={this.getMember(this.selectedMember).img_height} />
 
-			</div>
-		);
-	}
+                    <h1> <div>{this.getMember(this.selectedMember).name}</div> </h1>
+
+                    <h3>Role:</h3>
+                    <div>{this.getMember(this.selectedMember).role}</div>
+
+                    <h3> Experience with Role: </h3>
+                    <div>{this.getMember(this.selectedMember).experience}</div>
+
+                    <h3> Goals after Graduation: </h3>
+                    <div>{this.getMember(this.selectedMember).goals}</div>
+
+                    <h3> Hobbies outside of school: </h3>
+                    <div>{this.getMember(this.selectedMember).hobbies}</div>
+                </div>
+
+            </CenterPage>
+        );
+  }
 }
