@@ -1,40 +1,11 @@
 import React, { Component } from 'react';
-import {Typography, Grid, Card} from 'material-ui';
-import Tabs, {Tab} from 'material-ui/Tabs';
+import style from 'styled-components';
 
-const Topic = (props) => {
-	return(
-		<Card>
-			<Grid
-				container
-				direction={"column"}
-				justify={"space-between"}
-				alignItems={"center"}
-				style={{marginTop: "20px"}}
-			>
-				<Grid item xs>
-					<Typography variant={"headline"}>
-						{props.title}
-					</Typography>
-				</Grid>
 
-				<Grid item xs>
-					<Typography variant={"body1"} paragraph={true}>
-						{props.content}
-					</Typography>
-				</Grid>
-			</Grid>
-		</Card>
-	);
-};
+const CenterPage = style.div`
+    text-align: center;
+`
 
-function TabContainer(props) {
-	return (
-		<Topic title={props.children}/>
-	);
-}
-
-// TODO: AboutMe Style + Backend
 export class About extends Component {
 	constructor(props) {
 		super(props);

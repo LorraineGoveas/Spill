@@ -1,39 +1,59 @@
 import React from 'react';
-import { Card, CardHeader, CardContent, CardActions, Button, TextField, Avatar, IconButton} from 'material-ui';
+import { Card, CardHeader, CardContent, CardActions, Grid, Button, TextField, Avatar, IconButton} from 'material-ui';
 import AddPhotoIcon from '@material-ui/icons/AddAPhoto';
 import PinDropIcon from '@material-ui/icons/PinDrop';
 
 class CommentBox extends React.Component {
+	constructor(props) {
+		super(props);
+
+	}
 	render() {
 		return (
-			<div>
-				<Card>
-					<CardHeader
-						avatar={ <Avatar> F </Avatar> }
-						title="Frodo Baggins"
-						subheader="April 22, 2018"
+
+			<Card style={{ height: "100%"}}>
+				<CardHeader
+					avatar={ <Avatar> F </Avatar> }
+					title="Frodo Baggins"
+					subheader="April 22, 2018"
+				/>
+				<CardContent>
+					<TextField
+						label="What would you like to post?"
+						rows="7"
+						multiline
+						fullWidth
+						style={{backgroundColor: "white", color: "black"}}
 					/>
+				</CardContent>
 
-					<CardContent>
-						<TextField
-							label="What would you like to post?"
-							rows="7"
-							multiline
-							defaultValue=""
-							margin="normal"
-						/>
-					</CardContent>
+				<CardActions>
+					<Grid
+						container
+						direction={"row"}
+						justify={"flex-start"}
+						alignItems={"flex-start"}
+					>
+						<Grid item xs={6} sm>
+							<IconButton label="Add Photo"> <AddPhotoIcon /> </IconButton>
+						</Grid>
 
-					<CardActions>
-						<IconButton label="Add to favorites"> <AddPhotoIcon /> </IconButton>
-						<IconButton label="Share"> <PinDropIcon /> </IconButton>
-						<Button variant="raised"> Cancel </Button>
-						<Button variant="raised" color="primary"> Post </Button>
-					</CardActions>
+						<Grid item xs={6} sm>
+							<IconButton label="SetLocation"> <PinDropIcon /> </IconButton>
+						</Grid>
 
-				</Card>
+						<Grid item xs sm>
+							<Button variant="raised" onClick={this.props.handleCancel}> Cancel </Button>
+						</Grid>
 
-			</div>
+						<Grid item xs sm >
+							<Button variant="raised" color="primary"> Post </Button>
+						</Grid>
+					</Grid>
+				</CardActions>
+			</Card>
+
+
 		);
 	}
 }
