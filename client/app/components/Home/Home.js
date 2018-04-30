@@ -46,7 +46,6 @@ function DisplayFetchedData(place, i) {
 	const {image_src, location_name, address, city, state, zip, type, status} = place;
 	const sizeForMobile = 12; // 1 Item per row on mobile devices
 	const desktopSize = 4; // 4 Items per row on desktop screens
-	console.log("image source: ", image_src);
 	return (
 		<Grid key={i} item xs={sizeForMobile} sm={desktopSize}>
 			<Preview image={image_src} title={location_name}>
