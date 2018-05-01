@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9a7ae2b6-8fd9-4e8c-9a88-8fd344aec828" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/client/app/components/Footer/Footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/app/components/Footer/Footer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/app/components/Header/AccountPopover.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/app/components/Header/AccountPopover.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/app/components/Header/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/app/components/Header/Header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/app/components/Header/LoginArea.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/app/components/Header/SearchField.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/app/components/Header/SearchField.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/app/components/Header/OptionsHeader.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/app/components/Header/OptionsHeader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/app/components/Header/TopHeader.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/app/components/Header/TopHeader.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/app/components/Home/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/app/components/Home/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/app/components/SearchResults/SearchResults.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/app/components/SearchResults/SearchResults.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/app/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/app/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/js/app.js" afterDir="false" />
     </list>
@@ -26,8 +25,17 @@
       <file leaf-file-name="Header.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/app/components/Header/Header.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="276">
-              <caret line="12" column="2" lean-forward="true" selection-start-line="12" selection-start-column="2" selection-end-line="12" selection-end-column="2" />
+            <state relative-caret-position="450">
+              <caret line="103" column="54" lean-forward="true" selection-start-line="103" selection-start-column="54" selection-end-line="103" selection-end-column="54" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/app/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="174">
+              <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
             </state>
           </provider>
         </entry>
@@ -35,40 +43,54 @@
       <file leaf-file-name="TopHeader.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/app/components/Header/TopHeader.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="6" column="29" selection-start-line="6" selection-start-column="29" selection-end-line="6" selection-end-column="29" />
+            <state relative-caret-position="366">
+              <caret line="75" column="61" selection-start-line="75" selection-start-column="61" selection-end-line="75" selection-end-column="61" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="OptionsHeader.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/app/components/Header/OptionsHeader.js">
+      <file leaf-file-name="Home.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/app/components/Home/Home.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="115">
-              <caret line="5" column="35" selection-start-line="5" selection-start-column="35" selection-end-line="5" selection-end-column="35" />
+            <state relative-caret-position="322">
+              <caret line="16" column="14" lean-forward="true" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
               <folding>
-                <element signature="e#271#367#0" />
-                <element signature="e#312#500#0" />
-                <element signature="e#513#1537#0" />
+                <element signature="e#440#535#0" />
+                <element signature="e#584#1044#0" />
+                <element signature="e#1399#1646#0" />
+                <element signature="n#!!block;n#constructor#0;n#Home#0" />
+                <element signature="n#!!block;n#handlePostButtonClick#0;n#Home#0" />
+                <element signature="n#!!block;n#handleClose#0;n#Home#0" />
+                <element signature="n#!!block;n#componentDidMount#0;n#Home#0" />
+                <element signature="n#!!block;n#fetchAllResults#0;n#Home#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SignInWindow.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/app/components/Header/SignInWindow.js">
+      <file leaf-file-name="SearchResults.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/client/app/components/SearchResults/SearchResults.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/client/app/index.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="552">
-              <caret line="24" column="47" lean-forward="true" selection-start-line="24" selection-start-column="47" selection-end-line="24" selection-end-column="47" />
+            <state relative-caret-position="107">
+              <caret line="192" column="43" selection-start-line="192" selection-start-column="43" selection-end-line="192" selection-end-column="43" />
+              <folding>
+                <element signature="e#169#214#0" />
+                <element signature="e#287#654#0" />
+                <element signature="e#693#1101#0" />
+                <element signature="e#1119#1401#0" />
+                <element signature="e#1474#1614#0" />
+                <element signature="e#1627#1774#0" />
+                <element signature="n#!!block;n#constructor#0;n#SearchResults#0" />
+                <element signature="n#!!block;n#componentDidMount#0;n#SearchResults#0" />
+                <element signature="n#!!block;n#handleSearchFromHeader#0;n#SearchResults#0" />
+                <element signature="n#!!block;n#moveTheMap#0;n#SearchResults#0" />
+                <element signature="n#!!block;n#fetchResultsWithSearchKey#0;n#SearchResults#0" />
+                <element signature="n#!!block;n#fetchResultsWithCategory#0;n#SearchResults#0" />
+                <element signature="n#!!block;n#fetchResultsWithSearchAndCategory#0;n#SearchResults#0" />
+                <element signature="n#!!block;n#searchTextChanged#0;n#SearchResults#0" />
+                <element signature="n#!!block;n#categoryTextChanged#0;n#SearchResults#0" />
+                <element signature="n#!!block;n#DisplayFetchedData#0;n#SearchResults#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -96,6 +118,19 @@
       <find>Field</find>
       <find>Login</find>
       <find>props</find>
+      <find>&lt;h3&gt;</find>
+      <find>preview</find>
+      <find>h3</find>
+      <find>&lt;p</find>
+      <find>&lt;CardMedia</find>
+      <find>Preview</find>
+      <find>search</find>
+      <find>search</find>
+      <find>results for</find>
+      <find>resultsLabel</find>
+      <find>href</find>
+      <find>console</find>
+      <find>isSet</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -107,15 +142,16 @@
         <option value="$PROJECT_DIR$/client/app/components/Footer/Footer.js" />
         <option value="$PROJECT_DIR$/client/app/components/Header/SearchField.js" />
         <option value="$PROJECT_DIR$/config/webpack.common.js" />
-        <option value="$PROJECT_DIR$/client/app/components/Home/Home.js" />
         <option value="$PROJECT_DIR$/client/app/components/Header/LoginArea.js" />
         <option value="$PROJECT_DIR$/client/app/components/Header/SignInPopover.js" />
-        <option value="$PROJECT_DIR$/client/app/components/Header/OptionsHeader.js" />
         <option value="$PROJECT_DIR$/client/app/components/Header/SignInWindow.js" />
         <option value="$PROJECT_DIR$/client/app/components/Header/AccountPopover.js" />
-        <option value="$PROJECT_DIR$/client/app/components/Header/TopHeader.js" />
         <option value="$PROJECT_DIR$/client/app/components/Header/Header.js" />
+        <option value="$PROJECT_DIR$/client/app/components/Header/OptionsHeader.js" />
+        <option value="$PROJECT_DIR$/client/app/components/Home/Home.js" />
         <option value="$PROJECT_DIR$/client/app/index.js" />
+        <option value="$PROJECT_DIR$/client/app/components/Header/TopHeader.js" />
+        <option value="$PROJECT_DIR$/client/app/components/SearchResults/SearchResults.js" />
       </list>
     </option>
   </component>
@@ -136,10 +172,10 @@
     </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1280" />
+    <option name="x" value="840" />
     <option name="y" value="23" />
-    <option name="width" value="1280" />
-    <option name="height" value="1348" />
+    <option name="width" value="840" />
+    <option name="height" value="968" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -174,14 +210,6 @@
               <item name="client" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="csc648-team06" type="b2602c69:ProjectViewProjectNode" />
-              <item name="csc648-team06" type="462c0819:PsiDirectoryNode" />
-              <item name="client" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="App" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="csc648-team06" type="b2602c69:ProjectViewProjectNode" />
@@ -241,32 +269,34 @@
       <option name="presentableId" value="Default" />
       <updated>1525042346044</updated>
       <workItem from="1525042348600" duration="26129000" />
+      <workItem from="1525123197862" duration="11469000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26129000" />
+    <option name="totallyTimeSpent" value="37598000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1280" y="23" width="1280" height="1348" extended-state="0" />
+    <frame x="840" y="23" width="840" height="968" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24980111" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" weight="0.32938388" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32819906" />
+      <window_info id="npm" order="2" side_tool="true" />
+      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info anchor="bottom" id="TypeScript" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.2771673" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32924837" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info id="npm" side_tool="true" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="Terminal" />
+      <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info id="Favorites" side_tool="true" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
     </layout>
@@ -283,17 +313,45 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/client/app/components/Header/Header.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="12" column="2" selection-start-line="12" selection-start-column="2" selection-end-line="12" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/app/components/Header/TopHeader.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="6" column="29" selection-start-line="6" selection-start-column="29" selection-end-line="6" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/app/components/Header/OptionsHeader.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="5" column="35" selection-start-line="5" selection-start-column="35" selection-end-line="5" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/app/components/Header/SignInWindow.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/app/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="552">
+          <caret line="24" column="47" lean-forward="true" selection-start-line="24" selection-start-column="47" selection-end-line="24" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/client/app/components/Footer/Footer.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="414">
           <caret line="18" column="45" lean-forward="true" selection-start-line="18" selection-start-column="45" selection-end-line="18" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/app/components/SearchResults/SearchResults.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="344">
-          <caret line="64" column="5" lean-forward="true" selection-start-line="64" selection-start-column="5" selection-end-line="64" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -339,13 +397,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/app/components/Home/Home.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-923">
-          <caret line="38" column="26" lean-forward="true" selection-start-line="38" selection-start-column="26" selection-end-line="38" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/app/components/App/App.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="138">
@@ -353,20 +404,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/app/components/Header/SignInPopover.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="6" column="33" selection-start-line="6" selection-start-column="33" selection-end-line="6" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/app/components/Header/LoginArea.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="1" column="22" lean-forward="true" selection-start-line="1" selection-start-column="22" selection-end-line="1" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/client/app/components/Header/SignInPopover.js" />
+    <entry file="file://$PROJECT_DIR$/client/app/components/Header/LoginArea.js" />
     <entry file="file://$PROJECT_DIR$/client/app/components/Header/AccountPopover.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="46">
@@ -374,43 +413,94 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/app/components/Header/OptionsHeader.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="5" column="35" selection-start-line="5" selection-start-column="35" selection-end-line="5" selection-end-column="35" />
-          <folding>
-            <element signature="e#271#367#0" />
-            <element signature="e#312#500#0" />
-            <element signature="e#513#1537#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/app/components/Header/SignInWindow.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+        <state>
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/app/components/Header/TopHeader.js">
+    <entry file="file://$PROJECT_DIR$/node_modules/material-ui/SvgIcon/SvgIcon.d.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="6" column="29" selection-start-line="6" selection-start-column="29" selection-end-line="6" selection-end-column="29" />
+        <state relative-caret-position="437">
+          <caret line="19" column="14" selection-start-line="19" selection-start-column="14" selection-end-line="19" selection-end-column="14" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/app/components/Header/Header.js">
+    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.dom.d.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="12" column="2" lean-forward="true" selection-start-line="12" selection-start-column="2" selection-end-line="12" selection-end-column="2" />
+        <state relative-caret-position="303">
+          <caret line="4552" column="12" selection-start-line="4552" selection-start-column="4" selection-end-line="4552" selection-end-column="12" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/app/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="552">
-          <caret line="24" column="47" lean-forward="true" selection-start-line="24" selection-start-column="47" selection-end-line="24" selection-end-column="47" />
+        <state relative-caret-position="174">
+          <caret line="25" lean-forward="true" selection-start-line="25" selection-end-line="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/app/components/Header/Header.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="103" column="54" lean-forward="true" selection-start-line="103" selection-start-column="54" selection-end-line="103" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/app/components/Home/Home.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="16" column="14" lean-forward="true" selection-start-line="16" selection-start-column="14" selection-end-line="16" selection-end-column="14" />
+          <folding>
+            <element signature="e#440#535#0" />
+            <element signature="e#584#1044#0" />
+            <element signature="e#1399#1646#0" />
+            <element signature="n#!!block;n#constructor#0;n#Home#0" />
+            <element signature="n#!!block;n#handlePostButtonClick#0;n#Home#0" />
+            <element signature="n#!!block;n#handleClose#0;n#Home#0" />
+            <element signature="n#!!block;n#componentDidMount#0;n#Home#0" />
+            <element signature="n#!!block;n#fetchAllResults#0;n#Home#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/app/components/Header/OptionsHeader.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/app/components/Header/TopHeader.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="366">
+          <caret line="75" column="61" selection-start-line="75" selection-start-column="61" selection-end-line="75" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/app/components/SearchResults/SearchResults.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="107">
+          <caret line="192" column="43" selection-start-line="192" selection-start-column="43" selection-end-line="192" selection-end-column="43" />
+          <folding>
+            <element signature="e#169#214#0" />
+            <element signature="e#287#654#0" />
+            <element signature="e#693#1101#0" />
+            <element signature="e#1119#1401#0" />
+            <element signature="e#1474#1614#0" />
+            <element signature="e#1627#1774#0" />
+            <element signature="n#!!block;n#constructor#0;n#SearchResults#0" />
+            <element signature="n#!!block;n#componentDidMount#0;n#SearchResults#0" />
+            <element signature="n#!!block;n#handleSearchFromHeader#0;n#SearchResults#0" />
+            <element signature="n#!!block;n#moveTheMap#0;n#SearchResults#0" />
+            <element signature="n#!!block;n#fetchResultsWithSearchKey#0;n#SearchResults#0" />
+            <element signature="n#!!block;n#fetchResultsWithCategory#0;n#SearchResults#0" />
+            <element signature="n#!!block;n#fetchResultsWithSearchAndCategory#0;n#SearchResults#0" />
+            <element signature="n#!!block;n#searchTextChanged#0;n#SearchResults#0" />
+            <element signature="n#!!block;n#categoryTextChanged#0;n#SearchResults#0" />
+            <element signature="n#!!block;n#DisplayFetchedData#0;n#SearchResults#0" />
+          </folding>
         </state>
       </provider>
     </entry>

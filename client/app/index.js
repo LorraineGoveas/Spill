@@ -37,7 +37,6 @@ render((
 					<Route path="/user/login" component={Login}/>
 					<Route path="/user/history" component={CommentsPreview}/>
 					<Route path="/search/results" component={SearchResults}/>
-
 					<Route component={NotFound}/>
 				</Switch>
 			</App>

@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Grid, Card, CardContent, CardMedia, Typography, Button, Paper} from 'material-ui';
-import { DummyPreview } from "./DummyPreview";
 import AddIcon from '@material-ui/icons/Add';
 import { Modal } from 'material-ui';
 import { CommentBox } from "../Comment/CommentBox";
@@ -24,18 +23,19 @@ const Preview = (props) => {
 		<Card>
 			{(props.image === undefined) ? "" :
 				(
-					<CardMedia image={props.image}
-							   style={{
-								   backgroundColor: "grey",
-								   height: "0",
-								   paddingTop: "56.25%",
-								   margin: "auto"
-							   }}/>
+					<CardMedia
+						image={props.image} // Need to find a way to silence this warning
+						style={{
+							backgroundColor: "grey",
+							height: "0",
+							paddingTop: "56.25%",
+							margin: "auto"
+						}}/>
 				)
 			}
 			<CardContent>
 				<Typography align={"center"} variant={"headline"}> {props.title} </Typography>
-				<Typography align={"center"} component={"p"}> {props.children} </Typography>
+				<div> {props.children} </div>
 			</CardContent>
 		</Card>
 	);
@@ -49,10 +49,10 @@ function DisplayFetchedData(place, i) {
 	return (
 		<Grid key={i} item xs={sizeForMobile} sm={desktopSize}>
 			<Preview image={image_src} title={location_name}>
-				<h3> {type} </h3>
-				<div> {city}, {state} {zip}</div>
-				<div> {address} </div>
-				<div> {status} </div>
+				<Typography align={"center"}> {type} </Typography>
+				<Typography align={"center"}> {city}, {state} {zip}</Typography>
+				<Typography align={"center"}> {address} </Typography>
+				<Typography align={"center"}> {status} </Typography>
 			</Preview>
 		</Grid>
 	)
