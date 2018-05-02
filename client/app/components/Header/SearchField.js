@@ -5,23 +5,23 @@ import { Paper,FormControl} from 'material-ui';
 import Input, {InputLabel, InputAdornment} from 'material-ui/Input';
 
 class SearchField extends React.Component {
-	search(){
+	 search(){
 		console.log("Enter Button Pressed");
         window.location.replace("/search/results");
 	}
 	render() {
 		const SearchIcon = () => (
-			<Button size="large" href={"/search/results"}>
+			<Button height={10} width={10} href={"/search/results"} >
 				<Search>Search</Search>
 			</Button>
 		);
 		return (
-			<Paper style={{height: "2.8em"}} >
+			<Paper style={{height: "2.8em", paddingTop: 0, paddingBottom: 16, marginTop: 0,}} >
 				<FormControl fullWidth onKeyPress={event =>{if(event.key === "Enter"){
 					this.search();
 				}}}>
 					<InputLabel>Search</InputLabel>
-					<Input endAdornment={
+					<Input disableUnderline={true} endAdornment={
 						<InputAdornment>
 							<SearchIcon/>
 						</InputAdornment>

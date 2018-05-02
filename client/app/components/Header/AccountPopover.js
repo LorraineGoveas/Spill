@@ -10,7 +10,7 @@ const AccountMenuPopover = () => (
 	>
 		<Grid item><Button fullWidth href={"/user/userPanel"}>Profile</Button></Grid>
 		<Grid item><Button fullWidth> Settings </Button></Grid>
-		<Grid item><Button fullWidth> Panel </Button></Grid>
+		<Grid item><Button fullWidth href={"/cityManagerDash/CityManagerDashboard"}> Panel </Button></Grid>
 		<Grid item><Button fullWidth> Log Out </Button></Grid>
 	</Grid>
 );

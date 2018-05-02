@@ -19,6 +19,8 @@ import SignUp from './components/SignUp/SignUp';
 import CommentsPreview from './components/UserPanel/Comments';
 import {MuiThemeProvider} from "material-ui/styles/index";
 import theme from './components/Theme';
+import { CityManagerDashboard} from './components/CityManagerDashboard/CityManagerDashboard';
+
 // TODO: Move contents of Home to page called SignUp
 // TODO: Create Home Page according to updated spec
 // TODO: Update Header to have a Search Text Field at all times
@@ -34,6 +36,7 @@ render((
 					<Route path="/user/login" component={Login}/>
 					<Route path="/user/history" component={CommentsPreview}/>
 					<Route path="/search/results" component={SearchResults}/>
+					<Route path="/cityManagerDash/CityManagerDashboard" component={CityManagerDashboard}/>
 					<Route component={NotFound}/>
 				</Switch>
 			</App>
