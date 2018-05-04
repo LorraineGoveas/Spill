@@ -1,34 +1,7 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import { withStyles } from 'material-ui/styles';
 import Table, { TableBody, TableCell, TableHead, TableRow } from 'material-ui/Table';
 import Paper from 'material-ui/Paper';
-
-const CustomTableCell = withStyles(theme => ({
-    head: {
-        backgroundColor: theme.palette.common.black,
-        color: theme.palette.common.white,
-    },
-    body: {
-        fontSize: 14,
-    },
-}))(TableCell);
-
-const styles = theme => ({
-    root: {
-        width: '100%',
-        marginTop: theme.spacing.unit * 3,
-        overflowX: 'auto',
-    },
-    table: {
-        minWidth: 700,
-    },
-    row: {
-        '&:nth-of-type(odd)': {
-            backgroundColor: theme.palette.background.default,
-        },
-    },
-});
+import Button from 'material-ui/Button';
 
 let id = 0;
 function createData(author, location, status, desc, date, image) {
@@ -42,45 +15,62 @@ const data = [
     createData('Legolas', "San Mateo, CA", "Resolved", "Broken street lights near the grocery store","01/23/2018", "Image"),
 ];
 
+const deleteStyle = {
+    color: 'black',
+    background:'red',
+    borderRadius: 12,
+    border: 0,
+    height: 20,
+    padding: '0 10px'
+};
+
+const viewStyle = {
+    color: 'white',
+    background:'blue',
+    borderRadius: 12,
+    border: 0,
+    height: 20,
+    padding: '0 10px'
+};
+
 function CustomizedTable(props) {
-    const { classes } = props;
 
     return (
-        <Paper className={classes.root}>
-            <Table className={classes.table}>
+        <Paper >
+            <Table>
                 <TableHead>
                     <TableRow>
-                        <CustomTableCell numeric>ID</CustomTableCell>
-                        <CustomTableCell>Author</CustomTableCell>
-                        <CustomTableCell>Location</CustomTableCell>
-                        <CustomTableCell>Status</CustomTableCell>
-                        <CustomTableCell>Description</CustomTableCell>
-                        <CustomTableCell>Date</CustomTableCell>
-                        <CustomTableCell>Image</CustomTableCell>
-                        <CustomTableCell>Action</CustomTableCell>
+                        <TableCell numeric>ID</TableCell>
+                        <TableCell>Author</TableCell>
+                        <TableCell>Location</TableCell>
+                        <TableCell>Status</TableCell>
+                        <TableCell>Description</TableCell>
+                        <TableCell>Date</TableCell>
+                        <TableCell>Image</TableCell>
+                        <TableCell>Action</TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>
                     {data.map(n => {
                         return (
-                            <TableRow className={classes.row} key={n.id}>
-                                <CustomTableCell numeric>{n.id}</CustomTableCell>
-                                <CustomTableCell>{n.author}</CustomTableCell>
-                                <CustomTableCell>{n.location}</CustomTableCell>
-                                <CustomTableCell>{n.status}</CustomTableCell>
-                                <CustomTableCell>{n.desc}</CustomTableCell>
-                                <CustomTableCell>{n.date}</CustomTableCell>
-                                <CustomTableCell>{n.image}</CustomTableCell>
-                                <CustomTableCell>
+                            <TableRow key={n.id}>
+                                <TableCell numeric>{n.id}</TableCell>
+                                <TableCell>{n.author}</TableCell>
+                                <TableCell>{n.location}</TableCell>
+                                <TableCell>{n.status}</TableCell>
+                                <TableCell>{n.desc}</TableCell>
+                                <TableCell>{n.date}</TableCell>
+                                <TableCell>{n.image}</TableCell>
+                                <TableCell>
                                     <table><tr>
                                         <th>
-                                            <button>Delete</button>
+                                            <Button style={deleteStyle}> Delete </Button>
                                         </th>
                                         <th>
-                                            <button>View</button>
+                                            <Button style={viewStyle}> View </Button>
                                         </th>
                                     </tr></table>
-                                </CustomTableCell>
+                                </TableCell>
                             </TableRow>
                         )
                     })}
@@ -90,8 +80,4 @@ function CustomizedTable(props) {
     );
 }
 
-CustomizedTable.propTypes = {
-    classes: PropTypes.object.isRequired,
-};
-
-export default withStyles(styles)(CustomizedTable);
+export default CustomizedTable;

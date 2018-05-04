@@ -16,18 +16,20 @@ import RecentActivity from "./RecentActivity";
 // TODO: User Profile and Recent Activity should be grouped. AccountSettings should float left
 // TODO: [Important] - Replace content react-style when when settings button is clicked
 
+const GridStyle = {
 
+        spacing: 24,
+    direction: "row",
+    justify: "flex-start",
+    alignItems:"center",
+};
 export class UserPanel extends React.Component{
 	render(){
 		return(
 
 			<Paper style={{margin: "30px", padding: "20px", minWidth: "700px"}}>
-				<Grid
-					container
-					spacing={24}
-					direction={"row"}
-					justify={"flex-start"}
-					alignItems={"center"}
+				<Grid container
+					  {...GridStyle}
 				>
 					<Grid item xs={3}> <AccountSettings/> </Grid>
 					<Grid item xs> <UserProfile/> </Grid>
