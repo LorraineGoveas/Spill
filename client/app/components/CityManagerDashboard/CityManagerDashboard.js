@@ -40,7 +40,7 @@ export class CityManagerDashboard extends React.Component{
                         justify={"flex-start"}
                         alignItems={"stretch"}
                     >
-                        <Grid item xs> <DashboardTitle/> </Grid>
+                        <Grid item xs>  <DashboardTitle/> </Grid>
 
                         <Grid item xs>
                             <Card>
