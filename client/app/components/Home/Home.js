@@ -119,7 +119,7 @@ class Home extends Component {
 			<div {...MainContentAreaStyle}>
 				<Disclaimer/>
 				<Grid {...GridContentAreaStyles.container}>
-					<Grid {...GridContentAreaStyles.item}> <CenterPromptForComments/></Grid>
+					<Grid {...GridContentAreaStyles.item}> <CenterPromptForComments onClick={this.handlePostButtonClick}/></Grid>
 					<Grid {...GridContentAreaStyles.item}> <FetchedContent {...FetchedContentSettings}/></Grid>
 					<Grid {...GridContentAreaStyles.item}> <hr/> </Grid>
 				</Grid>

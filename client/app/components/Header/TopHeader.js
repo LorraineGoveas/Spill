@@ -42,7 +42,7 @@ const SearchBar = () => {
 			label: "Search",
 			fullWidth: true,
 		},
-		iconGridItem: {
+		editGridItem: {
 			item: true,
 			xs: 2,
 			sm: 1,
@@ -56,7 +56,7 @@ const SearchBar = () => {
 				<TextField {...SearchBarItemSettings.textField}/>
 			</Grid>
 
-			<Grid {...SearchBarItemSettings.iconGridItem}> <IconButton> <Search/> </IconButton></Grid>
+			<Grid {...SearchBarItemSettings.editGridItem}> <IconButton> <Search/> </IconButton></Grid>
 		</Grid>
 	)
 };
