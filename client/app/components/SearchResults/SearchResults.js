@@ -83,8 +83,8 @@ const SearchResultsLabel = (props) => {
 			style={{padding: "20px"}}>
 			Search Results for: <b>{props.searchInput}</b>
 		</Typography>)
-
 };
+
 const MapCardStyle = {
 	position: "fixed",
 	right: "0",
@@ -110,24 +110,44 @@ class SearchResults extends React.Component{
 	constructor(props){
 		super(props);
 		this.state = {
+			searchInput: '',
 			places: [],
 			searchKey: '',
 			category: '',
 			selectedPlaceLatitude: 37.3382,
 			selectedPlaceLng: -121.8863,
-			dropDownOpen: false
+			dropDownOpen: false,
+			shouldSearch: true
 		};
 		this.initiateSearch = this.initiateSearch.bind(this);
 		this.searchTextChanged = this.searchTextChanged.bind(this);
 		this.categoryTextChanged = this.categoryTextChanged.bind(this);
 		this.moveTheMap = this.moveTheMap.bind(this);
+		this.handleSearchFromHeader = this.handleSearchFromHeader.bind(this);
+	}
+
+	componentDidMount() {
+		const { sampleInfo } = this.props.location.state; // Boilerplate for receiving props via Link
+		this.setState({
+			searchInput: sampleInfo,
+			searchKey: sampleInfo,
+		});
+		console.log("State: " + this.state.searchInput);
+		console.log("Sample Info: " + sampleInfo);
+	}
+
+
+	handleSearchFromHeader() {
+		console.log(this.state.searchInput);
+		console.log(this.state.searchKey);
+		this.initiateSearch();
 	}
 
 	moveTheMap(lat, lng) {
 		this.setState({
-				selectedPlaceLatitude: parseFloat(lat),
-				selectedPlaceLng: parseFloat(lng)
-			});
+			selectedPlaceLatitude: parseFloat(lat),
+			selectedPlaceLng: parseFloat(lng)
+		});
 	}
 
 	fetchAllResults() {
@@ -170,20 +190,23 @@ class SearchResults extends React.Component{
 			});
 	}
 
-	initiateSearch(event) {
+	// TODO: Prevent this from re-rendering
+	initiateSearch() {
 		const {searchKey, category} = this.state;
-		this.setState({places: []});
-
-		if (category == '' && searchKey == ''){
-			this.fetchAllResults()
-		} else if (category == '' && searchKey != ''){
-			this.fetchResultsWithSearchKey(searchKey)
-		} else if (category != '' && searchKey == ''){
-			this.fetchResultsWithCategory(category)
-		} else {
-			this.fetchResultsWithSearchAndCategory(searchKey, category)
+		if (searchKey == '') {
+			console.log("KEYS: " + searchKey);
+			if (category == '' && searchKey == '') {
+				this.fetchAllResults()
+			} else if (category == '' && searchKey != '') {
+				this.fetchResultsWithSearchKey(searchKey)
+			} else if (category != '' && searchKey == '') {
+				this.fetchResultsWithCategory(category)
+			} else {
+				this.fetchResultsWithSearchAndCategory(searchKey, category)
+			}
 		}
-		event.preventDefault();
+
+		// event.preventDefault();
 	}
 
 	searchTextChanged(event) {
@@ -214,28 +237,22 @@ class SearchResults extends React.Component{
 		);
 	}
 
+	searchIfNeeded() {
+		if (this.state.shouldSearch) {
+			this.initiateSearch();
+		}
+	}
 
 	// TODO: Empty search causes terrible lag
 	render(){
-		const {selectedPlaceLatitude, selectedPlaceLng} = this.state;
+		const {selectedPlaceLatitude, selectedPlaceLng, places, searchInput} = this.state;
+		this.searchIfNeeded();
 		return(
 			<div>
-				<form onSubmit={this.initiateSearch}>
-					<Typography style={{textAlign: "center", marginTop: "10px"}}>
-						Search
-						<input type={"text"}
-							   value={this.state.searchKey}
-							   onChange={this.searchTextChanged} />
-
-						<input type={"submit"}
-							   value={"Submit"} />
-					</Typography>
-				</form>
-
-				<SearchResultsLabel searchInput={this.state.searchKey.toLocaleString()}/>
+				<SearchResultsLabel searchInput={searchInput}/>
 				<Paper style={styles.ResultsPost}>
 					<MapsContainer latitude={selectedPlaceLatitude} longitude={selectedPlaceLng}/>
-					{this.state.places.map(this.DisplayFetchedData, this)}
+					{places.map(this.DisplayFetchedData, this)}
 				</Paper>
 			</div>
 		);

@@ -65,7 +65,8 @@ const OptionsHeader = (props) => {
 					Help
 				</Button>
 			</Grid>
-			<Grid item xs={mobileSize} sm={3}>{/*EMPTY. This is for right-aligning the Account Button*/}</Grid>
+			<Grid item xs={mobileSize}
+				  sm={2} lg={3}>{/*EMPTY. This is for right-aligning the Account Button*/}</Grid>
 			<Grid item xs={mobileSize} sm={1}>
 				<AccountOption/>
 			</Grid>
