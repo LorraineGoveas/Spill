@@ -19,6 +19,8 @@ import Login from './components/UserPanel/Login';
 import SignUp from './components/SignUp/SignUp';
 import CommentsPreview from './components/UserPanel/Comments';
 import {MuiThemeProvider} from "material-ui/styles/index";
+import CssBaseline from 'material-ui/CssBaseline';
+
 import theme from './components/Theme';
 
 // TODO: Add Disclaimer to Home Page
@@ -28,6 +30,7 @@ render((
 	<Router >
 		<MuiThemeProvider theme={theme}>
 			<App>
+				<CssBaseline/>
 				<Switch>
 					<Route exact path="/" component={Home}/>
 					<Route path="/team/about" component={About}/>
@@ -37,7 +40,6 @@ render((
 					<Route path="/user/login" component={Login}/>
 					<Route path="/user/history" component={CommentsPreview}/>
 					<Route path="/search/results" component={SearchResults}/>
-
 					<Route component={NotFound}/>
 				</Switch>
 			</App>

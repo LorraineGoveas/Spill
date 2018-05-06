@@ -1,22 +1,31 @@
 import {createMuiTheme} from "material-ui/styles/index";
-import grey from 'material-ui/colors/grey';
-import teal from 'material-ui/colors/teal';
+import cyan from 'material-ui/colors/teal';
+import blueGrey from 'material-ui/colors/blueGrey';
 
 const theme = createMuiTheme({
 	palette: {
 		primary: {
-			light: '#8e8e8e',
-			main: grey[700],
-			dark: '#373737',
+			light: blueGrey[300],
+			main: blueGrey[500],
+			dark: blueGrey[800],
 			contrastText: '#ffffff',
 		},
 		secondary: {
-			light: '#b2fef7',
-			main: teal[200],
-			dark: '#49a94',
+			light: "#dbffff",
+			main: cyan['A100'],
+			dark: "#75ccb9",
 			contrastText: '#000000',
 		},
 	},
+
+	// overrides: {
+	// 	MuiButton: {
+	// 		root: {
+	// 			color: 'red',
+	// 		},
+	// 	},
+	// },
+
 });
 
 export default theme;
