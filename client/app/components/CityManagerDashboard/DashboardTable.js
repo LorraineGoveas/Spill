@@ -1,5 +1,5 @@
 import React from 'react';
-import Table, { TableBody, TableCell, TableHead, TableRow } from 'material-ui/Table';
+import Table, { TableBody, TableCell, TableHead, TableRow, TableSortLabel } from 'material-ui/Table';
 import Paper from 'material-ui/Paper';
 import Button from 'material-ui/Button';
 
@@ -42,6 +42,7 @@ class CustomizedTable extends React.Component {
         }
         this.state = {
             data: defaultData,
+            column_id: null,
             sort: {
                 column: null,
                 direction: 'desc',
@@ -134,6 +135,7 @@ class CustomizedTable extends React.Component {
 
             this.setState({
                 data: sortedData,
+                column_id: column,
                 sort: {
                     column,
                     direction,
@@ -150,12 +152,12 @@ class CustomizedTable extends React.Component {
             <Table>
                 <TableHead>
                     <TableRow>
-                        <TableCell numeric>ID<button onClick={this.onSort('id')}>sort</button></TableCell>
-                        <TableCell>Author<button onClick={this.onSort('author')}>sort</button></TableCell>
-                        <TableCell>Location<button onClick={this.onSort('location')}>sort</button></TableCell>
-                        <TableCell>Status<button onClick={this.onSort('status')}>sort</button></TableCell>
-                        <TableCell>Description<button onClick={this.onSort('desc')}>sort</button></TableCell>
-                        <TableCell>Date<button onClick={this.onSort('date')}>sort</button></TableCell>
+                        <TableCell numeric><TableSortLabel active={this.state.column_id === 'id'} direction={this.state.sort.direction} onClick={this.onSort('id')}>ID</TableSortLabel></TableCell>
+                        <TableCell><TableSortLabel active={this.state.column_id === 'author'} direction={this.state.sort.direction} onClick={this.onSort('author')}>Author</TableSortLabel></TableCell>
+                        <TableCell><TableSortLabel active={this.state.column_id === 'location'} direction={this.state.sort.direction} onClick={this.onSort('location')}>Location</TableSortLabel></TableCell>
+                        <TableCell><TableSortLabel active={this.state.column_id === 'status'} direction={this.state.sort.direction} onClick={this.onSort('status')}>Status</TableSortLabel></TableCell>
+                        <TableCell><TableSortLabel active={this.state.column_id === 'desc'} direction={this.state.sort.direction} onClick={this.onSort('desc')}>Description</TableSortLabel></TableCell>
+                        <TableCell><TableSortLabel active={this.state.column_id === 'date'} direction={this.state.sort.direction} onClick={this.onSort('date')}>Date</TableSortLabel></TableCell>
                         <TableCell>Image</TableCell>
                         <TableCell>Action</TableCell>
                     </TableRow>
