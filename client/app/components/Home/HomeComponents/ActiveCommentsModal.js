@@ -1,7 +1,7 @@
 import React from 'react';
 import {  Paper} from 'material-ui';
 import { Modal } from 'material-ui';
-import {CommentBox} from "../../Comment/CommentBox";
+import {CreateComment} from "./CreateComment";
 
 const ActiveCommentsModal = (props) => {
 	const ActiveCommentsStyle = {
@@ -11,11 +11,18 @@ const ActiveCommentsModal = (props) => {
 		}
 	};
 
-	console.log("Handler: " + props.handleClose);
+	const UserCreatingComment = {
+		userFirstInitial: "F",
+		userFullname: "Frodo Baggins",
+		userBirthday: "April 21, 1995",
+	};
+
 	return(
 		<Modal open={props.open} onClose={props.handleClose}>
 			<Paper {...ActiveCommentsStyle}>
-				<CommentBox handleCancel={props.handleClose}/>
+				<CreateComment
+					{...UserCreatingComment}
+					handleCancel={props.handleClose}/>
 			</Paper>
 		</Modal>
 	)

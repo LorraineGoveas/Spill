@@ -1,5 +1,6 @@
 import React from 'react';
 import {Card, CardHeader, Grid, Typography, Button, TextField} from 'material-ui';
+import {StyledLink} from "../utils/StyledLink";
 
 /*
 SignInWindow is a window that contains the email and password fields,
@@ -7,6 +8,10 @@ as well as the next and create account buttons.
 
 This window is presented when the user clicks on the Sign In button located in the Options Header
  */
+
+const SignInMenuItem = (props) => {
+	return(<Button size="small" style={{color: "black"}}>{props.label}</Button>)
+};
 
 const EmailPasswordField = (props) => {
 	return(
@@ -47,12 +52,18 @@ class SignInWindow extends React.Component {
 					</Grid>
 
 					<Grid item xs={12} style={{margin: "15px"}}>
-						<EmailPasswordField type={"password"} caption={"Password"} placeholder={"Password"}/>
+						<EmailPasswordField type={"password"}
+											caption={"Password"}
+											placeholder={"Password"}/>
 					</Grid>
 
 					<Grid item xs={12}>
-						<Button size="small" variant="flat" onClick={this.props.handleNextButton}>Next</Button>
-						<Button size="small" variant="flat" href={"/user/signUp"}>Create Account</Button>
+						<Button size="small"
+								variant="flat"
+								onClick={this.props.handleNextButton}>Next</Button>
+						<StyledLink to={{pathname: "/user/signUp"}}>
+							<SignInMenuItem label={"Create Account"}/>
+						</StyledLink>
 					</Grid>
 				</Grid>
 			</Card>

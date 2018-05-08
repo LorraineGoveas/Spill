@@ -56,7 +56,6 @@ const CommentPrompt = (props) => {
 class CenterPromptForComments extends React.Component {
 	constructor(props) {
 		super(props);
-
 	}
 
 	render() {
@@ -77,7 +76,7 @@ class CenterPromptForComments extends React.Component {
 		return(
 			<div>
 				<Card {...CenterPromptForCommentsStyle} onClick={this.props.onClick}>
-					<CommentPrompt userFirstInitial={"A"}/>
+					<CommentPrompt userFirstInitial={this.props.userFirstInitial}/>
 				</Card>
 			</div>
 		)

@@ -1,6 +1,7 @@
 import React from 'react';
 import {Paper, Grid, Card, CardContent, Typography, Button} from 'material-ui';
 import { Map } from '../Map';
+import Tooltip from 'material-ui/Tooltip';
 
 const styles = {
 	ResultsPost: {
@@ -106,6 +107,29 @@ const MapsContainer = (props) => (
 		mapElement={ <div style={MapElementStyle}/> }
 	/>);
 
+
+function displayFetchedData(place, i) {
+	// console.log("displayFetchedData()");
+	const {image_src, location_name, address, city, state, zip, type, status} = place;
+	{/*<div onClick={() => { this.moveTheMap(place.location_lat, place.location_lng)}}>*/}
+	return (
+		<div key={i}>
+			<SearchResult title={type} previewContent={(
+				<div>
+					<div><img src={image_src}/></div>
+					<div>{location_name}</div>
+					<div>{address}</div>
+					<div>{city}</div>
+					<div>{state}</div>
+					<div>{zip}</div>
+					<div>{type}</div>
+					<div>{status}</div>
+				</div>
+			)}/>
+		</div>
+	);
+}
+
 class SearchResults extends React.Component{
 	constructor(props){
 		super(props);
@@ -117,7 +141,8 @@ class SearchResults extends React.Component{
 			selectedPlaceLatitude: 37.3382,
 			selectedPlaceLng: -121.8863,
 			dropDownOpen: false,
-			shouldSearch: true
+			shouldSearch: true,
+			didFetch: false,
 		};
 		this.initiateSearch = this.initiateSearch.bind(this);
 		this.searchTextChanged = this.searchTextChanged.bind(this);
@@ -127,19 +152,48 @@ class SearchResults extends React.Component{
 	}
 
 	componentDidMount() {
-		const { sampleInfo } = this.props.location.state; // Boilerplate for receiving props via Link
+		// Boilerplate for receiving props via Link
+		const { sampleInfo, shouldSearch} = this.props.location.state;
+		// console.log("sampleInfo: " + sampleInfo);
 		this.setState({
 			searchInput: sampleInfo,
 			searchKey: sampleInfo,
+			shouldSearch: shouldSearch,
 		});
-		console.log("State: " + this.state.searchInput);
-		console.log("Sample Info: " + sampleInfo);
 	}
 
+	/*
+	shouldComponentUpdate(nextProps, nextState, nextContext) {
+		console.log("Should update?");
+		console.log("current search input: " + this.state.searchInput);
+		console.log("search input: " + nextState.searchInput);
+		this.setState({
+			shouldSearch: true,
+			searchInput: nextState.searchInput,
+		});
+		return false;
+	}
+	*/
+
+	componentDidUpdate(prevProps, prevState, snapshot) {
+		console.log("didUpdate()");
+		// console.log("Prev state: " + prevState.searchInput);
+		// console.log("Current input: " + this.props.location.state.sampleInfo);
+		// if (this.state.searchInput == '') {
+		// 	console.log("Fetching all");
+		// 	this.fetchAllResults()
+		// }
+
+		if (!(prevState.searchInput == this.props.location.state.sampleInfo)) {
+			this.setState({
+				searchInput: this.props.location.state.sampleInfo,
+			});
+			// if (this.state.shouldSearch) {
+			this.initiateSearch()
+		}
+	}
 
 	handleSearchFromHeader() {
-		console.log(this.state.searchInput);
-		console.log(this.state.searchKey);
 		this.initiateSearch();
 	}
 
@@ -151,6 +205,7 @@ class SearchResults extends React.Component{
 	}
 
 	fetchAllResults() {
+		console.log("Fetch all results");
 		fetch(`/api/postRecords/allResults`)
 			.then(res => res.json())
 			.then(json => {
@@ -190,23 +245,18 @@ class SearchResults extends React.Component{
 			});
 	}
 
-	// TODO: Prevent this from re-rendering
 	initiateSearch() {
 		const {searchKey, category} = this.state;
-		if (searchKey == '') {
-			console.log("KEYS: " + searchKey);
-			if (category == '' && searchKey == '') {
-				this.fetchAllResults()
-			} else if (category == '' && searchKey != '') {
-				this.fetchResultsWithSearchKey(searchKey)
-			} else if (category != '' && searchKey == '') {
-				this.fetchResultsWithCategory(category)
-			} else {
-				this.fetchResultsWithSearchAndCategory(searchKey, category)
-			}
+		console.log("initiateSearch()");
+		if (category == '' && searchKey == '') {
+			this.fetchAllResults()
+		} else if (category == '' && searchKey != '') {
+			this.fetchResultsWithSearchKey(searchKey)
+		} else if (category != '' && searchKey == '') {
+			this.fetchResultsWithCategory(category)
+		} else {
+			this.fetchResultsWithSearchAndCategory(searchKey, category)
 		}
-
-		// event.preventDefault();
 	}
 
 	searchTextChanged(event) {
@@ -217,42 +267,14 @@ class SearchResults extends React.Component{
 		this.setState({category: event.target.value})
 	}
 
-	DisplayFetchedData(place, i) {
-		const {image_src, location_name, address, city, state, zip, type, status} = place;
-		return (
-			<div key={i}>
-				<SearchResult title={type} previewContent={(
-					<div onClick={() => { this.moveTheMap(place.location_lat, place.location_lng)}}>
-						<div><img src={image_src}/></div>
-						<div>{location_name}</div>
-						<div>{address}</div>
-						<div>{city}</div>
-						<div>{state}</div>
-						<div>{zip}</div>
-						<div>{type}</div>
-						<div>{status}</div>
-					</div>
-				)}/>
-			</div>
-		);
-	}
-
-	searchIfNeeded() {
-		if (this.state.shouldSearch) {
-			this.initiateSearch();
-		}
-	}
-
-	// TODO: Empty search causes terrible lag
 	render(){
 		const {selectedPlaceLatitude, selectedPlaceLng, places, searchInput} = this.state;
-		this.searchIfNeeded();
 		return(
 			<div>
 				<SearchResultsLabel searchInput={searchInput}/>
 				<Paper style={styles.ResultsPost}>
-					<MapsContainer latitude={selectedPlaceLatitude} longitude={selectedPlaceLng}/>
-					{places.map(this.DisplayFetchedData, this)}
+					{/*<MapsContainer latitude={selectedPlaceLatitude} longitude={selectedPlaceLng}/>*/}
+					{places.slice(0,30).map(displayFetchedData, this)}
 				</Paper>
 			</div>
 		);

@@ -23,7 +23,6 @@ function getHrefForCurrentPage(currentPage) {
 class Header extends React.Component {
 	constructor(props) {
 		super(props);
-		console.log("Header loaded");
 		this.state = {
 			currentPage: "home",
 			open: false,

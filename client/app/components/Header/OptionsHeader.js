@@ -1,9 +1,10 @@
 import React from 'react';
 import { Grid, Button } from 'material-ui';
 import { AccountPopover } from "./AccountPopover";
-
-/*
-All props are passed down by Header
+import {StyledLink} from "../utils/StyledLink";
+import Tooltip from 'material-ui/Tooltip';
+/**
+ * All props are passed down by Header
  */
 
 const optionsHeaderStyle = {
@@ -36,35 +37,48 @@ const OptionsHeader = (props) => {
 			style={optionsHeaderStyle}
 		>
 			<Grid item xs={mobileSize} sm={2}>
-				<Button
-					color={"inherit"}
-					href={"/"}
-					onClick={() => {props.onClick("home", "/")}}>
-					Home
-				</Button>
+				<StyledLink to={{pathname: "/"}}>
+					<Button
+						style={{color: "white"}}
+						onClick={() => {props.onClick("home", "/")}}>
+						Home
+					</Button>
+				</StyledLink>
 			</Grid>
+
 			<Grid item xs={mobileSize} sm={2}>
-				<Button
-					color={"inherit"}
-					onClick={() => {props.onClick("browse", "/")}}>
-					Browse
-				</Button>
+				<Tooltip title={"Warning: Browse is not implemented yet"}>
+					<StyledLink to={{pathname: "/"}}>
+						<Button style={{color: "white"}}
+								onClick={() => {props.onClick("browse", "/")}}>
+							Browse
+						</Button>
+					</StyledLink>
+				</Tooltip>
 			</Grid>
+
 			<Grid item xs={mobileSize} sm={2}>
-				<Button color={"inherit"}
-						href={"/search/results"}
+				<StyledLink to={{pathname: "/search/results"}}>
+					<Button
+						style={{color: "white"}}
 						onClick={() => {props.onClick("search", "/search/results")}}>
-					Search
-				</Button>
+						Search
+					</Button>
+				</StyledLink>
 			</Grid>
+
 			<Grid item xs={mobileSize} sm={2}>
-				<Button
-					color={"inherit"}
-					href={"/"}
-					onClick={() => {props.onClick("help", "/")}}>
-					Help
-				</Button>
+				<Tooltip title={"Warning: Help is not implemented yet"}>
+					<StyledLink to={{pathname: "/"}}>
+						<Button
+							style={{color: "white"}}
+							onClick={() => {props.onClick("help", "/")}}>
+							Help
+						</Button>
+					</StyledLink>
+				</Tooltip>
 			</Grid>
+
 			<Grid item xs={mobileSize}
 				  sm={2} lg={3}>{/*EMPTY. This is for right-aligning the Account Button*/}</Grid>
 			<Grid item xs={mobileSize} sm={1}>
