@@ -11,6 +11,32 @@ module.exports = merge(commonConfig, {
       'webpack-hot-middleware/client?reload=true'
     ]
   },
+    //
+    module: {
+        rules: [
+            {
+                test: /\.(jpe?g|png|gif|svg)$/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {}
+                    }
+
+                ],
+
+                test: /\.(jpe?g|png|gif|svg)$/,
+                use: [
+                    {
+                        loader: 'url-loader',
+                        options:{
+                            limit:8192
+                        }
+                    }
+                ]
+
+            }
+        ]
+    },
 
   output: {
     filename: 'js/[name].js',
@@ -23,5 +49,6 @@ module.exports = merge(commonConfig, {
     contentBase: './client/public',
     historyApiFallback: true,
     stats: 'minimal' // none (or false), errors-only, minimal, normal (or true) and verbose
-  }
+  },
+
 });

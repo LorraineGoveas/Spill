@@ -6,14 +6,21 @@ import theme from '../Theme';
 import {Link} from 'react-router-dom';
 import {StyledLink} from "../utils/StyledLink";
 import Tooltip from 'material-ui/Tooltip';
-
+import logo from '../../../public/assets/img/SpillLogo.png';
 /**
  * TopHeader contains the logo, current page, and search bar.
  * When the user clicks the search button in the search bar, TopHeader should communicate with the
  * SearchResults page - passing whatever the user entered in the form as props.
  */
+
+
 const Logo = () => (
-	<Typography variant={"headline"} align={"center"} color={"inherit"}> SPILL </Typography>
+	<div><table>
+		<tr><td>
+			<img src={logo} alt="logo_image" height="200" width="250" /></td><td>
+			<Typography variant={"headline"} align={"center"} color={"inherit"}> SPILL </Typography></td>
+		</tr></table>
+	</div>
 );
 
 const CurrentPageLabel = (props) => {
@@ -83,6 +90,7 @@ class SearchBar extends React.Component {
 		};
 
 		return(
+
 			<Grid {...SearchBarSettings}>
 
 				<Grid {...SearchBarItemSettings.buttonGridItem}>

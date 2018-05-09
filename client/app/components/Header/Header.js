@@ -90,6 +90,8 @@ class Header extends React.Component {
 					marginTop: "50px",
 					marginRight: "25px",
 				}}>
+
+
 					<SignInWindow handleNextButton={this.validateCredentials}/>
 				</div>
 			</Modal>

@@ -16,8 +16,6 @@ module.exports = {
     ]
   },
 
-
-
   output: {
     path: helpers.root('dist'),
     publicPath: '/'
@@ -31,6 +29,13 @@ module.exports = {
   },
 
   module: {
+      loaders: [
+          {
+              test: /\.(png|jpg)$/,
+              loader: 'url?limit=25000'
+          }
+      ],
+
     rules: [
       // JS files
       {
