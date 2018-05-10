@@ -33,7 +33,7 @@ const LoginArea = (props) => {
 					<LoginField type={"password"} caption={"Password"} placeholder={"Password"}/>
 				</Grid>
 				<Grid item xs={12}>
-					<Button size="small" variant="flat" onClick={props.handleNextButton}>Next</Button>
+					<Button size="small" variant="flat" href={"/user/loginuser"}>Next</Button>
 					<Button size="small" variant="flat" href={"/user/signUp"}>Create Account</Button>
 				</Grid>
 			</Grid>

@@ -17,7 +17,7 @@ import { ReportIssue } from './components/ReportIssue/ReportIssue';
 
 import { SearchResults } from './components/SearchResults/SearchResults'
 import { UserPanel } from './components/UserPanel/UserPanel';
-
+import userlogin from './components/Login/login';
 import Login from './components/UserPanel/Login';
 import SignUp from './components/SignUp/SignUp';
 import CommentsPreview from './components/UserPanel/Comments';
@@ -40,6 +40,7 @@ render((
 					<Route path="/user/login" component={Login}/>
 					<Route path="/user/history" component={CommentsPreview}/>
 					<Route path="/search/results" component={SearchResults}/>
+          <Route path="/user/loginuser" component={userlogin}/>
 
 					<Route component={NotFound}/>
 				</Switch>
