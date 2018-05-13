@@ -1,21 +1,22 @@
 import React from 'react';
-import { Paper, Grid, MenuItem, MenuList, Typography} from 'material-ui';
+import { Paper, MenuItem, MenuList, Typography} from 'material-ui';
 import {StyledLink} from "../utils/StyledLink";
 import Tooltip from 'material-ui/Tooltip';
+
 const SettingsMenu = () => {
 	return(
 		<Paper>
 			<MenuList>
-				<StyledLink to={{pathname: "/user/login"}}>
+				<StyledLink to={{pathname: "/user/userPanel/overview"}}>
 					<MenuItem>Overview</MenuItem>
 				</StyledLink>
 
-				<StyledLink to={{pathname: "/user/history"}}>
-					<MenuItem>History</MenuItem>
+				<StyledLink to={{pathname: "/user/userPanel/activity"}}>
+					<MenuItem>Activity</MenuItem>
 				</StyledLink>
 
-				<StyledLink to={{pathname: "/user/login"}}>
-					<MenuItem>Login</MenuItem>
+				<StyledLink to={{pathname: "/user/userPanel/updatePassword"}}>
+					<MenuItem>Update Password</MenuItem>
 				</StyledLink>
 
 				<Tooltip title={"Warning: Help is not implemented yet"}>
@@ -35,16 +36,10 @@ const SettingsTitle = () => {
 
 const AccountSettings = () => {
 	return(
-		<Grid
-			container
-			spacing={8}
-			direction={"column"}
-			justify={"flex-start"}
-			alignItems={"stretch"}
-		>
-			<Grid item xs> <SettingsTitle/> </Grid>
-			<Grid item xs> <SettingsMenu/> </Grid>
-		</Grid>
+		<div>
+			<SettingsTitle/>
+			<SettingsMenu/>
+		</div>
 	);
 };
 

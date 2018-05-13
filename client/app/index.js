@@ -15,9 +15,7 @@ import { About } from './components/About/About';
 import { ReportIssue } from './components/ReportIssue/ReportIssue';
 import { SearchResults } from './components/SearchResults/SearchResults'
 import { UserPanel } from './components/UserPanel/UserPanel';
-import Login from './components/UserPanel/Login';
 import SignUp from './components/SignUp/SignUp';
-import CommentsPreview from './components/UserPanel/Comments';
 import {MuiThemeProvider} from "material-ui/styles/index";
 import CssBaseline from 'material-ui/CssBaseline';
 
@@ -37,8 +35,6 @@ render((
 					<Route path="/report/issue" component={ReportIssue}/>
 					<Route path="/user/userPanel" component={UserPanel}/>
 					<Route path="/user/signUp" component={SignUp}/>
-					<Route path="/user/login" component={Login}/>
-					<Route path="/user/history" component={CommentsPreview}/>
 					<Route path="/search/results" component={SearchResults}/>
 					<Route component={NotFound}/>
 				</Switch>
