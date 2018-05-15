@@ -1,48 +1,111 @@
 import React from 'react';
-import styled from 'styled-components'
+import { AppBar, Modal} from 'material-ui';
+import { SignInWindow } from "./SignInWindow";
+import { TopHeader } from "./TopHeader";
+import { OptionsHeader } from "./OptionsHeader";
 
-import { Link } from 'react-router-dom';
+/*
+Header holds the state of whether the user is signed in or not
+State Dependent Actions related to Search, Login, and Navigation are managed by Header
+Two Rows:
+	Top Header with Logo, Current Page, and Search Bar
+	Options Header with Home, Browse, Search, Help, and AccountOptions
+*/
 
-const HeaderNavbar = styled.div`
-    color: blue;
-`
+function getHrefForCurrentPage(currentPage) {
+	if (currentPage === "home") {
+		return "/"
+	} else if (currentPage === "browse") {
+		return "/search/results" // Proof of concept, this shouldn't actually be the link
+	}
+}
 
-const NavbarList = styled.ul`
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
-`
+class Header extends React.Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			currentPage: "home",
+			open: false,
+			isLoggedIn: false
+		};
 
-const NavbarItem = styled.li`
-    float: left;
-`
-const StyledLink = styled(Link)`
-    display: block;
-    color: white;
-    padding: 14px 16px;
-    text-decoration: none;
-    text-align: center;
-    &:hover {
-        color: #8cb8ff;
-    }
-`
+		this.handlePageClick = this.handlePageClick.bind(this);
+		this.beginSignInProcess = this.beginSignInProcess.bind(this);
+		this.handleLogout = this.handleLogout.bind(this);
+		this.signInSuccess = this.signInSuccess.bind(this);
+		this.signInFail = this.signInFail.bind(this);
+		this.validateCredentials = this.validateCredentials.bind(this);
+	}
 
-const Header = () => (
-  <header>
+	handlePageClick(label) {
+		this.setState({
+			currentPage: label,
+		})
+	}
 
-    <HeaderNavbar>
-        <NavbarList>
-            <NavbarItem><StyledLink to="/">Home</StyledLink></NavbarItem>
-            <NavbarItem><StyledLink to="/team/about">About</StyledLink></NavbarItem>
-            <NavbarItem><StyledLink to="/search/results">Search</StyledLink></NavbarItem>
-        </NavbarList>
-    </HeaderNavbar>
+	beginSignInProcess() {
+		this.setState({
+			open: true,
+		});
+		console.log("Sign In");
+	}
 
+	validateCredentials() {
+		console.log("Validating...");
+		this.signInSuccess();
+		// this.signInFail();
+	}
 
-    <hr />
-  </header>
-);
+	signInFail() {
+		console.log("Sign in failure");
+	}
 
+	signInSuccess() {
+		this.setState({
+			open: false,
+			isLoggedIn: true,
+		});
+		console.log("Successfully signed in");
+	}
+
+	handleLogout() {
+		this.setState({
+			isLoggedIn: false,
+			open: false,
+		});
+		console.log("Logged out");
+	}
+
+	// TODO: Current Page state should persist when user navigates to new page
+	render() {
+		// If the user is not signed in, when the user clicks the "Sign In" button, the Sign In Window will appear
+
+		const {currentPage} = this.state;
+		const ShowSignInWindow = () => (
+			<Modal open={this.state.open}>
+				<div style={{
+					position: "absolute",
+					right: "0",
+					width: "250px",
+					marginTop: "50px",
+					marginRight: "25px",
+				}}>
+					<SignInWindow handleNextButton={this.validateCredentials}/>
+				</div>
+			</Modal>
+		);
+
+		return(
+			<AppBar position="static">
+				<TopHeader currentPage={currentPage} href={getHrefForCurrentPage(currentPage)}/>
+
+				<OptionsHeader onClick={this.handlePageClick}
+							   isLoggedIn={this.state.isLoggedIn}
+							   handleSignInClick={this.beginSignInProcess}
+				/>
+				<ShowSignInWindow/>
+			</AppBar>
+		)
+	}
+}
 export default Header;

@@ -8,8 +8,15 @@ module.exports = (app) => {
         .catch((err) => next(err));
     });
 
-    app.post('/api/postRecords', function (req, res, next) {
-        const postRecord = new PostRecord();
+    app.post('/api/postRecords/:type/:name/:address/:city/:state/:zip/reportIssue', function (req, res, next) {
+        var postRecord = new PostRecord();
+
+        postRecord.location_name = req.params.name
+        postRecord.address = req.params.address
+        postRecord.type = req.params.type
+        postRecord.city = req.params.city
+        postRecord.state = req.params.state
+        postRecord.zip = req.params.zip
 
         postRecord.save()
         .then(() => res.json(postRecord))
