@@ -3,7 +3,6 @@ import { Button } from 'material-ui';
 import { Search } from '@material-ui/icons';
 import { Paper,FormControl} from 'material-ui';
 import Input, {InputLabel, InputAdornment} from 'material-ui/Input';
-import {SearchResults} from "../SearchResults/SearchResults";
 
 // HEADER
 class SearchField extends React.Component {

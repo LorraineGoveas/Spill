@@ -2,16 +2,15 @@ import React, { Component } from 'react';
 import { withGoogleMap, GoogleMap, Marker } from 'react-google-maps';
 
 class Map extends Component {
-
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
         this.state = {
             map: null
         }
     }
 
     mapMoved(){
-        console.log('moved the map: ' + JSON.stringify(this.state.map.getCenter()))
+        console.log('Moved the map: ' + JSON.stringify(this.state.map.getCenter()))
     }
 
     mapLoaded(map){
@@ -19,8 +18,15 @@ class Map extends Component {
         this.setState({map: map})
     }
 
-    render(){
+	// moveTheMap(lat, lng) {
+	// 	console.log("moveTheMap()");
+	// 	this.setState({
+	// 		selectedPlaceLatitude: parseFloat(lat),
+	// 		selectedPlaceLng: parseFloat(lng)
+	// 	});
+	// }
 
+    render(){
         const markers = this.props.markers || [];
 
         return (

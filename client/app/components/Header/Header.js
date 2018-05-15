@@ -1,100 +1,111 @@
 import React from 'react';
-import { AppBar, Toolbar, Typography, Button, Grid, Modal} from 'material-ui';
-import { SearchField } from "./SearchField";
-import { LoginArea } from "./LoginArea";
-import { AccountPopover } from "./AccountPopover";
+import { AppBar, Modal} from 'material-ui';
+import { SignInWindow } from "./SignInWindow";
+import { TopHeader } from "./TopHeader";
+import { OptionsHeader } from "./OptionsHeader";
 
-const Title = (props) => {
-	return(
-		<Button color='inherit' href="/">
-			<Typography variant="title" color="inherit">
-				{props.label}
-			</Typography>
-		</Button>
-	);
-};
+/*
+Header holds the state of whether the user is signed in or not
+State Dependent Actions related to Search, Login, and Navigation are managed by Header
+Two Rows:
+	Top Header with Logo, Current Page, and Search Bar
+	Options Header with Home, Browse, Search, Help, and AccountOptions
+*/
 
-// TODO: Compare user input with database login fields to see if it's valid
-function validateCredentials() {
-	return true;
+function getHrefForCurrentPage(currentPage) {
+	if (currentPage === "home") {
+		return "/"
+	} else if (currentPage === "browse") {
+		return "/search/results" // Proof of concept, this shouldn't actually be the link
+	}
 }
 
-class HeaderLayout extends React.Component {
+class Header extends React.Component {
 	constructor(props) {
 		super(props);
-		// TODO: isLoggedIn should be fetched from the database
 		this.state = {
+			currentPage: "home",
+			open: false,
+			isLoggedIn: false
+		};
+
+		this.handlePageClick = this.handlePageClick.bind(this);
+		this.beginSignInProcess = this.beginSignInProcess.bind(this);
+		this.handleLogout = this.handleLogout.bind(this);
+		this.signInSuccess = this.signInSuccess.bind(this);
+		this.signInFail = this.signInFail.bind(this);
+		this.validateCredentials = this.validateCredentials.bind(this);
+	}
+
+	handlePageClick(label) {
+		this.setState({
+			currentPage: label,
+		})
+	}
+
+	beginSignInProcess() {
+		this.setState({
+			open: true,
+		});
+		console.log("Sign In");
+	}
+
+	validateCredentials() {
+		console.log("Validating...");
+		this.signInSuccess();
+		// this.signInFail();
+	}
+
+	signInFail() {
+		console.log("Sign in failure");
+	}
+
+	signInSuccess() {
+		this.setState({
+			open: false,
+			isLoggedIn: true,
+		});
+		console.log("Successfully signed in");
+	}
+
+	handleLogout() {
+		this.setState({
 			isLoggedIn: false,
-			open: false
-		};
-		this.handleClose = this.handleClose.bind(this);
-		this.handleSignInButton = this.handleSignInButton.bind(this);
-		this.handleNextButton = this.handleNextButton.bind(this);
+			open: false,
+		});
+		console.log("Logged out");
 	}
 
-	handleSignInButton() {this.setState({ open: true });};
-
-	handleClose() {this.setState({ open: false });};
-
-	handleNextButton(e) {
-		e.preventDefault();
-		if (validateCredentials()) {
-			this.setState({ isLoggedIn: true });
-			this.handleClose()
-		} else {
-			// TODO: Handle situation where user enters invalid login or password
-			console.log("Invalid Credentials not yet implemented")
-		}
-	}
-
+	// TODO: Current Page state should persist when user navigates to new page
 	render() {
-		const loginModalStyle= {
-			position: "absolute",
-			right: "0",
-			width: "250px",
-			marginTop: "50px",
-			marginRight: "25px",
-		};
+		// If the user is not signed in, when the user clicks the "Sign In" button, the Sign In Window will appear
 
-		const SignInButton = () => (
-			<Button color={"inherit"} onClick={this.handleSignInButton}> Sign In </Button>
-		);
-
-		// TODO: Present drop down menu when user clicks on AccountButton
-		const HeaderOption = () => (
-			<div>
-				{this.state.isLoggedIn ? <AccountPopover/> : <SignInButton/>}
-				<Modal open={this.state.open} onClose={this.handleClose}>
-					<div style={loginModalStyle}>
-						<LoginArea handleNextButton={this.handleNextButton}/>
-					</div>
-				</Modal>
-			</div>
+		const {currentPage} = this.state;
+		const ShowSignInWindow = () => (
+			<Modal open={this.state.open}>
+				<div style={{
+					position: "absolute",
+					right: "0",
+					width: "250px",
+					marginTop: "50px",
+					marginRight: "25px",
+				}}>
+					<SignInWindow handleNextButton={this.validateCredentials}/>
+				</div>
+			</Modal>
 		);
 
 		return(
-			<Toolbar>
-				<Grid
-					container
-					direction={"row"}
-					justify={"center"}
-					alignItems={"center"}
-				>
-					<Grid item xs={12} sm={2}><Title label={"Spill"}/></Grid>
-					<Grid item xs={9} sm={8}><SearchField/></Grid>
-					<Grid item xs={3} sm={2}><HeaderOption/></Grid>
-				</Grid>
-			</Toolbar>
+			<AppBar position="static">
+				<TopHeader currentPage={currentPage} href={getHrefForCurrentPage(currentPage)}/>
+
+				<OptionsHeader onClick={this.handlePageClick}
+							   isLoggedIn={this.state.isLoggedIn}
+							   handleSignInClick={this.beginSignInProcess}
+				/>
+				<ShowSignInWindow/>
+			</AppBar>
 		)
 	}
 }
-
-const Header = () => {
-	return(
-		<AppBar position="static">
-			<HeaderLayout/>
-		</AppBar>
-	)
-};
-
 export default Header;

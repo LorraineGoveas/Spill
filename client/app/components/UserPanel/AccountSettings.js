@@ -1,20 +1,30 @@
 import React from 'react';
-import { Paper, Grid, MenuItem, MenuList, Typography, Button} from 'material-ui';
-const SettingsItem = (props) => {
-	return(
-		<MenuItem><Button><Typography align={"left"}>{props.label}</Typography></Button></MenuItem>
-	);
-};
+import { Paper, MenuItem, MenuList, Typography} from 'material-ui';
+import {StyledLink} from "../utils/StyledLink";
+import Tooltip from 'material-ui/Tooltip';
 
 const SettingsMenu = () => {
 	return(
 		<Paper>
 			<MenuList>
-				<SettingsItem label={"Overview"}/>
-				{/*<SettingsItem label={"History"}/>*/}
-				<MenuItem><Button href="/user/history"><Typography align={"left"}>History</Typography></Button></MenuItem>
-				<MenuItem><Button href="/user/login"><Typography align={"left"}>Login</Typography></Button></MenuItem>
-				<SettingsItem label={"Help"}/>
+				<StyledLink to={{pathname: "/user/userPanel/overview"}}>
+					<MenuItem>Overview</MenuItem>
+				</StyledLink>
+
+				<StyledLink to={{pathname: "/user/userPanel/activity"}}>
+					<MenuItem>Activity</MenuItem>
+				</StyledLink>
+
+				<StyledLink to={{pathname: "/user/userPanel/updatePassword"}}>
+					<MenuItem>Update Password</MenuItem>
+				</StyledLink>
+
+				<Tooltip title={"Warning: Help is not implemented yet"}>
+					<StyledLink to={{pathname: "/user/userPanel"}}>
+						<MenuItem>Help</MenuItem>
+					</StyledLink>
+				</Tooltip>
+
 			</MenuList>
 		</Paper>
 	);
@@ -26,16 +36,10 @@ const SettingsTitle = () => {
 
 const AccountSettings = () => {
 	return(
-		<Grid
-			container
-			spacing={8}
-			direction={"column"}
-			justify={"flex-start"}
-			alignItems={"stretch"}
-		>
-			<Grid item xs> <SettingsTitle/> </Grid>
-			<Grid item xs> <SettingsMenu/> </Grid>
-		</Grid>
+		<div>
+			<SettingsTitle/>
+			<SettingsMenu/>
+		</div>
 	);
 };
 

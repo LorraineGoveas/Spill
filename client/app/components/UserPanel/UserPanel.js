@@ -1,40 +1,78 @@
 import React from 'react';
 import { Paper, Grid } from 'material-ui';
-import UserProfile from "./UserProfile";
+import {Profile} from "./Profile";
 import AccountSettings from "./AccountSettings";
-import CommentsPreview from "./Comments";
-import RecentActivity from "./RecentActivity";
+import {Activity} from "./Activity";
+import {UpdatePassword} from "./UpdatePassword";
 
+import {Overview} from "./Overview";
+import {
+	BrowserRouter as Router,
+	Route,
+	Switch
+} from 'react-router-dom'
+
+// import Login from './Login';
 /**
  * The layout of this page consists of nested Grid Containers
  * The left side (Account Settings) is a vertical Grid Container
  * The right side is also a vertical Grid container
  * Both of these containers are contained inside MainContainer, which is a horizontal Grid Container
  */
+const UserPanelContainer = (props) => {
+	const Container = {
+		style: {
+			margin: "30px",
+			padding: "20px",
+			// backgroundColor: "red",
+		}
+	};
 
-// TODO: Make this responsive, remove hard coded width
-// TODO: User Profile and Recent Activity should be grouped. AccountSettings should float left
-// TODO: [Important] - Replace content react-style when when settings button is clicked
+	return (
+		<Paper {...Container}>
+			{props.children}
+		</Paper>
+	)
+};
 
+const UserPanelContentGrid = (props) => {
+	const Settings = {
+		container: true,
+		spacing: 24,
+		direction: "row",
+		justify: "flex-start",
+		alignItems: "center",
+		style: {
+			// backgroundColor: "orange",
+		}
+	};
 
-export class UserPanel extends React.Component{
+	return(
+		<Grid {...Settings}>
+			{props.children}
+		</Grid>
+	)
+};
+
+class UserPanel extends React.Component{
 	render(){
 		return(
-
-			<Paper style={{margin: "30px", padding: "20px", minWidth: "700px"}}>
-				<Grid
-					container
-					spacing={24}
-					direction={"row"}
-					justify={"flex-start"}
-					alignItems={"center"}
-				>
-					<Grid item xs={3}> <AccountSettings/> </Grid>
-					<Grid item xs> <UserProfile/> </Grid>
-				</Grid>
-				<RecentActivity/>
-				<CommentsPreview/>
-			</Paper>
+			<Router >
+				<Switch>
+					<UserPanelContainer>
+						<UserPanelContentGrid>
+							<Grid item xs={12} sm={3}><AccountSettings/></Grid>
+							<Grid item xs><Profile/></Grid>
+							<Grid item xs={12}><Route path="/user/userPanel/overview" component={Overview}/></Grid>
+							<Grid item xs={12}><Route path="/user/userPanel/activity" component={Activity}/></Grid>
+							<Grid item xs={12}><Route path="/user/userPanel/userPanel" component={Activity}/></Grid>
+							<Grid item xs={12}><Route path="/user/userPanel/updatePassword" component={UpdatePassword}/></Grid>
+						</UserPanelContentGrid>
+					</UserPanelContainer>
+				</Switch>
+			</Router>
 		);
 	}
 }
+
+export {UserPanel}

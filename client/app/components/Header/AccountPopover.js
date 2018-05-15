@@ -2,16 +2,46 @@ import React from 'react';
 import Button from 'material-ui/Button';
 import Popover from 'material-ui/Popover';
 import {Grid} from 'material-ui';
+import {StyledLink} from "../utils/StyledLink";
+
+/*
+AccountMenuPopover is a menu that is presented to the user when the user clicks the Account button
+located in the OptionsHeader. This assumes the user is already logged in.
+
+Note: As of now, not all buttons are provided with links.
+The user should be able to log out when the user clicks LogOut, however that should be a prop that is passed down
+from Header
+ */
+
+const AccountMenuItem = (props) => {
+	return(<Button fullWidth style={{color: "black"}}>{props.label}</Button>)
+};
 
 const AccountMenuPopover = () => (
 	<Grid
 		container
 		direction={"column"}
 	>
-		<Grid item><Button fullWidth href={"/user/userPanel"}>Profile</Button></Grid>
-		<Grid item><Button fullWidth> Settings </Button></Grid>
-		<Grid item><Button fullWidth> Panel </Button></Grid>
-		<Grid item><Button fullWidth> Log Out </Button></Grid>
+		<Grid item>
+			<StyledLink to={{pathname: "/user/userPanel"}}>
+				<AccountMenuItem label={"Profile"}/>
+			</StyledLink>
+		</Grid>
+		<Grid item>
+			<StyledLink to={{pathname: "/user/userPanel"}}>
+				<AccountMenuItem label={"Settings"}/>
+			</StyledLink>
+		</Grid>
+		<Grid item>
+			<StyledLink to={{pathname: "/user/userPanel"}}>
+				<AccountMenuItem label={"Panel"}/>
+			</StyledLink>
+		</Grid>
+		<Grid item>
+			<StyledLink to={{pathname: "/user/userPanel"}}>
+				<AccountMenuItem label={"Logout"}/>
+			</StyledLink>
+		</Grid>
 	</Grid>
 );
 
