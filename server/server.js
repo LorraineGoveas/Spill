@@ -10,6 +10,13 @@ const webpackHotMiddleware = require('webpack-hot-middleware');
 
 const config = require('../config/config');
 const webpackConfig = require('../webpack.config');
+const LocalStrategy = require("passport-local");
+const passportLocalMongoose   = require("passport-local-mongoose");
+const passport = require("passport");
+const expressValidator = require('express-validator');
+const flash = require('connect-flash');
+//const session = require('express-session')
+
 
 const isDev = process.env.NODE_ENV !== 'production';
 const port  = process.env.PORT || 8080;
@@ -32,6 +39,43 @@ mongoose.Promise = global.Promise;
 const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+
+//app.use(flash());
+
+app.use(require("express-session")({    
+      secret:"Hello World, this is a session",    
+      resave: false,    
+      saveUninitialized: false
+}));
+
+// app.use(require("express-session")({    
+//       secret:"Hello World, this is a session",    
+//       resave: false,    
+//       saveUninitialized: false
+// }));
+
+// app.use(passport.initialize());
+// app.use(passport.session());
+
+// app.use(expressValidator({
+//   errorFormatter: function(param, msg, value) {
+//       var namespace = param.split('.')
+//       , root    = namespace.shift()
+//       , formParam = root;
+
+//     while(namespace.length) {
+//       formParam += '[' + namespace.shift() + ']';
+//     }
+//     return {
+//       param : formParam,
+//       msg   : msg,
+//       value : value
+//     };
+//   }
+// }));
+//passport.use(new LocalStrategy(User.authenticate()));
+//passport.serializeUser(User.serializeUser());
+//passport.deserializeUser(User.deserializeUser());
 
 // API routes
 require('./routes')(app);
