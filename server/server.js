@@ -38,13 +38,15 @@ const app = express();
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-//app.use(flash());
+
 
 app.use(require("express-session")({    
       secret:"Hello World, this is a session",    
       resave: false,    
       saveUninitialized: false
 }));
+
+
 
 
 // API routes
