@@ -72,51 +72,60 @@ export class ReportIssue extends Component {
 
 	render() {
 		return (
-			<CenterPage>
+			
 
-            <form onSubmit={this.handleSubmit}>
-                <br/>
-                <label>
-                    Type of Issue
-                    <br/>
-                    <select value={this.state.damageType} onChange={this.handleChange}>
-                        <option value="Wind Damage">Wind Damage</option>
-                        <option value="Tree Damage">Tree Damage</option>
-                        <option value="Chemical Spill">Chemical Spill</option>
-                        <option value="Oil Spill">Oil Spill</option>
-                    </select>
-                </label>
-                <br/>
-                <br/>
-                <input type="text" value={this.state.value}
-                onChange={this.locationNameChanged}
-                placeholder="Location Name.."></input>
-                <br/>
-                <br/>
-                <input type="text" value={this.state.value}
-                onChange={this.addressChanged}
-                placeholder="Address.."></input>
-                <br/>
-                <br/>
-                <input type="text" value={this.state.value}
-                onChange={this.cityChanged}
-                placeholder="City"></input>
-                <br/>
-                <br/>
-                <input type="text" value={this.state.value}
-                onChange={this.stateChanged}
-                placeholder="State"></input>
-                <br/>
-                <br/>
-                <input type="text" value={this.state.value}
-                onChange={this.zipChanged}
-                placeholder="Zip"></input>
-                <br/>
-                <br/>
-                <input type="submit" value="Submit" />
-            </form>
+            <Autocomplete
+    style={{width: '90%'}}
+    onPlaceSelected={(place) => {
+      console.log(place);
+    }}
+    types={['(regions)']}
+    componentRestrictions={{country: "ru"}}
+/>
 
-			</CenterPage>
+            // <form onSubmit={this.handleSubmit}>
+            //     <br/>
+            //     <label>
+            //         Type of Issue
+            //         <br/>
+            //         <select value={this.state.damageType} onChange={this.handleChange}>
+            //             <option value="Wind Damage">Wind Damage</option>
+            //             <option value="Tree Damage">Tree Damage</option>
+            //             <option value="Chemical Spill">Chemical Spill</option>
+            //             <option value="Oil Spill">Oil Spill</option>
+            //         </select>
+            //     </label>
+            //     <br/>
+            //     <br/>
+            //     <input type="text" value={this.state.value}
+            //     onChange={this.locationNameChanged}
+            //     placeholder="Location Name.."></input>
+            //     <br/>
+            //     <br/>
+            //     <input type="text" value={this.state.value}
+            //     onChange={this.addressChanged}
+            //     placeholder="Address.."></input>
+            //     <br/>
+            //     <br/>
+            //     <input type="text" value={this.state.value}
+            //     onChange={this.cityChanged}
+            //     placeholder="City"></input>
+            //     <br/>
+            //     <br/>
+            //     <input type="text" value={this.state.value}
+            //     onChange={this.stateChanged}
+            //     placeholder="State"></input>
+            //     <br/>
+            //     <br/>
+            //     <input type="text" value={this.state.value}
+            //     onChange={this.zipChanged}
+            //     placeholder="Zip"></input>
+            //     <br/>
+            //     <br/>
+            //     <input type="submit" value="Submit" />
+            // </form>
+
+			
 		);
 	}
 }

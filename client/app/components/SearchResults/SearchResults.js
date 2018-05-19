@@ -215,9 +215,14 @@ class SearchResults extends React.Component{
 		fetch(`/api/postRecords/${searchKey}/SearchAnything`)
 			.then(res => res.json())
 			.then(json => {
+				if(json.length > 0){
 				this.setState({
 					places: json
 				});
+			}
+			else{
+				this.fetchAllResults()
+			}
 			});
 	}
 	
@@ -229,7 +234,7 @@ class SearchResults extends React.Component{
 		if (searchKey != ''){
 		  this.fetchResultsWithSearch(searchKey)
 	    }
-	    else if (searchKey == ''){
+	    else if (searchKey.length == 0){
 	    	this.fetchAllResults()
 	    }
 
