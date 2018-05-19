@@ -24,6 +24,12 @@ module.exports = (app) => {
         .then(() => res.json(postRecord))
         .catch((err) => next(err));
     });
+     app.get('/api/postRecords/:keyword/SearchAnything', (req, res, next) => {
+        PostRecord.find( {"$text" : {"$search": sanitize(req.params.keyword)}})
+        .exec()
+        .then((postRecord) => res.json(postRecord))
+        .catch((err) => next(err));
+});
 
     app.get('/api/postRecords/:keyword/locSearch', (req, res, next) => {
         PostRecord.find( { "location_name": new RegExp( sanitize(req.params.keyword), "i" ) } )

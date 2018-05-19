@@ -33,7 +33,11 @@ mongoose.connect("mongodb://localhost:27017/myTestDB", {
   "pass": "SealTeam",
   "useMongoClient": true
 });
-mongoose.Promise = global.Promise;
+
+// mongoose.connect(isDev ? config.db_dev : config.db, {
+//   useMongoClient: true,
+// });
+// mongoose.Promise = global.Promise;
 
 
 const app = express();

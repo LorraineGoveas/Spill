@@ -205,18 +205,14 @@ class SearchResults extends React.Component{
 	}
 
 	fetchAllResults() {
-		console.log("Fetch all results");
-		fetch(`/api/postRecords/allResults`)
-			.then(res => res.json())
-			.then(json => {
-				this.setState({
-					places: json
-				});
-			});
-	}
+		fetch(`/api/postRecords/allResults`).then(res => res.json()).then(json => {
+			this.setState({places: json});
+		});
+}
 
-	fetchResultsWithSearchKey(searchKey) {
-		fetch(`/api/postRecords/${searchKey}/locSearch`)
+	
+	fetchResultsWithSearch(searchKey) {
+		fetch(`/api/postRecords/${searchKey}/SearchAnything`)
 			.then(res => res.json())
 			.then(json => {
 				this.setState({
@@ -224,39 +220,20 @@ class SearchResults extends React.Component{
 				});
 			});
 	}
-
-	fetchResultsWithCategory(category) {
-		fetch(`/api/postRecords/${category}/catSearch`)
-			.then(res => res.json())
-			.then(json => {
-				this.setState({
-					places: json
-				});
-			});
-	}
-
-	fetchResultsWithSearchAndCategory(searchKey, category) {
-		fetch(`/api/postRecords/${searchKey}/${category}/catLocSearch`)
-			.then(res => res.json())
-			.then(json => {
-				this.setState({
-					places: json
-				});
-			});
-	}
+	
 
 	initiateSearch() {
-		const {searchKey, category} = this.state;
+		const {searchKey} = this.state;
 		console.log("initiateSearch()");
-		if (category == '' && searchKey == '') {
-			this.fetchAllResults()
-		} else if (category == '' && searchKey != '') {
-			this.fetchResultsWithSearchKey(searchKey)
-		} else if (category != '' && searchKey == '') {
-			this.fetchResultsWithCategory(category)
-		} else {
-			this.fetchResultsWithSearchAndCategory(searchKey, category)
-		}
+		
+		if (searchKey != ''){
+		  this.fetchResultsWithSearch(searchKey)
+	    }
+	    else if (searchKey == ''){
+	    	this.fetchAllResults()
+	    }
+
+	   
 	}
 
 	searchTextChanged(event) {
