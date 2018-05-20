@@ -27,17 +27,17 @@ const port  = process.env.PORT || 8080;
 
 // Set up Mongoose
 
-mongoose.connect("mongodb://localhost:27017/myTestDB", {
-  "auth": {"authSource": "admin"},
-  "user": "team06Admin",
-  "pass": "SealTeam",
-  "useMongoClient": true
-});
-
-// mongoose.connect(isDev ? config.db_dev : config.db, {
-//   useMongoClient: true,
+// mongoose.connect("mongodb://localhost:27017/myTestDB", {
+//   "auth": {"authSource": "admin"},
+//   "user": "team06Admin",
+//   "pass": "SealTeam",
+//   "useMongoClient": true
 // });
-// mongoose.Promise = global.Promise;
+
+mongoose.connect(isDev ? config.db_dev : config.db, {
+  useMongoClient: true,
+});
+mongoose.Promise = global.Promise;
 
 
 const app = express();

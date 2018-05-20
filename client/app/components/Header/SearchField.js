@@ -20,6 +20,7 @@ class SearchField extends React.Component {
 			);
 		};
 
+		// TODO: "Enter" should initiate a search
 		return (
 			<Paper style={{height: "2.8em"}} >
 				<FormControl fullWidth onKeyPress={event =>{if(event.key === "Enter"){

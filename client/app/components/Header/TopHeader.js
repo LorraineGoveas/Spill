@@ -18,12 +18,12 @@ const Logo = () => (
 
 const CurrentPageLabel = (props) => {
 	return(
-		<StyledLink to={{pathname: props.href}}>
-			<Button
-				size={"small"}
-				style={{color: "white"}}
-			> {props.currentPage} </Button>
-		</StyledLink>
+		<Tooltip title={"Current Page"}>
+		<Typography
+			variant={"subheading"}
+			style={{color: "white", textTransform: "uppercase"}}
+		> {props.currentPage} </Typography>
+		</Tooltip>
 	)
 };
 
@@ -64,7 +64,7 @@ class SearchBar extends React.Component {
 		};
 
 		const SearchBarItemSettings = {
-			buttonGridItem: {
+			messageButton: {
 				item: true,
 				xs: 10,
 				sm: 11,
@@ -82,10 +82,12 @@ class SearchBar extends React.Component {
 			}
 		};
 
+		// TODO: Shouldn't have to replace page to perform another search
+		// TODO: Warn user of invalid search
 		return(
 			<Grid {...SearchBarSettings}>
 
-				<Grid {...SearchBarItemSettings.buttonGridItem}>
+				<Grid {...SearchBarItemSettings.messageButton}>
 					<TextField
 						{...SearchBarItemSettings.textField}
 						onKeyPress={this.handleKeyPress}
@@ -101,7 +103,7 @@ class SearchBar extends React.Component {
 						}
 					}}>
 						<Tooltip title={"Note: To get updated search, for now you have to move to a different page and navigate back to this one."}>
-						<IconButton> <Search/> </IconButton>
+							<IconButton> <Search/> </IconButton>
 						</Tooltip>
 					</Link>
 				</Grid>

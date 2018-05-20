@@ -20,10 +20,6 @@ import {MuiThemeProvider} from "material-ui/styles/index";
 import CssBaseline from 'material-ui/CssBaseline';
 
 import theme from './components/Theme';
-
-// TODO: Add Disclaimer to Home Page
-// TODO: Update Header to have a Search Text Field at all times
-
 render((
 	<Router >
 		<MuiThemeProvider theme={theme}>

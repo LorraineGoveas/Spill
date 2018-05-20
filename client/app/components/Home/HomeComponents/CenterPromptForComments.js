@@ -7,7 +7,7 @@ import IconButton from 'material-ui/IconButton';
 
 const CommentPrompt = (props) => {
 	const CommentPromptSettings = {
-		container: {
+		promptContainer: {
 			container: true,
 			direction: "row",
 			justify: "flex-start",
@@ -16,7 +16,7 @@ const CommentPrompt = (props) => {
 				height: "48px",
 			}
 		},
-		buttonGridItem: {
+		messageButton: {
 			item: true,
 			xs: 10,
 			sm: 10,
@@ -27,37 +27,38 @@ const CommentPrompt = (props) => {
 				fontSize: "14px",
 			},
 		},
-		avatarGridItem: {
+		avatarItem: {
 			item: true,
 			sm: 1,
 			xs: 1,
 		},
 		editGridItem: {
 			item: true,
-			xs: 1,
-			sm: 1,
+			xs: 2,
+			sm: 2,
 		}
 	};
 
+	const {promptContainer, avatarItem, messageButton, promptLabel} = CommentPromptSettings;
+
 	return(
-		<Grid {...CommentPromptSettings.container}>
-			<Grid {...CommentPromptSettings.avatarGridItem}> <Avatar> {props.userFirstInitial} </Avatar> </Grid>
-			<Grid {...CommentPromptSettings.buttonGridItem}>
-				<Typography {...CommentPromptSettings.promptLabel}>
-					Tell us about an environmental issue in your area
-				</Typography>
+		<Grid {...promptContainer}>
+			{/*<Grid {...avatarItem}>*/}
+				{/*<Avatar> {props.userFirstInitial} </Avatar>*/}
+			{/*</Grid>*/}
+
+			<Grid {...messageButton}>
+				<Typography {...promptLabel}>Tell us about an environmental issue in your area</Typography>
 			</Grid>
 
-			<Grid {...CommentPromptSettings.editGridItem}> <IconButton> <ModeEdit/> </IconButton></Grid>
+			<Grid {...CommentPromptSettings.editGridItem}>
+				<IconButton> <ModeEdit/> </IconButton>
+			</Grid>
 		</Grid>
 	)
 };
 
 class CenterPromptForComments extends React.Component {
-	constructor(props) {
-		super(props);
-	}
-
 	render() {
 		const CenterPromptForCommentsStyle = {
 			style: {

@@ -10,6 +10,7 @@ const AddPostButton = (props) => {
 			position: "fixed",
 			right: "2.5rem",
 			bottom: "2.5rem",
+			zIndex: 1100, // To make sure the button doesn't hide behind the footer
 			backgroundColor: props.theme.palette.secondary.dark,
 		},
 		onClick: props.handlePostButtonClick,

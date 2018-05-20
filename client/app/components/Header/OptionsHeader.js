@@ -47,14 +47,12 @@ const OptionsHeader = (props) => {
 			</Grid>
 
 			<Grid item xs={mobileSize} sm={2}>
-				<Tooltip title={"Warning: Browse is not implemented yet"}>
-					<StyledLink to={{pathname: "/"}}>
-						<Button style={{color: "white"}}
-								onClick={() => {props.onClick("browse", "/")}}>
-							Browse
-						</Button>
-					</StyledLink>
-				</Tooltip>
+				<StyledLink to={{pathname: "/report/issue"}}>
+					<Button style={{color: "white"}}
+							onClick={() => {props.onClick("Post", "/")}}>
+						Post a Hazard
+					</Button>
+				</StyledLink>
 			</Grid>
 
 			<Grid item xs={mobileSize} sm={2}>
