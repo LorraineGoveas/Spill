@@ -1,11 +1,11 @@
 import React from 'react';
 import { Card } from 'material-ui';
 import { Typography} from 'material-ui';
-import { Grid, Avatar } from 'material-ui';
+import { Grid } from 'material-ui';
 import {ModeEdit} from '@material-ui/icons';
 import IconButton from 'material-ui/IconButton';
 
-const CommentPrompt = (props) => {
+const CommentPrompt = () => {
 	const CommentPromptSettings = {
 		promptContainer: {
 			container: true,
@@ -39,14 +39,10 @@ const CommentPrompt = (props) => {
 		}
 	};
 
-	const {promptContainer, avatarItem, messageButton, promptLabel} = CommentPromptSettings;
+	const {promptContainer, messageButton, promptLabel} = CommentPromptSettings;
 
 	return(
 		<Grid {...promptContainer}>
-			{/*<Grid {...avatarItem}>*/}
-				{/*<Avatar> {props.userFirstInitial} </Avatar>*/}
-			{/*</Grid>*/}
-
 			<Grid {...messageButton}>
 				<Typography {...promptLabel}>Tell us about an environmental issue in your area</Typography>
 			</Grid>
