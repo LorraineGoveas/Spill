@@ -6,11 +6,6 @@ import Tooltip from 'material-ui/Tooltip';
 /**
  * All props are passed down by Header
  */
-
-const optionsHeaderStyle = {
-	minHeight: "48px",
-};
-
 const SignInOption = (props) => {
 	return(
 		<div>
@@ -18,9 +13,32 @@ const SignInOption = (props) => {
 		</div>
 	)
 };
+const HomeLink = props => <StyledLink to={{pathname: "/",}} {...props} style={{color:"white"}}/>;
+const HazardLink = props => <StyledLink to={{pathname: "/report/issue"}} {...props} style={{color:"white"}}/>;
+const SearchLink = props => <StyledLink to={{pathname: "/search/results"}} {...props} style={{color:"white"}}/>;
+const HelpLink = props => <StyledLink to={{pathname: "/"}} {...props} style={{color:"white"}}/>;
 
 const OptionsHeader = (props) => {
-	const mobileSize = 6;
+	const GridItemSettings = {
+		mobileItem: {
+			item: true,
+			xs: 6,
+			sm: 2,
+		},
+		emptyItem: {
+			item: true,
+			xs: 6,
+			sm: 2,
+			lg: 3,
+		},
+		rightItem: {
+			item: true,
+			xs: 6,
+			sm: 1,
+		}
+	};
+	const {mobileItem, emptyItem, rightItem} = GridItemSettings;
+
 	const AccountOption = () => {
 		return(
 			<div>
@@ -34,52 +52,38 @@ const OptionsHeader = (props) => {
 			direction={"row"}
 			justify={"flex-start"}
 			alignItems={"center"}
-			style={optionsHeaderStyle}
+			style={{minHeight: "48px",}}
 		>
-			<Grid item xs={mobileSize} sm={2}>
-				<StyledLink to={{pathname: "/"}}>
-					<Button
-						style={{color: "white"}}
-						onClick={() => {props.onClick("home", "/")}}>
-						Home
-					</Button>
-				</StyledLink>
+			<Grid {...mobileItem}>
+				<Button component={HomeLink} onClick={() => {props.onClick("Home")}}>
+					Home
+				</Button>
 			</Grid>
 
-			<Grid item xs={mobileSize} sm={2}>
-				<StyledLink to={{pathname: "/report/issue"}}>
-					<Button style={{color: "white"}}
-							onClick={() => {props.onClick("Post", "/")}}>
-						Post a Hazard
-					</Button>
-				</StyledLink>
+			<Grid {...mobileItem}>
+				<Button component={HazardLink} onClick={() => {props.onClick("Post")}}>
+					Post a Hazard
+				</Button>
 			</Grid>
 
-			<Grid item xs={mobileSize} sm={2}>
-				<StyledLink to={{pathname: "/search/results"}}>
-					<Button
-						style={{color: "white"}}
-						onClick={() => {props.onClick("search", "/search/results")}}>
-						Search
-					</Button>
-				</StyledLink>
+			<Grid {...mobileItem}>
+				<Button component={SearchLink} onClick={() => {props.onClick("Search")}}>
+					Search
+				</Button>
 			</Grid>
 
-			<Grid item xs={mobileSize} sm={2}>
+			<Grid {...mobileItem}>
 				<Tooltip title={"Warning: Help is not implemented yet"}>
-					<StyledLink to={{pathname: "/"}}>
-						<Button
-							style={{color: "white"}}
-							onClick={() => {props.onClick("help", "/")}}>
-							Help
-						</Button>
-					</StyledLink>
+					<Button component={HelpLink} onClick={() => {props.onClick("Help")}}>
+						Help
+					</Button>
 				</Tooltip>
 			</Grid>
 
-			<Grid item xs={mobileSize}
-				  sm={2} lg={3}>{/*EMPTY. This is for right-aligning the Account Button*/}</Grid>
-			<Grid item xs={mobileSize} sm={1}>
+			<Grid {...emptyItem}>
+				{/*EMPTY. This is for right-aligning the Account Button*/}
+				</Grid>
+			<Grid {...rightItem}>
 				<AccountOption/>
 			</Grid>
 		</Grid>

@@ -12,14 +12,6 @@ Two Rows:
 	Options Header with Home, Browse, Search, Help, and AccountOptions
 */
 
-function getHrefForCurrentPage(currentPage) {
-	if (currentPage === "home") {
-		return "/"
-	} else if (currentPage === "browse") {
-		return "/search/results" // Proof of concept, this shouldn't actually be the link
-	}
-}
-
 class Header extends React.Component {
 	constructor(props) {
 		super(props);
@@ -76,7 +68,6 @@ class Header extends React.Component {
 		console.log("Logged out");
 	}
 
-	// TODO: Current Page state should persist when user navigates to new page
 	render() {
 		// If the user is not signed in, when the user clicks the "Sign In" button, the Sign In Window will appear
 
@@ -97,7 +88,7 @@ class Header extends React.Component {
 
 		return(
 			<AppBar position="static">
-				<TopHeader currentPage={currentPage} href={getHrefForCurrentPage(currentPage)}/>
+				<TopHeader currentPage={currentPage}/>
 
 				<OptionsHeader onClick={this.handlePageClick}
 							   isLoggedIn={this.state.isLoggedIn}

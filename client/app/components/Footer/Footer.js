@@ -4,20 +4,19 @@ import { withStyles } from 'material-ui/styles';
 import { Button, Toolbar, Grid } from 'material-ui';
 import { StyledLink} from "../utils/StyledLink";
 
-
 const styles = {
 	root: {
 		flexGrow: 1,
 		backgroundColor: theme.palette.primary.dark,
 	},
-	Button: {
+	footerButton: {
 		color: "white",
 		textTransform: 'capitalize',
 	},
 };
+const AboutLink = props => <StyledLink to={{pathname: "/team/about"}} {...props}/>;
 
 class Footer extends React.Component {
-	// TODO: Rename "Report an issue" to "Post a Hazard", then place this in Browse
 	render() {
 		const {classes} = this.props;
 		const GridSettings = {
@@ -32,22 +31,14 @@ class Footer extends React.Component {
 				<Toolbar className={classes.root}>
 					<Grid {...GridSettings}>
 						<Grid item xs={6} sm={3} lg={2}>
-							<StyledLink to={{pathname: "/team/about"}}>
-								<Button className={classes.Button}>
-									About the Team
-								</Button>
-							</StyledLink>
+							<Button className={classes.footerButton} component={AboutLink}>
+								About the Team
+							</Button>
 						</Grid>
-
-						{/*<Grid item xs={6} sm={3} lg={2}>*/}
-							{/*<StyledLink to={{pathname: "/report/issue"}}>*/}
-								{/*<Button className={classes.Button}> Post a Hazard </Button>*/}
-							{/*</StyledLink>*/}
-						{/*</Grid>*/}
 
 						<Grid item xs={5} sm={3} lg={2}>
 							{/*<StyledLink to={{pathname: "/policy"}}>*/}
-							<Button className={classes.Button}> Terms </Button>
+							<Button className={classes.footerButton}> Terms </Button>
 							{/*</StyledLink>*/}
 						</Grid>
 

@@ -17,6 +17,7 @@ class WrappedSearchBar extends React.Component {
 		this.handleKeyPress = this.handleKeyPress.bind(this);
 	}
 
+	// TODO: Handle invalid input appropriately. At the moment this is just a proof of concept
 	searchTextChanged(event) {
 		if (event.target.value.includes("@")) {
 			console.log("Invalid input");
@@ -36,6 +37,10 @@ class WrappedSearchBar extends React.Component {
 	handleKeyPress(event) {
 		const {history} = this.props;
 		if (event.key === "Enter") {
+			if (this.props.location.pathname === "/search/results/") {
+				// TODO: Find a better solution instead of reloading, as this version is slow
+				window.location.reload();
+			}
 			history.push({
 				pathname: "/search/results/",
 				state: {
