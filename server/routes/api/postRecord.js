@@ -33,7 +33,7 @@ module.exports = (app) => {
 
         console.log(imageFile);
 
-        mv(imageFile.path, `client/public/assets/thumbs/${imageFile.filename}.jpg`, function(err) {
+        mv(imageFile.path, `../client/public/assets/thumbs/${imageFile.filename}.jpg`, function(err) {
             if (err) {
                 console.log(err)
             }
