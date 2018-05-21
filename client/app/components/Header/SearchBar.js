@@ -40,7 +40,7 @@ class WrappedSearchBar extends React.Component {
 		if (event.key === "Enter") {
 			if (this.state.invalidInput) { return } // Don't search if the input isn't valid
 
-			if (this.props.location.pathname === "/search/results/") {
+			if (this.props.location.pathname === "/search/results") {
 				// TODO: Find a better solution instead of reloading, as this version is slow
 				window.location.reload();
 			}

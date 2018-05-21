@@ -66,14 +66,14 @@ module.exports = (app) => {
     });
 
     app.get('/api/postRecords/:keyword/locSearch', (req, res, next) => {
-        PostRecord.find( { "location_name": new RegExp( sanitize(req.params.keyword), "i" ) } )
+        PostRecord.find( { "post_title": new RegExp( sanitize(req.params.keyword), "i" ) } )
         .exec()
         .then((postRecord) => res.json(postRecord))
         .catch((err) => next(err));
     });
 
     app.get('/api/postRecords/:keyword/:category/catLocSearch', (req, res, next) => {
-        PostRecord.find( { "location_name": new RegExp( sanitize(req.params.keyword), "i" ), "type": sanitize(req.params.category)} )
+        PostRecord.find( { "post_title": new RegExp( sanitize(req.params.keyword), "i" ), "type": sanitize(req.params.category)} )
         .exec()
         .then((postRecord) => res.json(postRecord))
         .catch((err) => next(err));
