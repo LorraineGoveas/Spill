@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9a7ae2b6-8fd9-4e8c-9a88-8fd344aec828" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/client/app/components/Home/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/app/components/Home/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/app/components/SearchResults/SearchResults.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/app/components/SearchResults/SearchResults.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -19,43 +19,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="SearchResults.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="SearchResults.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/app/components/SearchResults/SearchResults.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="71">
-              <caret line="70" column="26" lean-forward="true" selection-start-line="70" selection-start-column="26" selection-end-line="70" selection-end-column="26" />
-              <folding>
-                <element signature="e#346#484#0" />
-                <element signature="e#515#560#0" />
-                <element signature="e#566#645#0" />
-                <element signature="e#707#758#0" />
-                <element signature="e#786#825#0" />
-                <element signature="e#839#1017#0" />
-                <element signature="e#1172#1346#0" />
-                <element signature="e#1380#1481#0" />
-                <element signature="e#1517#1636#0" />
-                <element signature="e#1663#1836#0" />
-                <element signature="e#1851#2397#0" />
-                <element signature="n#!!block;n#constructor#0;n#SearchResults#0" />
-                <element signature="n#!!block;n#componentDidMount#0;n#SearchResults#0" />
-                <element signature="n#!!block;n#performNewSearch#0;n#SearchResults#0" />
-                <element signature="n#!!block;n#componentDidUpdate#0;n#SearchResults#0" />
-                <element signature="n#!!block;n#handleSearchFromHeader#0;n#SearchResults#0" />
-                <element signature="n#!!block;n#fetchAllResults#0;n#SearchResults#0" />
-                <element signature="n#!!block;n#fetchResultsWithSearch#0;n#SearchResults#0" />
-                <element signature="n#!!block;n#initiateSearch#0;n#SearchResults#0" />
-                <element signature="n#!!block;n#searchTextChanged#0;n#SearchResults#0" />
-                <element signature="n#!!block;n#categoryTextChanged#0;n#SearchResults#0" />
-              </folding>
+            <state relative-caret-position="628">
+              <caret line="181" lean-forward="true" selection-start-line="181" selection-end-line="181" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Home.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Home.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/app/components/Home/Home.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="223">
-              <caret line="55" column="17" lean-forward="true" selection-start-line="55" selection-start-column="17" selection-end-line="55" selection-end-column="17" />
+            <state relative-caret-position="131">
+              <caret line="51" column="34" lean-forward="true" selection-start-line="51" selection-start-column="34" selection-end-line="51" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -80,8 +57,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Link</find>
-      <find>= props =&gt;</find>
       <find>/user/userPanel/updatePassword</find>
       <find>SampleInfo</find>
       <find>sample</find>
@@ -97,7 +72,6 @@
       <find>handleNextButton</find>
       <find>/signU</find>
       <find>postReco</find>
-      <find>fetch</find>
       <find>fetch(</find>
       <find>SignInWindow</find>
       <find>Wrong email or password</find>
@@ -110,6 +84,9 @@
       <find>Create an Account</find>
       <find>Create Account</find>
       <find>reportIssue</find>
+      <find>fetch</find>
+      <find>/postRecords</find>
+      <find>postRecords/</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/client/app/components/UserPanel</dir>
@@ -162,7 +139,6 @@
         <option value="$PROJECT_DIR$/client/app/components/UserPanel/UpdatePassword.js" />
         <option value="$PROJECT_DIR$/client/app/components/UserPanel/Activity.js" />
         <option value="$PROJECT_DIR$/client/app/components/UserPanel/Dashboard.js" />
-        <option value="$PROJECT_DIR$/client/app/components/SearchResults/SearchResults.js" />
         <option value="$PROJECT_DIR$/client/app/components/Login/login.js" />
         <option value="$PROJECT_DIR$/client/app/components/Header/SearchBar.js" />
         <option value="$PROJECT_DIR$/client/app/components/Header/OptionsHeader.js" />
@@ -172,6 +148,7 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/client/app/components/Header/Header.js" />
         <option value="$PROJECT_DIR$/client/app/components/Home/Home.js" />
+        <option value="$PROJECT_DIR$/client/app/components/SearchResults/SearchResults.js" />
       </list>
     </option>
   </component>
@@ -384,7 +361,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="171511000" />
+    <option name="totallyTimeSpent" value="171929000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -801,36 +778,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/app/components/SearchResults/SearchResults.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="71">
-          <caret line="70" column="26" lean-forward="true" selection-start-line="70" selection-start-column="26" selection-end-line="70" selection-end-column="26" />
-          <folding>
-            <element signature="e#346#484#0" />
-            <element signature="e#515#560#0" />
-            <element signature="e#566#645#0" />
-            <element signature="e#707#758#0" />
-            <element signature="e#786#825#0" />
-            <element signature="e#839#1017#0" />
-            <element signature="e#1172#1346#0" />
-            <element signature="e#1380#1481#0" />
-            <element signature="e#1517#1636#0" />
-            <element signature="e#1663#1836#0" />
-            <element signature="e#1851#2397#0" />
-            <element signature="n#!!block;n#constructor#0;n#SearchResults#0" />
-            <element signature="n#!!block;n#componentDidMount#0;n#SearchResults#0" />
-            <element signature="n#!!block;n#performNewSearch#0;n#SearchResults#0" />
-            <element signature="n#!!block;n#componentDidUpdate#0;n#SearchResults#0" />
-            <element signature="n#!!block;n#handleSearchFromHeader#0;n#SearchResults#0" />
-            <element signature="n#!!block;n#fetchAllResults#0;n#SearchResults#0" />
-            <element signature="n#!!block;n#fetchResultsWithSearch#0;n#SearchResults#0" />
-            <element signature="n#!!block;n#initiateSearch#0;n#SearchResults#0" />
-            <element signature="n#!!block;n#searchTextChanged#0;n#SearchResults#0" />
-            <element signature="n#!!block;n#categoryTextChanged#0;n#SearchResults#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/app/components/Home/HomeComponents/OverlayForFetchedData.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
@@ -840,8 +787,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/app/components/Home/Home.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
-          <caret line="55" column="17" lean-forward="true" selection-start-line="55" selection-start-column="17" selection-end-line="55" selection-end-column="17" />
+        <state relative-caret-position="131">
+          <caret line="51" column="34" lean-forward="true" selection-start-line="51" selection-start-column="34" selection-end-line="51" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/app/components/SearchResults/SearchResults.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="628">
+          <caret line="181" lean-forward="true" selection-start-line="181" selection-end-line="181" />
         </state>
       </provider>
     </entry>
