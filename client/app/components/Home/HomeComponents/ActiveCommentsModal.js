@@ -2,6 +2,7 @@ import React from 'react';
 import {  Paper} from 'material-ui';
 import { Modal } from 'material-ui';
 import {CreateComment} from "./CreateComment";
+import {ReportIssue} from "../../ReportIssue/ReportIssue";
 
 const ActiveCommentsModal = (props) => {
 	const ActiveCommentsStyle = {
@@ -20,9 +21,10 @@ const ActiveCommentsModal = (props) => {
 	return(
 		<Modal open={props.open} onClose={props.handleClose}>
 			<Paper {...ActiveCommentsStyle}>
-				<CreateComment
-					{...UserCreatingComment}
-					handleCancel={props.handleClose}/>
+				<ReportIssue/>
+				{/*<CreateComment*/}
+					{/*{...UserCreatingComment}*/}
+					{/*handleCancel={props.handleClose}/>*/}
 			</Paper>
 		</Modal>
 	)

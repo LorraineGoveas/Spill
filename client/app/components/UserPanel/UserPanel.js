@@ -4,15 +4,15 @@ import {Profile} from "./Profile";
 import AccountSettings from "./AccountSettings";
 import {Activity} from "./Activity";
 import {UpdatePassword} from "./UpdatePassword";
-
 import {Overview} from "./Overview";
+import Dashboard from './Dashboard'
+
 import {
 	BrowserRouter as Router,
 	Route,
 	Switch
 } from 'react-router-dom'
 
-// import Login from './Login';
 /**
  * The layout of this page consists of nested Grid Containers
  * The left side (Account Settings) is a vertical Grid Container
@@ -66,6 +66,7 @@ class UserPanel extends React.Component{
 							<Grid item xs={12}><Route path="/user/userPanel/overview" component={Overview}/></Grid>
 							<Grid item xs={12}><Route path="/user/userPanel/activity" component={Activity}/></Grid>
 							<Grid item xs={12}><Route path="/user/userPanel/userPanel" component={Activity}/></Grid>
+							<Grid item xs={12}><Route path="/user/userPanel/dashboard" component={Dashboard}/></Grid>
 							<Grid item xs={12}><Route path="/user/userPanel/updatePassword" component={UpdatePassword}/></Grid>
 						</UserPanelContentGrid>
 					</UserPanelContainer>

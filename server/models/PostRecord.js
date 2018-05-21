@@ -13,6 +13,18 @@ const PostRecordSchema = new mongoose.Schema({
         type: String,
         default: ''
     },
+    post_title: {
+        type: String,
+        default: ''
+    },
+    post_user: {
+        type: String,
+        default: ''
+    },
+    post_id: {
+        type: String,
+        default: ''
+    },
     address: {
         type: String,
         default: ''

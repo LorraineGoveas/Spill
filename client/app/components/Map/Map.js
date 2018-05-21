@@ -18,14 +18,6 @@ class Map extends Component {
         this.setState({map: map})
     }
 
-	// moveTheMap(lat, lng) {
-	// 	console.log("moveTheMap()");
-	// 	this.setState({
-	// 		selectedPlaceLatitude: parseFloat(lat),
-	// 		selectedPlaceLng: parseFloat(lng)
-	// 	});
-	// }
-
     render(){
         const markers = this.props.markers || [];
 

@@ -8,6 +8,8 @@ import {
 	AddPostButton, ActiveCommentsModal
 } from './HomeComponents';
 
+import {ReportIssue} from "../ReportIssue/ReportIssue";
+
 class Home extends Component {
 	constructor(props) {
 		super(props);
@@ -50,10 +52,12 @@ class Home extends Component {
 	}
 
 	displayFetchedData(place, i) {
-		const {image_src, location_name, address, city, state, zip, type, status} = place;
+		const { post_title, image_src, location_name, address, city, state, zip, type, status} = place;
 
 		const Description = () => (
 			<div>
+				{location_name}
+				<br/>
 				{type}
 				<br/>
 				{city}, {state} {zip}
@@ -77,7 +81,7 @@ class Home extends Component {
 		return (
 			<GridListTile key={i} cols={1}>
 				<img {...FetchedImageSettings}/>
-				<OverlayForFetchedData title={location_name}>
+				<OverlayForFetchedData title={post_title}>
 					<Description/>
 				</OverlayForFetchedData>
 			</GridListTile>
@@ -114,15 +118,18 @@ class Home extends Component {
 				sm: 12,
 			}
 		};
+		const DisplayCenterPromptIfDesktop = () => {
+			if (this.props.width !== "xs") {
+				return(<CenterPromptForComments userFirstInitial={"F"} onClick={this.handlePostButtonClick}/>)
+			}
+		};
 
 		return (
 			<div {...MainContentAreaStyle}>
 				<Disclaimer/>
 				<Grid {...GridContentAreaStyles.container}>
-					<Grid {...GridContentAreaStyles.item}>
-						<CenterPromptForComments userFirstInitial={"F"} onClick={this.handlePostButtonClick}/>
-					</Grid>
-					<Grid {...GridContentAreaStyles.item}> <FetchedContent {...FetchedContentSettings}/></Grid>
+					<Grid {...GridContentAreaStyles.item}>{DisplayCenterPromptIfDesktop()}</Grid>
+					<Grid {...GridContentAreaStyles.item} style={{minWidth: "500px"}}> <FetchedContent {...FetchedContentSettings}/></Grid>
 					<Grid {...GridContentAreaStyles.item}> <hr/> </Grid>
 				</Grid>
 				<AddPostButton handlePostButtonClick={this.handlePostButtonClick} theme={theme}/>
