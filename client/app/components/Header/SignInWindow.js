@@ -62,7 +62,7 @@ class SignInWindow extends React.Component {
 						
 						
        <form action="/api/registeredUsers" method="post">
-                        <input type="text" name="logemail" placeholder="E-mail" required=""/>
+                        <input type="text" name="logemail" placeholder="Username" required=""/>
                         <br/>
                         <br/>
                         <input type="password" name="logpassword" placeholder="Password" required=""/>
