@@ -21,6 +21,9 @@ const flash = require('connect-flash');
 const isDev = process.env.NODE_ENV !== 'production';
 const port  = process.env.PORT || 8080;
 
+const fileUpload = require('express-fileupload');
+const cors = require('cors');
+
 
 // Configuration
 // ================================================================================================
@@ -46,15 +49,15 @@ app.use(bodyParser.json());
 
 //app.use(flash());
 
-app.use(require("express-session")({    
-      secret:"Hello World, this is a session",    
-      resave: false,    
+app.use(require("express-session")({
+      secret:"Hello World, this is a session",
+      resave: false,
       saveUninitialized: false
 }));
 
-// app.use(require("express-session")({    
-//       secret:"Hello World, this is a session",    
-//       resave: false,    
+// app.use(require("express-session")({
+//       secret:"Hello World, this is a session",
+//       resave: false,
 //       saveUninitialized: false
 // }));
 
@@ -106,12 +109,16 @@ if (isDev) {
 
   app.use(webpackHotMiddleware(compiler));
   app.use(express.static(path.resolve(__dirname, '../dist')));
+  app.use(cors());
+  app.use(fileUpload());
 } else {
   app.use(express.static(path.resolve(__dirname, '../dist')));
   app.get('*', function (req, res) {
     res.sendFile(path.resolve(__dirname, '../dist/index.html'));
     res.end();
   });
+  app.use(cors());
+  app.use(fileUpload());
 }
 
 app.listen(port, '0.0.0.0', (err) => {
