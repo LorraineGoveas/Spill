@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import style from 'styled-components';
-
+import Dropzone from 'react-dropzone';
+var FormData = require('form-data');
 
 const CenterPage = style.div`
     text-align: center;
@@ -17,7 +18,9 @@ export class ReportIssue extends Component {
             address: 'addr',
             city: 'city',
             state: 'state',
-            zip: 'zip'
+            zip: 'zip',
+            postTitle: 'title',
+            photoFile: File
         };
 
         this.handleChange = this.handleChange.bind(this);
@@ -27,11 +30,16 @@ export class ReportIssue extends Component {
         this.cityChanged = this.cityChanged.bind(this);
         this.stateChanged = this.stateChanged.bind(this);
         this.zipChanged = this.zipChanged.bind(this);
-
+        this.postTitleChanged = this.postTitleChanged.bind(this);
+        this.handleDrop = this.handleDrop.bind(this);
 	}
 
     handleChange(event) {
         this.setState({damageType: event.target.value});
+    }
+
+    postTitleChanged(event) {
+        this.setState({postTitle: event.target.value});
     }
 
     locationNameChanged(event) {
@@ -62,13 +70,29 @@ export class ReportIssue extends Component {
         const state = this.state.state
         const zip = this.state.zip
         const address = this.state.address
+        const postTitle = this.state.postTitle
+        const photo = this.state.photoFile
 
-        fetch(`/api/postRecords/${type}/${name}/${address}/${city}/${state}/${zip}/ReportIssue`, { method: 'POST' })
 
-        alert('You have succesfully submitted your issue!')
+        var photoData = new FormData();
+        photoData.append('file', this.state.photoFile);
+        photoData.append('filename', this.state.photoFile.name);
+
+        fetch(`/api/postRecords/${type}/${name}/${address}/${city}/${state}/${zip}/${postTitle}/ReportIssue`, {
+            method: 'POST',
+            body: photoData
+        })
+
+        alert('You have succesfully submitted your issue!');
+
 
         event.preventDefault();
     }
+
+    handleDrop(acceptedFiles) {
+        this.setState({photoFile: acceptedFiles[0]})
+    }
+
 
 	render() {
 		return (
@@ -86,6 +110,11 @@ export class ReportIssue extends Component {
                         <option value="Oil Spill">Oil Spill</option>
                     </select>
                 </label>
+                <br/>
+                <br/>
+                <input type="text" value={this.state.value}
+                onChange={this.postTitleChanged}
+                placeholder="Post title.."></input>
                 <br/>
                 <br/>
                 <input type="text" value={this.state.value}
@@ -115,6 +144,16 @@ export class ReportIssue extends Component {
                 <br/>
                 <input type="submit" value="Submit" />
             </form>
+
+            <Dropzone onDrop={(files) => this.handleDrop(files)}>
+                <div>Add an image to your post</div>
+            </Dropzone>
+
+            <img src={this.state.photoFile.preview}
+                alt={this.state.photoFile.name}
+                width={200}
+                height={200} />
+
 
 			</CenterPage>
 		);

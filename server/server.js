@@ -16,11 +16,14 @@ const passport = require("passport");
 const expressValidator = require('express-validator');
 const flash = require('connect-flash');
 //const session = require('express-session')
+const fileUpload = require('express-fileupload');
+const cors = require('cors');
 
 
 const isDev = process.env.NODE_ENV !== 'production';
 const port  = process.env.PORT || 8080;
 
+var multer = require('multer');
 
 // Configuration
 // ================================================================================================
@@ -42,15 +45,18 @@ app.use(bodyParser.json());
 
 //app.use(flash());
 
-app.use(require("express-session")({    
-      secret:"Hello World, this is a session",    
-      resave: false,    
+app.use(require("express-session")({
+      secret:"Hello World, this is a session",
+      resave: false,
       saveUninitialized: false
 }));
 
-// app.use(require("express-session")({    
-//       secret:"Hello World, this is a session",    
-//       resave: false,    
+
+
+
+// app.use(require("express-session")({
+//       secret:"Hello World, this is a session",
+//       resave: false,
 //       saveUninitialized: false
 // }));
 
@@ -87,6 +93,8 @@ if (isDev) {
     verbose: false
   }));
 
+
+
   app.use(webpackDevMiddleware(compiler, {
     publicPath: webpackConfig.output.publicPath,
     contentBase: path.resolve(__dirname, '../client/public'),
@@ -100,14 +108,20 @@ if (isDev) {
     }
   }));
 
+
   app.use(webpackHotMiddleware(compiler));
   app.use(express.static(path.resolve(__dirname, '../dist')));
+
+  app.use(cors());
+  app.use(fileUpload());
 } else {
   app.use(express.static(path.resolve(__dirname, '../dist')));
   app.get('*', function (req, res) {
     res.sendFile(path.resolve(__dirname, '../dist/index.html'));
     res.end();
   });
+  app.use(cors());
+  app.use(fileUpload());
 }
 
 app.listen(port, '0.0.0.0', (err) => {
