@@ -50,10 +50,12 @@ class Home extends Component {
 	}
 
 	displayFetchedData(place, i) {
-		const {image_src, location_name, address, city, state, zip, type, status} = place;
+		const { post_title, image_src, location_name, address, city, state, zip, type, status} = place;
 
 		const Description = () => (
 			<div>
+				{location_name}
+				<br/>
 				{type}
 				<br/>
 				{city}, {state} {zip}
@@ -77,7 +79,7 @@ class Home extends Component {
 		return (
 			<GridListTile key={i} cols={1}>
 				<img {...FetchedImageSettings}/>
-				<OverlayForFetchedData title={location_name}>
+				<OverlayForFetchedData title={post_title}>
 					<Description/>
 				</OverlayForFetchedData>
 			</GridListTile>
