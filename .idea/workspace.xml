@@ -22,8 +22,13 @@
       <file leaf-file-name="SearchBar.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/app/components/Header/SearchBar.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="763">
-              <caret line="114" column="23" selection-start-line="114" selection-start-column="23" selection-end-line="114" selection-end-column="23" />
+            <state relative-caret-position="299">
+              <caret line="24" column="48" lean-forward="true" selection-start-line="24" selection-start-column="48" selection-end-line="24" selection-end-column="48" />
+              <folding>
+                <element signature="n#!!block;n#constructor#0;n#WrappedSearchBar#0" />
+                <element signature="n#!!block;n#setCategory#0;n#WrappedSearchBar#0" />
+                <element signature="n#!!block;n#handleKeyPress#0;n#WrappedSearchBar#0" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -90,8 +95,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>yellow</find>
-      <find>Create an Account</find>
       <find>Create Account</find>
       <find>reportIssue</find>
       <find>fetch</find>
@@ -120,6 +123,8 @@
       <find>CreateComment</find>
       <find>Comments</find>
       <find>button</find>
+      <find>iconbut</find>
+      <find>regex</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/client/app/components/UserPanel</dir>
@@ -379,7 +384,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="177989000" />
+    <option name="totallyTimeSpent" value="178492000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -832,8 +837,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/app/components/Header/SearchBar.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="763">
-          <caret line="114" column="23" selection-start-line="114" selection-start-column="23" selection-end-line="114" selection-end-column="23" />
+        <state relative-caret-position="299">
+          <caret line="24" column="48" lean-forward="true" selection-start-line="24" selection-start-column="48" selection-end-line="24" selection-end-column="48" />
+          <folding>
+            <element signature="n#!!block;n#constructor#0;n#WrappedSearchBar#0" />
+            <element signature="n#!!block;n#setCategory#0;n#WrappedSearchBar#0" />
+            <element signature="n#!!block;n#handleKeyPress#0;n#WrappedSearchBar#0" />
+          </folding>
         </state>
       </provider>
     </entry>

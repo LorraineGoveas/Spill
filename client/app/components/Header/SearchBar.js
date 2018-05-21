@@ -22,7 +22,7 @@ class WrappedSearchBar extends React.Component {
 	searchTextChanged({target: {value}}) {
 		// RegEx for letters and numbers
 		// Check if search input matches the given RegEx
-		const acceptedChars = /^[0-9a-zA-Z]+$/;
+		const acceptedChars = /^[0-9a-z A-Z]+$/;
 		if (value.length > 0 && value.match(acceptedChars) === null) {
 			this.setState({
 				invalidInput: true,
@@ -139,7 +139,7 @@ class WrappedSearchBar extends React.Component {
 
 				<Grid {...searchIcon}>
 					{/*Disable when input is invalid*/}
-					<IconButton component={SearchLink} disabled={this.state.invalidInput}> <Search/> </IconButton>
+					<IconButton component={SearchLink} disabled={true}> <Search/> </IconButton>
 				</Grid>
 			</Grid>
 		)
