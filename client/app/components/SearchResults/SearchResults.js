@@ -47,17 +47,17 @@ const MapsContainer = (props) => {
 };
 
 function displayFetchedData(place, i) {
-	const {image_src, location_name, address, city, state, zip, type, status,} = place;
+	const {post_title, image_src, location_name, address, city, state, zip, type, status,} = place;
 	const coordinates = {
-
 		// Webstorm complains about this, but this is the only way to get it to work
-
 		latitude: parseFloat(place.location_lat),
 		longitude: parseFloat(place.location_lng),
 	};
 
 	const Description = () => (
 		<div>
+			{location_name}
+			<br/>
 			{type}
 			<br/>
 			{city}, {state} {zip}
@@ -100,7 +100,7 @@ function displayFetchedData(place, i) {
 			<GridList {...GridListStyles}>
 				<GridListTile cols={1}>
 					<img {...FetchedImageSettings}/>
-					<OverlayForFetchedData title={location_name}>
+					<OverlayForFetchedData title={post_title}>
 						<Description/>
 					</OverlayForFetchedData>
 				</GridListTile>
@@ -131,18 +131,25 @@ class SearchResults extends React.Component{
 		this.searchTextChanged = this.searchTextChanged.bind(this);
 		this.categoryTextChanged = this.categoryTextChanged.bind(this);
 		this.handleSearchFromHeader = this.handleSearchFromHeader.bind(this);
+
+		this.caseTwo = this.caseTwo.bind(this);
+		this.caseThree = this.caseThree.bind(this);
+		this.caseFour = this.caseFour.bind(this);
 	}
 
 	componentDidMount() {
 		if (this.props.location.state) {
-			const { inputSearch, shouldSearch} = this.props.location.state;
+			const { inputSearch, shouldSearch, category} = this.props.location.state;
 			this.setState({
+				category: category,
 				searchInput: inputSearch,
 				searchKey: inputSearch,
 				shouldSearch: shouldSearch,
 			});
 		} else {
+
 			this.setState({
+				category: "Any",
 				searchInput: "",
 				searchKey: "",
 				shouldSearch: true,
@@ -152,6 +159,7 @@ class SearchResults extends React.Component{
 	}
 
 	performNewSearch(input) {
+		console.log("performNewSearch");
 		this.setState({
 			searchInput: input
 		});
@@ -170,36 +178,69 @@ class SearchResults extends React.Component{
 	}
 
 	handleSearchFromHeader() {
+		console.log("handleSearchFromHeader()");
 		this.initiateSearch();
 	}
 
 	fetchAllResults() {
-		console.log("Fetching all results");
+		// If any && blank --> return all
 		fetch(`/api/postRecords/allResults`).then(res => res.json()).then(json => {
 			this.setState({places: json});
 		});
 	}
 
-	fetchResultsWithSearch(searchKey) {
-		fetch(`/api/postRecords/${searchKey}/locSearch`)
+	caseTwo(keyword, category) {
+		fetch(`/api/postRecords/${keyword}/${category}/catLocSearch`)
 			.then(res => res.json())
 			.then(json => {
-				this.setState({
-					places: json
-				});
+				this.setState({places: json});
+			});
+	}
+
+	caseThree(keyword) {
+		fetch(`/api/postRecords/${keyword}/locSearch`)
+			.then(res => res.json())
+			.then(json => {
+				this.setState({places: json});
+			});
+	}
+
+	caseFour(category) {
+		fetch(`/api/postRecords/${category}/catSearch`)
+			.then(res => res.json())
+			.then(json => {
+				this.setState({places: json});
 			});
 	}
 
 	initiateSearch() {
-		const {searchKey} = this.state;
-		// console.log("initiateSearch()");
+		console.log("Initiate search");
+		const { category, searchInput} = this.state;
+		console.log("Category: " + category);
+		console.log("SearchInput: " + searchInput);
 
-		if (searchKey != ''){
-			this.fetchResultsWithSearch(searchKey)
-		} else if (searchKey == ''){
+		const categoryIsAny = (category === "Any");
+		const categoryIsntANY = (category !== "Any");
+
+		const searchBarHasText = (searchInput !== " ");
+		const searchBarDoesNotHaveText = (searchInput === " ");
+
+
+		// if (categoryIsAny && searchDoesNotHaveText)
+		if (categoryIsAny && searchBarDoesNotHaveText) {
+			console.log("Case 1. If (category==ANY) && !searchBarHasText  --> return allResults");
 			this.fetchAllResults()
-		}
+		} else if (categoryIsntANY && searchBarHasText) {
+			console.log("Case 2: If (category!=ANY && searchBarHasText) --> catLocSearch")
+			this.caseTwo(searchInput, category);
 
+		} else if (categoryIsAny && searchBarHasText) {
+			console.log("Case 3. If (category==ANY && searchBarHasText) --> locSearch");
+			this.caseThree(searchInput);
+		} else if (categoryIsntANY && searchBarDoesNotHaveText) {
+			console.log("Case 4. If (category!=ANY && !searchBarHasText ) --> catSearch");
+			this.caseFour(category);
+		}
 	}
 
 	searchTextChanged(event) {
@@ -211,6 +252,7 @@ class SearchResults extends React.Component{
 	}
 
 	render(){
+		// console.log("Category: ~!~!" + this.state.category);
 		const {places, searchInput} = this.state;
 		return(
 			<div>
