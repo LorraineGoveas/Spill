@@ -130,19 +130,19 @@ class SearchResults extends React.Component{
 	}
 
 	componentDidMount() {
-		const { sampleInfo, shouldSearch} = this.props.location.state;
+		const { inputSearch, shouldSearch} = this.props.location.state;
 		this.setState({
-			searchInput: sampleInfo,
-			searchKey: sampleInfo,
+			searchInput: inputSearch,
+			searchKey: inputSearch,
 			shouldSearch: shouldSearch,
 		});
 	}
 
 	componentDidUpdate(prevProps, prevState, snapshot) {
-		console.log("didUpdate()");
-		if (!(prevState.searchInput == this.props.location.state.sampleInfo)) {
+		// console.log("didUpdate()");
+		if (!(prevState.searchInput == this.props.location.state.inputSearch)) {
 			this.setState({
-				searchInput: this.props.location.state.sampleInfo,
+				searchInput: this.props.location.state.inputSearch,
 			});
 			this.initiateSearch()
 		}
@@ -170,7 +170,7 @@ class SearchResults extends React.Component{
 
 	initiateSearch() {
 		const {searchKey} = this.state;
-		console.log("initiateSearch()");
+		// console.log("initiateSearch()");
 
 		if (searchKey != ''){
 			this.fetchResultsWithSearch(searchKey)

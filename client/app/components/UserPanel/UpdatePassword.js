@@ -1,5 +1,5 @@
 import React from 'react';
-import { TextField, Typography, Button, Grid, Paper} from 'material-ui';
+import { TextField, Button, Grid, Paper} from 'material-ui';
 import {SectionTitle} from "./SectionTitle";
 
 class UpdatePassword extends React.Component {
@@ -36,12 +36,6 @@ class UpdatePassword extends React.Component {
 
 	render() {
 		const Settings ={
-			parent: {
-				style: {
-					display: "inline-block",
-					padding: "10px",
-				}
-			},
 			grid: {
 				container: true,
 				spacing: 16,
@@ -51,12 +45,32 @@ class UpdatePassword extends React.Component {
 			},
 		};
 
+		const FieldContainer = (props) => {
+			return(
+				<Paper style={{
+					display: "flex",
+					flexDirection: "column",
+					padding: "10px",
+				}}>
+					{props.children}
+				</Paper>
+			)
+		};
+
+		const LoginOptions = () => {
+			return(
+				<Grid item xs={12}>
+					<Button onClick={this.resetFields}>Cancel</Button>
+					<Button>Update</Button>
+				</Grid>
+			)
+		};
 		return(
 			<div>
 				<SectionTitle title={"Update your password"}/>
-				<Grid {...Settings.grid} direction={"column"} spacing={8}>
+				<Grid {...Settings.grid} direction={"column"} spacing={8} style={{marginTop: "48px",}}>
 					<Grid item xs={12} sm={3}>
-						<Paper {...Settings.parent}>
+						<FieldContainer>
 							<Grid {...Settings.grid}>
 								<Grid item xs={12}>
 									<TextField type={"search"}
@@ -72,25 +86,12 @@ class UpdatePassword extends React.Component {
 											   label={"Password"}
 											   value={this.state.passwordValue}
 											   onChange={this.handlePasswordInputChange}/>
-
 								</Grid>
 
-								<Grid item xs={12}>
-									<Button>Update</Button>
-									<Button onClick={this.resetFields}>Cancel</Button>
-								</Grid>
+								<LoginOptions/>
 							</Grid>
-						</Paper>
-
+						</FieldContainer>
 					</Grid>
-
-					<Grid item xs={12} sm={8}>
-						<Paper style={{marginTop: "18px", padding: "48px"}}>
-							<Typography variant={"headline"}> This is where you update your password </Typography>
-							<Typography variant={"subheading"}> However, as of this moment, this is not working. </Typography>
-						</Paper>
-					</Grid>
-
 				</Grid>
 			</div>
 		)

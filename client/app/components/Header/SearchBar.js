@@ -17,10 +17,11 @@ class WrappedSearchBar extends React.Component {
 		this.handleKeyPress = this.handleKeyPress.bind(this);
 	}
 
-	// TODO: Handle invalid input appropriately. At the moment this is just a proof of concept
-	searchTextChanged(event) {
-		if (event.target.value.includes("@")) {
-			console.log("Invalid input");
+	searchTextChanged({target: {value}}) {
+		// RegEx for letters and numbers
+		// Check if search input matches the given RegEx
+		const acceptedChars = /^[0-9a-zA-Z]+$/;
+		if (value.length > 0 && value.match(acceptedChars) === null) {
 			this.setState({
 				invalidInput: true,
 			})
@@ -30,13 +31,15 @@ class WrappedSearchBar extends React.Component {
 			})
 		}
 		this.setState({
-			searchKey: event.target.value
+			searchKey: value
 		})
 	}
 
 	handleKeyPress(event) {
 		const {history} = this.props;
 		if (event.key === "Enter") {
+			if (this.state.invalidInput) { return } // Don't search if the input isn't valid
+
 			if (this.props.location.pathname === "/search/results/") {
 				// TODO: Find a better solution instead of reloading, as this version is slow
 				window.location.reload();
@@ -44,7 +47,7 @@ class WrappedSearchBar extends React.Component {
 			history.push({
 				pathname: "/search/results/",
 				state: {
-					sampleInfo: this.state.searchKey,
+					inputSearch: this.state.searchKey,
 					shouldSearch: true,
 				}
 			})
@@ -52,6 +55,8 @@ class WrappedSearchBar extends React.Component {
 	}
 
 	render() {
+		const errorText = "Invalid input";
+
 		const Settings = {
 			gridContainer: {
 				container: true,
@@ -72,7 +77,7 @@ class WrappedSearchBar extends React.Component {
 			},
 			searchField: {
 				id: "search",
-				label: "Search",
+				label: this.state.invalidInput ? errorText : "Search",
 				fullWidth: true,
 				value: this.state.searchKey,
 				onChange: this.searchTextChanged
@@ -83,25 +88,22 @@ class WrappedSearchBar extends React.Component {
 				sm: 1,
 			}
 		};
-		const {gridContainer, searchGridItem, searchIcon, searchField} = Settings;
 
-		const SearchIcon = () => ( <IconButton> <Search/> </IconButton>);
+		const {gridContainer, searchGridItem, searchIcon, searchField} = Settings;
+		const SearchLink = props => <Link to={{
+			pathname: "/search/results/",
+			state: {
+				inputSearch: this.state.searchKey,
+				shouldSearch: true,
+			}}} {...props}/>;
+
 		return (
 			<Grid {...gridContainer}>
-
 				<Grid {...searchGridItem}>
 					<TextField {...searchField} error={this.state.invalidInput} onKeyPress={this.handleKeyPress} onChange={this.searchTextChanged}/>
 				</Grid>
-
 				<Grid {...searchIcon}>
-					<Link to={{
-						pathname: "/search/results/",
-						state: {
-							sampleInfo: this.state.searchKey,
-							shouldSearch: true,
-						}}}>
-						<SearchIcon/>
-					</Link>
+					<IconButton component={SearchLink}> <Search/> </IconButton>
 				</Grid>
 			</Grid>
 		)

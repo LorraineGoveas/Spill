@@ -1,87 +1,90 @@
 import React, { Component } from 'react';
-import style from 'styled-components';
-
-
-const CenterPage = style.div`
-    text-align: center;
-`
+import { Button, Card, CardContent, Typography} from 'material-ui';
 
 export class About extends Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			teamMembers: [],
+			selectedMember: String
+		};
+		this.selectedMember = 'Peter Mutch'
+	}
 
-    constructor(props) {
-        super(props);
+	componentDidMount() {
+		fetch('/api/teamMembers')
+			.then(res => res.json())
+			.then(json => {
+				this.setState({
+					teamMembers: json
+				});
+			});
+	}
 
-        this.state = {
-          teamMembers: [],
-          selectedMember: String
+	getMember(name){
+		if (this.state.teamMembers[0]){
+			return this.state.teamMembers.find(function(member) {
+				return member.name === name
+			});
+		} else {
+			return "User Not Found";
+		}
+	}
+
+	switchMember(memberName){
+		this.selectedMember = memberName;
+		this.forceUpdate()
+	}
+
+	render() {
+		const {image_src, img_alt, img_width, img_height, name, role, experience, goals, hobbies} = this.getMember(this.selectedMember);
+		const MemberDescription = (props) => {
+			return(
+				<div>
+					<Typography gutterBottom variant={"title"}> {props.label} </Typography>
+					<Typography gutterBottom variant={"subheading"}>{props.value}</Typography>
+				</div>
+			)
+		};
+
+		const MemberButton = (props) => {
+		    return(
+				<Button onClick={() => this.switchMember(props.fullname)}>
+                    {props.firstName}
+                    </Button>
+            )
         };
 
-        this.selectedMember = 'Peter Mutch'
-    }
+		return (
+			<div style={{textAlign: "center"}}>
+                <MemberButton fullname={"Peter Mutch"} firstName={"Peter"}/>
+				<MemberButton fullname={"Sid Bola"} firstName={"Sid"}/>
+				<MemberButton fullname={"Alaric Gonzales"} firstName={"Alaric"}/>
+				<MemberButton fullname={"Lorraine Goveas"} firstName={"Lorraine"}/>
+				<MemberButton fullname={"Albert Fernandez Saucedo"} firstName={"Albert"}/>
+				<MemberButton fullname={"Harpreet Singh"} firstName={"Harpreet"}/>
 
-    componentDidMount() {
-      fetch('/api/teamMembers')
-        .then(res => res.json())
-        .then(json => {
-          this.setState({
-            teamMembers: json
-          });
-        });
-    }
+                <Card style={{margin: "24px", padding: "12px"}}>
+					<img src={image_src}
+                         alt={img_alt}
+                         width={img_width}
+                         height={img_height}
+                         style={{
+                             borderRadius: "5px",
+							 border: "0.5px solid lightGray",
+						 }}
+                    />
 
+					<CardContent>
+						<Typography variant={"display1"} color={"inherit"}> {name} </Typography>
+						<MemberDescription label={"Role"} value={role}/>
+						<MemberDescription label={"Experience with role"} value={experience}/>
+						<MemberDescription label={"Goals after graduation"} value={goals}/>
+						<MemberDescription label={"Hobbies outside of school"} value={hobbies}/>
+					</CardContent>
+				</Card>
 
-    getMember(name){
-        if (this.state.teamMembers[0]){
-            return this.state.teamMembers.find(function(member) {
-                return member.name === name
-            });
-        } else {
-            return "User Not Found";
-        }
-    }
-
-    switchMember(memberName){
-        this.selectedMember = memberName
-        this.forceUpdate()
-    }
-
-    render() {
-        return (
-            <CenterPage>
-
-
-            <button onClick={() => this.switchMember('Peter Mutch')}>Peter</button>
-            <button onClick={() => this.switchMember('Sid Bola')}>Sid</button>
-            <button onClick={() => this.switchMember('Alaric Gonzales')}>Alaric</button>
-            <button onClick={() => this.switchMember('Lorraine Goveas')}>Lorraine</button>
-            <button onClick={() => this.switchMember('Albert Fernandez Saucedo')}>Albert</button>
-            <button onClick={() => this.switchMember('Harpreet Singh')}>Harpreet</button>
-
-
-
-                <div>
-
-                    <img src={this.getMember(this.selectedMember).image_src}
-                        alt={this.getMember(this.selectedMember).img_alt}
-                        width={this.getMember(this.selectedMember).img_width}
-                        height={this.getMember(this.selectedMember).img_height} />
-
-                    <h1> <div>{this.getMember(this.selectedMember).name}</div> </h1>
-
-                    <h3>Role:</h3>
-                    <div>{this.getMember(this.selectedMember).role}</div>
-
-                    <h3> Experience with Role: </h3>
-                    <div>{this.getMember(this.selectedMember).experience}</div>
-
-                    <h3> Goals after Graduation: </h3>
-                    <div>{this.getMember(this.selectedMember).goals}</div>
-
-                    <h3> Hobbies outside of school: </h3>
-                    <div>{this.getMember(this.selectedMember).hobbies}</div>
-                </div>
-
-            </CenterPage>
-        );
-  }
+			</div>
+		);
+	}
 }

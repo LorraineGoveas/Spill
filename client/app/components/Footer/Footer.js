@@ -37,9 +37,7 @@ class Footer extends React.Component {
 						</Grid>
 
 						<Grid item xs={5} sm={3} lg={2}>
-							{/*<StyledLink to={{pathname: "/policy"}}>*/}
 							<Button className={classes.footerButton}> Terms </Button>
-							{/*</StyledLink>*/}
 						</Grid>
 
 					</Grid>

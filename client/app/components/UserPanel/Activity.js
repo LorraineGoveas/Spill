@@ -3,16 +3,15 @@ import { Grid } from 'material-ui';
 import {RecentPost} from "./UserProfile/UserPost";
 import {SectionTitle} from "./SectionTitle";
 
-const Activity = (props) => {
+const Activity = () => {
 	const Settings = {
 		parent: {
 			style: {
-				display: "flexGrow",
 				marginTop: "25px",
 				padding: "10px",
 			}
 		},
-		grid: {
+		gridContainer: {
 			container: true,
 			spacing: 8,
 			direction: "column",
@@ -20,12 +19,12 @@ const Activity = (props) => {
 			alignItems: "stretch",
 		}
 	};
+	const {parent, gridContainer} = Settings;
 	return(
-		<div {...Settings.parent}>
-			<Grid {...Settings.grid}>
+		<div {...parent}>
+			<Grid {...gridContainer}>
 				<Grid item xs={12}> <SectionTitle title={"Recent Activity"} /> </Grid>
 				<Grid item xs={12}> <RecentPost/> </Grid>
-
 			</Grid>
 		</div>
 	);
