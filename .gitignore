@@ -1,3 +1,6 @@
 dist/js/app.js
 node_modules/
 .DS_Store
+./client/app/components/ReportIssue/ReportIssue.js
+./dist/assets/thumbnails
+./client/public/assets/thumbnails
