@@ -59,33 +59,27 @@ class SignInWindow extends React.Component {
 
 				<Grid {...GridContainer}>
 					<Grid {...GridItem}>
-						<Typography variant={"caption"}> Email </Typography>
-						<form onSubmit={this.handleSubmit} name={"email"}>
-							<TextField type={"text"}
-									   placeholder={"Email"}
-									   name={"email"}
-									   value={this.state.email}
-									   onChange={this.handleInputChange}/>
-						</form>
+						
+						
+       <form action="/api/registeredUsers" method="post">
+                        <input type="text" name="logemail" placeholder="E-mail" required=""/>
+                        <br/>
+                        <br/>
+                        <input type="password" name="logpassword" placeholder="Password" required=""/>
+                        <br/>
+                        <br/>
+                        <input type="submit" value="LOGIN"/>
+                        
+</form>
 					</Grid>
 
-					<Grid {...GridItem}>
-						<form onSubmit={this.handleSubmit} name={"password"}>
-							<Typography variant={"caption"}> Password </Typography>
-							<TextField type={"password"}
-									   placeholder={"Password"}
-									   name={"password"}
-									   value={this.state.password}
-									   onChange={this.handleInputChange}/>
-						</form>
-					</Grid>
+					
 
 
 					<Grid item xs={12}>
-						<Button size="small" variant="flat" onClick={this.submitAll}>Next</Button>
-						{/*<StyledLink to={{pathname: "/user/signUp"}}>*/}
-						<SignInMenuItem label={"Create Account"} onClick={this.submitAll}/>
-						{/*</StyledLink>*/}
+						<StyledLink to={{pathname: "/user/signUp"}}>
+							<SignInMenuItem label={"Create Account"}/>
+</StyledLink>
 					</Grid>
 				</Grid>
 			</Card>
