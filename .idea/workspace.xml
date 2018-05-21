@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9a7ae2b6-8fd9-4e8c-9a88-8fd344aec828" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/client/app/components/SearchResults/SearchResults.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/app/components/SearchResults/SearchResults.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/app/components/Header/SearchBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/app/components/Header/SearchBar.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -19,11 +19,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="SearchResults.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SearchBar.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/client/app/components/Header/SearchBar.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="161">
+              <caret line="42" column="65" selection-start-line="42" selection-start-column="65" selection-end-line="42" selection-end-column="65" />
+              <folding>
+                <element signature="n#!!block;n#searchTextChanged#0;n#WrappedSearchBar#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SearchResults.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/app/components/SearchResults/SearchResults.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="628">
-              <caret line="181" lean-forward="true" selection-start-line="181" selection-end-line="181" />
+            <state relative-caret-position="362">
+              <caret line="145" column="32" lean-forward="true" selection-start-line="145" selection-start-column="32" selection-end-line="145" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -57,7 +69,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>/user/userPanel/updatePassword</find>
       <find>SampleInfo</find>
       <find>sample</find>
       <find>sampleInf</find>
@@ -87,6 +98,7 @@
       <find>fetch</find>
       <find>/postRecords</find>
       <find>postRecords/</find>
+      <find>search/results/</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/client/app/components/UserPanel</dir>
@@ -140,7 +152,6 @@
         <option value="$PROJECT_DIR$/client/app/components/UserPanel/Activity.js" />
         <option value="$PROJECT_DIR$/client/app/components/UserPanel/Dashboard.js" />
         <option value="$PROJECT_DIR$/client/app/components/Login/login.js" />
-        <option value="$PROJECT_DIR$/client/app/components/Header/SearchBar.js" />
         <option value="$PROJECT_DIR$/client/app/components/Header/OptionsHeader.js" />
         <option value="$PROJECT_DIR$/client/app/components/Header/SignInWindow.js" />
         <option value="$PROJECT_DIR$/client/app/components/Header/SignInModal.js" />
@@ -149,6 +160,7 @@
         <option value="$PROJECT_DIR$/client/app/components/Header/Header.js" />
         <option value="$PROJECT_DIR$/client/app/components/Home/Home.js" />
         <option value="$PROJECT_DIR$/client/app/components/SearchResults/SearchResults.js" />
+        <option value="$PROJECT_DIR$/client/app/components/Header/SearchBar.js" />
       </list>
     </option>
   </component>
@@ -361,7 +373,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="171929000" />
+    <option name="totallyTimeSpent" value="172076000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -385,7 +397,7 @@
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4988086" weight="0.32924837" />
       <window_info id="npm" order="2" sideWeight="0.502451" side_tool="true" weight="0.22081016" />
       <window_info id="Structure" order="1" sideWeight="0.5054811" side_tool="true" weight="0.22081016" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.4988086" weight="0.22140522" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.4988086" visible="true" weight="0.22140522" />
       <window_info id="Favorites" order="3" sideWeight="0.502451" side_tool="true" weight="0.22081016" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="TypeScript" order="10" />
@@ -701,17 +713,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/app/components/Header/SearchBar.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="91" column="35" selection-start-line="91" selection-start-column="35" selection-end-line="91" selection-end-column="35" />
-          <folding>
-            <element signature="n#!!block;n#searchTextChanged#0;n#WrappedSearchBar#0" />
-            <element signature="n#!!block;n#handleKeyPress#0;n#WrappedSearchBar#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/app/components/Header/TopHeader.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="669">
@@ -794,8 +795,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/app/components/SearchResults/SearchResults.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="628">
-          <caret line="181" lean-forward="true" selection-start-line="181" selection-end-line="181" />
+        <state relative-caret-position="362">
+          <caret line="145" column="32" lean-forward="true" selection-start-line="145" selection-start-column="32" selection-end-line="145" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/app/components/Header/SearchBar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="42" column="65" selection-start-line="42" selection-start-column="65" selection-end-line="42" selection-end-column="65" />
+          <folding>
+            <element signature="n#!!block;n#searchTextChanged#0;n#WrappedSearchBar#0" />
+          </folding>
         </state>
       </provider>
     </entry>
