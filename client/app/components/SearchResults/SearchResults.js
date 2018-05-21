@@ -49,7 +49,9 @@ const MapsContainer = (props) => {
 function displayFetchedData(place, i) {
 	const {image_src, location_name, address, city, state, zip, type, status,} = place;
 	const coordinates = {
+
 		// Webstorm complains about this, but this is the only way to get it to work
+
 		latitude: parseFloat(place.location_lat),
 		longitude: parseFloat(place.location_lng),
 	};
@@ -123,6 +125,8 @@ class SearchResults extends React.Component{
 			shouldSearch: true,
 			didFetch: false,
 		};
+
+		this.performNewSearch = this.performNewSearch.bind(this);
 		this.initiateSearch = this.initiateSearch.bind(this);
 		this.searchTextChanged = this.searchTextChanged.bind(this);
 		this.categoryTextChanged = this.categoryTextChanged.bind(this);
@@ -130,21 +134,38 @@ class SearchResults extends React.Component{
 	}
 
 	componentDidMount() {
-		const { inputSearch, shouldSearch} = this.props.location.state;
+		if (this.props.location.state) {
+			const { inputSearch, shouldSearch} = this.props.location.state;
+			this.setState({
+				searchInput: inputSearch,
+				searchKey: inputSearch,
+				shouldSearch: shouldSearch,
+			});
+		} else {
+			this.setState({
+				searchInput: "",
+				searchKey: "",
+				shouldSearch: true,
+			});
+		}
+
+	}
+
+	performNewSearch(input) {
 		this.setState({
-			searchInput: inputSearch,
-			searchKey: inputSearch,
-			shouldSearch: shouldSearch,
+			searchInput: input
 		});
+		this.initiateSearch();
 	}
 
 	componentDidUpdate(prevProps, prevState, snapshot) {
-		// console.log("didUpdate()");
-		if (!(prevState.searchInput == this.props.location.state.inputSearch)) {
-			this.setState({
-				searchInput: this.props.location.state.inputSearch,
-			});
-			this.initiateSearch()
+		if (this.props.location.state) {
+			const { inputSearch } = this.props.location.state;
+			// If the previous search input is not equal to the current search input,
+			// perform a new search with the updated input
+			if (!(prevState.searchInput === inputSearch)) {
+				this.performNewSearch(inputSearch)
+			}
 		}
 	}
 
@@ -153,6 +174,7 @@ class SearchResults extends React.Component{
 	}
 
 	fetchAllResults() {
+		console.log("Fetching all results");
 		fetch(`/api/postRecords/allResults`).then(res => res.json()).then(json => {
 			this.setState({places: json});
 		});

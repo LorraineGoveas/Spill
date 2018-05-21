@@ -2,24 +2,8 @@ import React from 'react';
 import {Card, CardHeader, Grid, Typography, Button, TextField} from 'material-ui';
 import {StyledLink} from "../utils/StyledLink";
 
-/*
-SignInWindow is a window that contains the email and password fields,
-as well as the next and create account buttons.
-
-This window is presented when the user clicks on the Sign In button located in the Options Header
- */
-
 const SignInMenuItem = (props) => {
 	return(<Button size="small" style={{color: "black"}}>{props.label}</Button>)
-};
-
-const EmailPasswordField = (props) => {
-	return(
-		<div>
-			<Typography variant={"caption"}> {props.caption} </Typography>
-			<TextField type={props.type} placeholder={props.placeholder}/>
-		</div>
-	)
 };
 
 class SignInWindow extends React.Component {
@@ -27,43 +11,81 @@ class SignInWindow extends React.Component {
 		super(props);
 		this.state = {
 			open: false,
-		}
+			email: "",
+			password: "",
+		};
+
+		this.submitAll = this.submitAll.bind(this);
+		this.handleInputChange = this.handleInputChange.bind(this);
+		this.handleSubmit = this.handleSubmit.bind(this);
 	}
 
+	handleInputChange(event) {
+		this.setState({
+			[event.target.name]: event.target.value
+		});
+	}
+
+	handleSubmit(event) {
+		console.log("Submitting: " + event.target.name);
+		event.preventDefault();
+	}
+
+	submitAll() {
+		console.log("Submitting form with values: ");
+		console.log("\tEmail: " + this.state.email);
+		console.log("\tPassword: " + this.state.password);
+	}
 	render() {
+		const GridContainer = {
+			container: true,
+			spacing: 8,
+			direction: "column",
+			justify: "flex-start",
+			alignItems: "flex-start",
+		};
+
+		const GridItem = {
+			item: true,
+			xs: 12,
+			style: {
+				margin: "15px",
+			}
+		};
+
 		return (
-			<Card style={{
-				width: "100%",
-				height: "100%",
-			}}
-
-			>
+			<Card style={{width: "100%", height: "100%",}}>
 				<CardHeader title={"Log in to Spill"}/>
-				<Grid
-					container
-					spacing={8}
-					direction={"column"}
-					justify={"flex-start"}
-					alignItems={"flex-start"}
-				>
 
-					<Grid item xs={12} style={{margin: "15px"}}>
-						<EmailPasswordField type={"text"} caption={"Email"} placeholder={"Email"}/>
+				<Grid {...GridContainer}>
+					<Grid {...GridItem}>
+						<Typography variant={"caption"}> Email </Typography>
+						<form onSubmit={this.handleSubmit} name={"email"}>
+							<TextField type={"text"}
+									   placeholder={"Email"}
+									   name={"email"}
+									   value={this.state.email}
+									   onChange={this.handleInputChange}/>
+						</form>
 					</Grid>
 
-					<Grid item xs={12} style={{margin: "15px"}}>
-						<EmailPasswordField type={"password"}
-											caption={"Password"}
-											placeholder={"Password"}/>
+					<Grid {...GridItem}>
+						<form onSubmit={this.handleSubmit} name={"password"}>
+							<Typography variant={"caption"}> Password </Typography>
+							<TextField type={"password"}
+									   placeholder={"Password"}
+									   name={"password"}
+									   value={this.state.password}
+									   onChange={this.handleInputChange}/>
+						</form>
 					</Grid>
+
 
 					<Grid item xs={12}>
-						<Button size="small"
-								variant="flat"
-								onClick={this.props.handleNextButton}>Next</Button>
-						<StyledLink to={{pathname: "/user/signUp"}}>
-							<SignInMenuItem label={"Create Account"}/>
-						</StyledLink>
+						<Button size="small" variant="flat" onClick={this.submitAll}>Next</Button>
+						{/*<StyledLink to={{pathname: "/user/signUp"}}>*/}
+						<SignInMenuItem label={"Create Account"} onClick={this.submitAll}/>
+						{/*</StyledLink>*/}
 					</Grid>
 				</Grid>
 			</Card>

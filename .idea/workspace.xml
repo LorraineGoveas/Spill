@@ -2,16 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9a7ae2b6-8fd9-4e8c-9a88-8fd344aec828" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/app/components/About/About.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/app/components/About/About.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/app/components/Footer/Footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/app/components/Footer/Footer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/app/components/Header/SearchBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/app/components/Header/SearchBar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/app/components/Header/SignInWindow.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/app/components/Header/SignInWindow.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/app/components/Login/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/app/components/Login/login.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/app/components/SearchResults/SearchResults.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/app/components/SearchResults/SearchResults.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/app/components/UserPanel/AccountSettings.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/app/components/UserPanel/AccountSettings.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/app/components/UserPanel/Activity.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/app/components/UserPanel/Activity.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/app/components/UserPanel/Overview.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/app/components/UserPanel/Overview.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/app/components/UserPanel/UpdatePassword.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/app/components/UserPanel/UpdatePassword.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/app/components/UserPanel/UserPanel.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/app/components/UserPanel/UserPanel.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -28,51 +21,56 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="UserPost.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/app/components/UserPanel/UserProfile/UserPost.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="185">
-              <caret line="41" column="31" selection-start-line="41" selection-start-column="30" selection-end-line="41" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SearchResults.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/app/components/SearchResults/SearchResults.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="141" column="18" selection-start-line="141" selection-start-column="11" selection-end-line="141" selection-end-column="18" />
-              <folding>
-                <element signature="n#!!block;n#initiateSearch#0;n#SearchResults#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Dashboard.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/client/app/components/UserPanel/Dashboard.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="437">
-              <caret line="19" column="11" lean-forward="true" selection-start-line="19" selection-start-column="11" selection-end-line="19" selection-end-column="11" />
-              <folding>
-                <element signature="e#827#1162#0" />
-                <element signature="e#1214#1303#0" />
-                <element signature="n#!!block;n#constructor#0;n#Body#0" />
-                <element signature="n#!!block;n#componentDidMount#0;n#Body#0" />
-                <element signature="n#!!block;n#handleDelete#0;n#Body#0" />
-                <element signature="n#!!block;n#render#0;n#Body#0" />
-                <element signature="e#2538#2580#0" />
-                <element signature="e#2623#2779#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="SearchBar.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/app/components/Header/SearchBar.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="600">
-              <caret line="43" column="19" selection-start-line="43" selection-start-column="19" selection-end-line="43" selection-end-column="19" />
+            <state>
+              <caret column="16" lean-forward="true" selection-start-column="16" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UpdatePassword.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/app/components/UserPanel/UpdatePassword.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2139">
+              <caret line="93" column="27" lean-forward="true" selection-start-line="93" selection-start-column="27" selection-end-line="93" selection-end-column="27" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="login.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/app/components/Login/login.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="299">
+              <caret line="13" column="32" lean-forward="true" selection-start-line="13" selection-start-column="32" selection-end-line="13" selection-end-column="32" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Header.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/app/components/Header/Header.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="609">
+              <caret line="83" column="50" selection-start-line="83" selection-start-column="34" selection-end-line="83" selection-end-column="50" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SignInWindow.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/client/app/components/Header/SignInWindow.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="592">
+              <caret line="36" column="23" selection-start-line="36" selection-start-column="23" selection-end-line="36" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Map.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/app/components/Map/Map.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="207">
+              <caret line="9" column="5" lean-forward="true" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -80,8 +78,8 @@
       <file leaf-file-name="ReportIssue.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/app/components/ReportIssue/ReportIssue.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="17" column="28" lean-forward="true" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
+            <state relative-caret-position="384">
+              <caret line="76" column="16" selection-start-line="76" selection-start-column="16" selection-end-line="76" selection-end-column="51" />
             </state>
           </provider>
         </entry>
@@ -97,13 +95,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>GridListStyles</find>
-      <find>/issue</find>
-      <find>CenterPage</find>
-      <find>link</find>
-      <find>enter</find>
-      <find>handleKeyPress</find>
-      <find>withST</find>
       <find>withWidth</find>
       <find>test</find>
       <find>display</find>
@@ -125,8 +116,15 @@
       <find>sample</find>
       <find>sampleInf</find>
       <find>theme</find>
-      <find>console</find>
       <find>console.log</find>
+      <find>console</find>
+      <find>search</find>
+      <find>Login</find>
+      <find>Log in to</find>
+      <find>Form</find>
+      <find>Validating...</find>
+      <find>handleNextButton</find>
+      <find>/signU</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/client/app/components/UserPanel</dir>
@@ -138,7 +136,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/client/app/components/Header/LoginArea.js" />
         <option value="$PROJECT_DIR$/client/app/components/Header/SignInPopover.js" />
         <option value="$PROJECT_DIR$/client/app/components/Home/Disclaimer.js" />
         <option value="$PROJECT_DIR$/client/app/components/Home/FetchedContent.js" />
@@ -151,7 +148,6 @@
         <option value="$PROJECT_DIR$/client/app/components/Home/HomeComponents/CreateComment.js" />
         <option value="$PROJECT_DIR$/client/app/components/utils/StyledLink.js" />
         <option value="$PROJECT_DIR$/client/app/components/Header/AccountPopover.js" />
-        <option value="$PROJECT_DIR$/client/app/components/Header/SignInWindow.js" />
         <option value="$PROJECT_DIR$/client/app/components/UserPanel/ProfilePicture.js" />
         <option value="$PROJECT_DIR$/client/app/components/UserPanel/ProfileContentsGrid.js" />
         <option value="$PROJECT_DIR$/client/app/components/UserPanel/index.js" />
@@ -186,9 +182,11 @@
         <option value="$PROJECT_DIR$/client/app/components/UserPanel/Overview.js" />
         <option value="$PROJECT_DIR$/client/app/components/UserPanel/UpdatePassword.js" />
         <option value="$PROJECT_DIR$/client/app/components/UserPanel/Activity.js" />
+        <option value="$PROJECT_DIR$/client/app/components/UserPanel/Dashboard.js" />
         <option value="$PROJECT_DIR$/client/app/components/Header/SearchBar.js" />
         <option value="$PROJECT_DIR$/client/app/components/SearchResults/SearchResults.js" />
-        <option value="$PROJECT_DIR$/client/app/components/UserPanel/Dashboard.js" />
+        <option value="$PROJECT_DIR$/client/app/components/Login/login.js" />
+        <option value="$PROJECT_DIR$/client/app/components/Header/SignInWindow.js" />
       </list>
     </option>
   </component>
@@ -283,6 +281,30 @@
               <item name="client" type="cbb8eebc:String" user="client" />
               <item name="app" type="cbb8eebc:String" user="app" />
               <item name="components" type="cbb8eebc:String" user="components" />
+              <item name="Header" type="cbb8eebc:String" user="Header" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="csc648-team06" type="cbb8eebc:String" user="csc648-team06" />
+              <item name="client" type="cbb8eebc:String" user="client" />
+              <item name="app" type="cbb8eebc:String" user="app" />
+              <item name="components" type="cbb8eebc:String" user="components" />
+              <item name="Login" type="cbb8eebc:String" user="Login" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="csc648-team06" type="cbb8eebc:String" user="csc648-team06" />
+              <item name="client" type="cbb8eebc:String" user="client" />
+              <item name="app" type="cbb8eebc:String" user="app" />
+              <item name="components" type="cbb8eebc:String" user="components" />
+              <item name="Map" type="cbb8eebc:String" user="Map" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="csc648-team06" type="cbb8eebc:String" user="csc648-team06" />
+              <item name="client" type="cbb8eebc:String" user="client" />
+              <item name="app" type="cbb8eebc:String" user="app" />
+              <item name="components" type="cbb8eebc:String" user="components" />
               <item name="SearchResults" type="cbb8eebc:String" user="SearchResults" />
             </path>
             <path>
@@ -291,23 +313,7 @@
               <item name="client" type="cbb8eebc:String" user="client" />
               <item name="app" type="cbb8eebc:String" user="app" />
               <item name="components" type="cbb8eebc:String" user="components" />
-              <item name="Theme" type="cbb8eebc:String" user="Theme" />
-            </path>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="csc648-team06" type="cbb8eebc:String" user="csc648-team06" />
-              <item name="client" type="cbb8eebc:String" user="client" />
-              <item name="app" type="cbb8eebc:String" user="app" />
-              <item name="components" type="cbb8eebc:String" user="components" />
               <item name="UserPanel" type="cbb8eebc:String" user="UserPanel" />
-            </path>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="csc648-team06" type="cbb8eebc:String" user="csc648-team06" />
-              <item name="client" type="cbb8eebc:String" user="client" />
-              <item name="app" type="cbb8eebc:String" user="app" />
-              <item name="components" type="cbb8eebc:String" user="components" />
-              <item name="utils" type="cbb8eebc:String" user="utils" />
             </path>
             <path>
               <item name="Root" type="cbb8eebc:String" user="Root" />
@@ -378,12 +384,12 @@
       <workItem from="1525588186045" duration="14625000" />
       <workItem from="1525640657725" duration="1999000" />
       <workItem from="1526162785459" duration="21042000" />
-      <workItem from="1526790941105" duration="23244000" />
+      <workItem from="1526790941105" duration="27981000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="148226000" />
+    <option name="totallyTimeSpent" value="152963000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -405,7 +411,7 @@
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49960285" weight="0.32924837" />
       <window_info anchor="bottom" id="TypeScript" order="8" />
-      <window_info content_ui="combo" id="Project" order="0" weight="0.22160445" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22160445" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32924837" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -452,13 +458,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/node_modules/react-router-dom/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="3" column="191" selection-start-line="3" selection-start-column="191" selection-end-line="3" selection-end-column="191" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/material-ui/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="575">
@@ -466,29 +465,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/app/components/Header/SignInWindow.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="13" selection-start-line="2" selection-end-line="3" />
-          <folding>
-            <element signature="e#387#533#0" />
-            <element signature="n#!!block;n#constructor#0;n#SignInWindow#0" />
-            <element signature="n#!!block;n#render#0;n#SignInWindow#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/app/components/Header/AccountPopover.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1116">
           <caret line="88" column="20" lean-forward="true" selection-start-line="88" selection-start-column="20" selection-end-line="88" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/app/components/Map/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="5" selection-start-line="5" selection-end-line="5" />
         </state>
       </provider>
     </entry>
@@ -579,13 +559,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="207">
           <caret line="9" column="30" lean-forward="true" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/app/components/Map/Map.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
         </state>
       </provider>
     </entry>
@@ -687,13 +660,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/app/components/UserPanel/UpdatePassword.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="15" column="5" lean-forward="true" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/app/components/Footer/Footer.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="138">
@@ -743,48 +709,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/app/components/UserPanel/UserProfile/UserPost.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="185">
-          <caret line="41" column="31" selection-start-line="41" selection-start-column="30" selection-end-line="41" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/app/components/SearchResults/SearchResults.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="141" column="18" selection-start-line="141" selection-start-column="11" selection-end-line="141" selection-end-column="18" />
-          <folding>
-            <element signature="n#!!block;n#initiateSearch#0;n#SearchResults#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/app/components/Header/Header.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/app/components/ReportIssue/ReportIssue.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="17" column="28" lean-forward="true" selection-start-line="17" selection-start-column="28" selection-end-line="17" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/app/components/Header/SearchBar.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="43" column="19" selection-start-line="43" selection-start-column="19" selection-end-line="43" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/app/components/UserPanel/Dashboard.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="19" column="11" lean-forward="true" selection-start-line="19" selection-start-column="11" selection-end-line="19" selection-end-column="11" />
+        <state relative-caret-position="345">
+          <caret line="15" column="31" lean-forward="true" selection-start-line="15" selection-start-column="31" selection-end-line="15" selection-end-column="31" />
           <folding>
             <element signature="e#827#1162#0" />
             <element signature="e#1214#1303#0" />
@@ -795,6 +723,79 @@
             <element signature="e#2538#2580#0" />
             <element signature="e#2623#2779#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/app/components/UserPanel/UserProfile/UserPost.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="185">
+          <caret line="41" column="31" selection-start-line="41" selection-start-column="30" selection-end-line="41" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/app/components/Map/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/app/components/Map/Map.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="9" column="5" lean-forward="true" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/app/components/SearchResults/SearchResults.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="79">
+          <caret line="72" column="27" lean-forward="true" selection-start-line="72" selection-start-column="27" selection-end-line="72" selection-end-column="27" />
+          <folding>
+            <element signature="n#!!block;n#initiateSearch#0;n#SearchResults#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/app/components/Header/SearchBar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="16" lean-forward="true" selection-start-column="16" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/app/components/ReportIssue/ReportIssue.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="76" column="16" selection-start-line="76" selection-start-column="16" selection-end-line="76" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/app/components/Login/login.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="13" column="32" lean-forward="true" selection-start-line="13" selection-start-column="32" selection-end-line="13" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/app/components/UserPanel/UpdatePassword.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2139">
+          <caret line="93" column="27" lean-forward="true" selection-start-line="93" selection-start-column="27" selection-end-line="93" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/app/components/Header/Header.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="609">
+          <caret line="83" column="50" selection-start-line="83" selection-start-column="34" selection-end-line="83" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/app/components/Header/SignInWindow.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="592">
+          <caret line="36" column="23" selection-start-line="36" selection-start-column="23" selection-end-line="36" selection-end-column="23" />
         </state>
       </provider>
     </entry>
