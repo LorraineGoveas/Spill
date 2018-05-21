@@ -79,8 +79,8 @@ export class ReportIssue extends Component {
         fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${name}`)
             .then(res => res.json())
             .then(json => json.results.map( (result) => {
-                const lat = result.geometry.location.lat;
-                const lng = result.geometry.location.lng;
+                const lat = result.geometry.location.lat.toString();
+                const lng = result.geometry.location.lng.toString();
 
                 fetch(`/api/postRecords/${type}/${name}/${address}/${city}/${state}/${zip}/${postTitle}/${lat}/${lng}/ReportIssue`, {
                     method: 'POST',
