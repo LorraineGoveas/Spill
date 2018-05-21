@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import style from 'styled-components';
 import Dropzone from 'react-dropzone';
-var FormData = require('form-data');
 
 const CenterPage = style.div`
     text-align: center;
