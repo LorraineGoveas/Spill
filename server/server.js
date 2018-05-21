@@ -16,28 +16,32 @@ const passport = require("passport");
 const expressValidator = require('express-validator');
 const flash = require('connect-flash');
 //const session = require('express-session')
+const fileUpload = require('express-fileupload');
+const cors = require('cors');
 
 
 const isDev = process.env.NODE_ENV !== 'production';
 const port  = process.env.PORT || 8080;
 
+var multer = require('multer');
 
 // Configuration
 // ================================================================================================
 
 // Set up Mongoose
 
-// mongoose.connect("mongodb://localhost:27017/myTestDB", {
-//   "auth": {"authSource": "admin"},
-//   "user": "team06Admin",
-//   "pass": "SealTeam",
-//   "useMongoClient": true
-// });
-
-mongoose.connect(isDev ? config.db_dev : config.db, {
-  useMongoClient: true,
+mongoose.connect("mongodb://localhost:27017/myTestDB", {
+  "auth": {"authSource": "admin"},
+  "user": "team06Admin",
+  "pass": "SealTeam",
+  "useMongoClient": true
 });
 mongoose.Promise = global.Promise;
+
+// mongoose.connect(isDev ? config.db_dev : config.db, {
+//   useMongoClient: true,
+// });
+// mongoose.Promise = global.Promise;
 
 
 const app = express();
@@ -46,15 +50,15 @@ app.use(bodyParser.json());
 
 //app.use(flash());
 
-app.use(require("express-session")({    
-      secret:"Hello World, this is a session",    
-      resave: false,    
+app.use(require("express-session")({
+      secret:"Hello World, this is a session",
+      resave: false,
       saveUninitialized: false
 }));
 
-// app.use(require("express-session")({    
-//       secret:"Hello World, this is a session",    
-//       resave: false,    
+// app.use(require("express-session")({
+//       secret:"Hello World, this is a session",
+//       resave: false,
 //       saveUninitialized: false
 // }));
 
@@ -106,12 +110,16 @@ if (isDev) {
 
   app.use(webpackHotMiddleware(compiler));
   app.use(express.static(path.resolve(__dirname, '../dist')));
+  app.use(cors());
+  app.use(fileUpload());
 } else {
   app.use(express.static(path.resolve(__dirname, '../dist')));
   app.get('*', function (req, res) {
     res.sendFile(path.resolve(__dirname, '../dist/index.html'));
     res.end();
   });
+  app.use(cors());
+  app.use(fileUpload());
 }
 
 app.listen(port, '0.0.0.0', (err) => {
