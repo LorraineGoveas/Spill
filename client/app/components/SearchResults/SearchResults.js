@@ -131,6 +131,10 @@ class SearchResults extends React.Component{
 		this.searchTextChanged = this.searchTextChanged.bind(this);
 		this.categoryTextChanged = this.categoryTextChanged.bind(this);
 		this.handleSearchFromHeader = this.handleSearchFromHeader.bind(this);
+
+		this.caseTwo = this.caseTwo.bind(this);
+		this.caseThree = this.caseThree.bind(this);
+		this.caseFour = this.caseFour.bind(this);
 	}
 
 	componentDidMount() {
@@ -185,23 +189,29 @@ class SearchResults extends React.Component{
 		});
 	}
 
-	// fetchResultsWithSearch(searchKey) {
-	// 	// Case 1. If (category==ANY) && !searchBarHasText  --> return allResults
-	// 	// 2. If (category!=ANY && searchBarHasText) --> catLocSearch
-	// 	// 3. If (category==ANY && searchBarHasText) --> locSearch
-	// 	// Case 4. If (category!=ANY && !searchBarHasText ) --> catSearch
-	//
-	//
-	// 	//app.get('/api/postRecords/:keyword/:category/catLocSearch'
-	//
-	// 	fetch(`/api/postRecords/${searchKey}/locSearch`)
-	// 		.then(res => res.json())
-	// 		.then(json => {
-	// 			this.setState({
-	// 				places: json
-	// 			});
-	// 		});
-	// }
+	caseTwo(keyword, category) {
+		fetch(`/api/postRecords/${keyword}/${category}/catLocSearch`)
+			.then(res => res.json())
+			.then(json => {
+				this.setState({places: json});
+			});
+	}
+
+	caseThree(keyword) {
+		fetch(`/api/postRecords/${keyword}/locSearch`)
+			.then(res => res.json())
+			.then(json => {
+				this.setState({places: json});
+			});
+	}
+
+	caseFour(category) {
+		fetch(`/api/postRecords/${category}/catSearch`)
+			.then(res => res.json())
+			.then(json => {
+				this.setState({places: json});
+			});
+	}
 
 	initiateSearch() {
 		console.log("Initiate search");
@@ -219,12 +229,17 @@ class SearchResults extends React.Component{
 		// if (categoryIsAny && searchDoesNotHaveText)
 		if (categoryIsAny && searchBarDoesNotHaveText) {
 			console.log("Case 1. If (category==ANY) && !searchBarHasText  --> return allResults");
+			this.fetchAllResults()
 		} else if (categoryIsntANY && searchBarHasText) {
 			console.log("Case 2: If (category!=ANY && searchBarHasText) --> catLocSearch")
+			this.caseTwo(searchInput, category);
+
 		} else if (categoryIsAny && searchBarHasText) {
 			console.log("Case 3. If (category==ANY && searchBarHasText) --> locSearch");
+			this.caseThree(searchInput);
 		} else if (categoryIsntANY && searchBarDoesNotHaveText) {
 			console.log("Case 4. If (category!=ANY && !searchBarHasText ) --> catSearch");
+			this.caseFour(category);
 		}
 	}
 
