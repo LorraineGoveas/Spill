@@ -70,7 +70,7 @@ class SignInModal extends React.Component {
 		return(
 			<div>
 				<Button color={"inherit"} onClick={this.handleSignInButton}> Sign In </Button>
-				<Modal open={this.state.open} onClick={this.closeModal}>
+				<Modal disableAutoFocus open={this.state.open} onClick={this.closeModal}>
 					<SignInWindow handleNextButton={this.validateCredentials}/>
 				</Modal>
 			</div>
