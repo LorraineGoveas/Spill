@@ -32,6 +32,7 @@ module.exports = (app) => {
         postRecord.location_lat = sanitize(req.params.lat)
         postRecord.location_lng = sanitize(req.params.lng)
         postRecord.status = 'Unverified'
+        postRecord.post_id = (Math.floor(Math.random() * 10000000)).toString()
 
 
         mv(imageFile.path, `../client/public/assets/thumbs/${imageFile.filename}.jpg`, function(err) {
@@ -47,7 +48,7 @@ module.exports = (app) => {
 
     app.post('/api/postRecords/:objId/:status/changeStatus', (req, res, next) => {
         PostRecord.updateOne(
-            {"_id": new ObjectId(req.params.objId)},
+            {"post_id": req.params.objId},
             {"status":req.params.status},
             {upsert:true}, function(err, doc) {
                 if (err) console.log(err);
