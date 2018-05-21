@@ -73,17 +73,23 @@ export class ReportIssue extends Component {
         const postTitle = this.state.postTitle
         const photo = this.state.photoFile
 
-
         var photoData = new FormData();
         photoData.append('file', this.state.photoFile);
         photoData.append('filename', this.state.photoFile.name);
 
-        fetch(`/api/postRecords/${type}/${name}/${address}/${city}/${state}/${zip}/${postTitle}/ReportIssue`, {
-            method: 'POST',
-            body: photoData
-        })
+        fetch(`https://maps.googleapis.com/maps/api/geocode/json?address=${name}`)
+            .then(res => res.json())
+            .then(json => json.results.map( (result) => {
+                const lat = result.geometry.location.lat;
+                const lng = result.geometry.location.lng;
 
-        alert('You have succesfully submitted your issue!');
+                fetch(`/api/postRecords/${type}/${name}/${address}/${city}/${state}/${zip}/${postTitle}/${lat}/${lng}/ReportIssue`, {
+                    method: 'POST',
+                    body: photoData
+                })
+                alert('You have succesfully submitted your issue!');
+
+            }));
 
 
         event.preventDefault();

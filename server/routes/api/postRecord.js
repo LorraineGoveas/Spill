@@ -15,12 +15,10 @@ module.exports = (app) => {
         .catch((err) => next(err));
     });
 
-    app.post('/api/postRecords/:type/:name/:address/:city/:state/:zip/reportIssue', function (req, res, next) {
+    app.post('/api/postRecords/:type/:name/:address/:city/:state/:zip/:title/:lat/:lng/reportIssue', upload.single('file'), function (req, res, next) {
         var postRecord = new PostRecord();
 
         let imageFile = req.file;
-
-        let homePath = __dirname.substring(0,__dirname.length - 18)
 
         postRecord.location_name = sanitize(req.params.name)
         postRecord.address = sanitize(req.params.address)
@@ -29,7 +27,9 @@ module.exports = (app) => {
         postRecord.state = sanitize(req.params.state)
         postRecord.zip = sanitize(req.params.zip)
         postRecord.post_title = sanitize(req.params.title)
-        postRecord.image_src = `${homePath}/client/public/assets/thumbs/${imageFile.filename}.jpg`
+        postRecord.image_src = `/assets/thumbs/${imageFile.filename}.jpg`
+        postRecord.location_lat = sanitize(req.params.lat)
+        postRecord.location_lng = sanitize(req.params.lng)
 
         console.log(imageFile);
 
@@ -50,7 +50,7 @@ module.exports = (app) => {
         .exec()
         .then((postRecord) => res.json(postRecord))
         .catch((err) => next(err));
-});
+    });
 
     app.get('/api/postRecords/:keyword/locSearch', (req, res, next) => {
         PostRecord.find( { "location_name": new RegExp( sanitize(req.params.keyword), "i" ) } )

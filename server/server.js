@@ -16,14 +16,14 @@ const passport = require("passport");
 const expressValidator = require('express-validator');
 const flash = require('connect-flash');
 //const session = require('express-session')
+const fileUpload = require('express-fileupload');
+const cors = require('cors');
 
 
 const isDev = process.env.NODE_ENV !== 'production';
 const port  = process.env.PORT || 8080;
 
-const fileUpload = require('express-fileupload');
-const cors = require('cors');
-
+var multer = require('multer');
 
 // Configuration
 // ================================================================================================
@@ -36,6 +36,7 @@ mongoose.connect("mongodb://localhost:27017/myTestDB", {
   "pass": "SealTeam",
   "useMongoClient": true
 });
+mongoose.Promise = global.Promise;
 
 // mongoose.connect(isDev ? config.db_dev : config.db, {
 //   useMongoClient: true,
