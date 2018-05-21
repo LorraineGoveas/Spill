@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@material-ui/icons": "^1.0.0-beta.42",
+    "@types/googlemaps": "^3.30.8",
     "axios": "^0.18.0",
     "bcrypt": "^2.0.1",
     "body-parser": "^1.17.2",
