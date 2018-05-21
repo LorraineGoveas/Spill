@@ -7,9 +7,13 @@ const SignInForm = () => {
 	const GridContainer = {
 		container: true,
 		spacing: 8,
-		direction: "column",
+		direction: "row",
 		justify: "flex-start",
 		alignItems: "flex-start",
+		style: {
+			// marginRight: "10px",
+			// backgroundColor: "yellow"
+		}
 	};
 
 	const GridItem = {
@@ -33,17 +37,30 @@ const SignInForm = () => {
 	};
 
 	return(
-		<form action="/api/registeredUsers" method="post">
-			<Grid {...GridContainer}>
-				<Grid {...GridItem}> <TextField {...Fields.email} /> </Grid>
-				<Grid {...GridItem}> <TextField {...Fields.password} /> </Grid>
-				<Grid {...GridItem}> <input type="submit" value="Log in"/> </Grid>
+		<Grid {...GridContainer}>
+			{/*<form action="/api/registeredUsers" method="post">*/}
+			<Grid {...GridItem}
+				  // style={{backgroundColor: "purple"}}
+			> <TextField {...Fields.email} /> </Grid>
 
-				<Grid item xs={12}>
-					<Button size="small" component={CreateAccountLink} style={{color: "black"}}>Create Account</Button>
-				</Grid>
+			<Grid {...GridItem}
+				  // style={{backgroundColor: "orange"}}
+			> <TextField {...Fields.password} /> </Grid>
+			{/*<Grid {...GridItem}> <input type="submit" value="Log in"/> </Grid>*/}
+			<Grid item xs={5}
+				  // style={{backgroundColor: "green"}}
+			>
+				<Button size="small" component={CreateAccountLink}
+						style={{color: "black"}}> Next </Button>
 			</Grid>
-		</form>
+
+			<Grid item xs={7}
+				  // style={{backgroundColor: "brown"}}
+			>
+				<Button size="small" component={CreateAccountLink} style={{color: "black"}}>Create Account</Button>
+			</Grid>
+			{/*// </form>*/}
+		</Grid>
 	)
 };
 
