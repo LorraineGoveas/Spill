@@ -181,7 +181,7 @@ class SearchResults extends React.Component{
 	}
 
 	fetchResultsWithSearch(searchKey) {
-		fetch(`/api/postRecords/${searchKey}/SearchAnything`)
+		fetch(`/api/postRecords/${searchKey}/locSearch`)
 			.then(res => res.json())
 			.then(json => {
 				this.setState({
