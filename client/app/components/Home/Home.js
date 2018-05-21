@@ -8,6 +8,8 @@ import {
 	AddPostButton, ActiveCommentsModal
 } from './HomeComponents';
 
+import {ReportIssue} from "../ReportIssue/ReportIssue";
+
 class Home extends Component {
 	constructor(props) {
 		super(props);
