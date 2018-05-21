@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9a7ae2b6-8fd9-4e8c-9a88-8fd344aec828" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/app/components/Home/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/app/components/Home/Home.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/app/components/Home/HomeComponents/ActiveCommentsModal.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/app/components/Home/HomeComponents/ActiveCommentsModal.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/app/components/Header/SearchBar.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/app/components/Header/SearchBar.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -21,20 +19,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="SearchBar.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="SearchBar.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/client/app/components/Header/SearchBar.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="69">
-              <caret line="44" column="5" lean-forward="true" selection-start-line="44" selection-start-column="5" selection-end-line="44" selection-end-column="5" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SearchResults.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/app/components/SearchResults/SearchResults.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="22">
-              <caret line="205" column="5" lean-forward="true" selection-start-line="205" selection-start-column="5" selection-end-line="205" selection-end-column="5" />
+            <state relative-caret-position="763">
+              <caret line="114" column="23" selection-start-line="114" selection-start-column="23" selection-end-line="114" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -42,71 +31,50 @@
       <file leaf-file-name="TopHeader.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/app/components/Header/TopHeader.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="71">
-              <caret line="11" column="3" lean-forward="true" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
+            <state relative-caret-position="230">
+              <caret line="17" column="2" lean-forward="true" selection-start-line="17" selection-start-column="2" selection-end-line="17" selection-end-column="2" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ReportIssue.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/app/components/ReportIssue/ReportIssue.js">
+      <file leaf-file-name="SearchResults.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/app/components/SearchResults/SearchResults.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="6" column="1" lean-forward="true" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+            <state relative-caret-position="163">
+              <caret line="70" column="23" selection-start-line="70" selection-start-column="23" selection-end-line="70" selection-end-column="23" />
+              <folding>
+                <element signature="e#346#484#0" />
+                <element signature="e#515#560#0" />
+                <element signature="e#566#645#0" />
+                <element signature="e#707#758#0" />
+                <element signature="e#786#825#0" />
+                <element signature="e#839#1017#0" />
+                <element signature="e#1172#1346#0" />
+                <element signature="e#1380#1481#0" />
+                <element signature="e#1851#2397#0" />
+                <element signature="n#!!block;n#constructor#0;n#SearchResults#0" />
+                <element signature="n#!!block;n#componentDidMount#0;n#SearchResults#0" />
+                <element signature="n#!!block;n#performNewSearch#0;n#SearchResults#0" />
+                <element signature="n#!!block;n#componentDidUpdate#0;n#SearchResults#0" />
+                <element signature="n#!!block;n#handleSearchFromHeader#0;n#SearchResults#0" />
+                <element signature="n#!!block;n#fetchAllResults#0;n#SearchResults#0" />
+                <element signature="n#!!block;n#caseTwo#0;n#SearchResults#0" />
+                <element signature="n#!!block;n#caseThree#0;n#SearchResults#0" />
+                <element signature="n#!!block;n#caseFour#0;n#SearchResults#0" />
+                <element signature="n#!!block;n#initiateSearch#0;n#SearchResults#0" />
+                <element signature="n#!!block;n#searchTextChanged#0;n#SearchResults#0" />
+                <element signature="n#!!block;n#categoryTextChanged#0;n#SearchResults#0" />
+                <element signature="n#!!block;n#render#0;n#SearchResults#0" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Home.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/app/components/Home/Home.js">
+      <file leaf-file-name="SignInModal.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/app/components/Header/SignInModal.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="528">
-              <caret line="122" column="37" selection-start-line="122" selection-start-column="37" selection-end-line="122" selection-end-column="37" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CenterPromptForComments.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/app/components/Home/HomeComponents/CenterPromptForComments.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="25">
-              <caret line="38" column="9" lean-forward="true" selection-start-line="38" selection-start-column="9" selection-end-line="38" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ActiveCommentsModal.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/client/app/components/Home/HomeComponents/ActiveCommentsModal.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="598">
-              <caret line="26" column="33" selection-start-line="24" selection-start-column="36" selection-end-line="26" selection-end-column="33" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CreateComment.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/app/components/Home/HomeComponents/CreateComment.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="8" column="19" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="19" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="OverlayForFetchedData.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/app/components/Home/HomeComponents/OverlayForFetchedData.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="15" column="35" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Header.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/app/components/Header/Header.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="782">
-              <caret line="34" column="20" lean-forward="true" selection-start-line="34" selection-start-column="20" selection-end-line="34" selection-end-column="20" />
+            <state relative-caret-position="1058">
+              <caret line="46" column="22" selection-start-line="46" selection-start-column="22" selection-end-line="46" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -122,7 +90,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>SignInBut</find>
       <find>yellow</find>
       <find>Create an Account</find>
       <find>Create Account</find>
@@ -149,9 +116,10 @@
       <find>shouldSearch</find>
       <find>handleKeyPress</find>
       <find>ReportIssu</find>
-      <find>Comments</find>
       <find>21, 199</find>
       <find>CreateComment</find>
+      <find>Comments</find>
+      <find>button</find>
     </findStrings>
     <dirStrings>
       <dir>$PROJECT_DIR$/client/app/components/UserPanel</dir>
@@ -209,11 +177,11 @@
         <option value="$PROJECT_DIR$/client/app/components/ReportIssue/ReportIssue.js" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/client/app/components/Header/Header.js" />
-        <option value="$PROJECT_DIR$/client/app/components/Header/SearchBar.js" />
         <option value="$PROJECT_DIR$/client/app/components/SearchResults/SearchResults.js" />
         <option value="$PROJECT_DIR$/client/app/components/Home/Home.js" />
         <option value="$PROJECT_DIR$/client/app/components/Home/HomeComponents/CenterPromptForComments.js" />
         <option value="$PROJECT_DIR$/client/app/components/Home/HomeComponents/ActiveCommentsModal.js" />
+        <option value="$PROJECT_DIR$/client/app/components/Header/SearchBar.js" />
       </list>
     </option>
   </component>
@@ -347,14 +315,6 @@
             <path>
               <item name="Root" type="cbb8eebc:String" user="Root" />
               <item name="csc648-team06" type="cbb8eebc:String" user="csc648-team06" />
-              <item name="client" type="cbb8eebc:String" user="client" />
-              <item name="app" type="cbb8eebc:String" user="app" />
-              <item name="components" type="cbb8eebc:String" user="components" />
-              <item name="Home" type="cbb8eebc:String" user="Home" />
-            </path>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="csc648-team06" type="cbb8eebc:String" user="csc648-team06" />
               <item name="config" type="cbb8eebc:String" user="config" />
             </path>
           </expand>
@@ -419,7 +379,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="177184000" />
+    <option name="totallyTimeSpent" value="177989000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -755,13 +715,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/app/components/Header/SignInModal.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1058">
-          <caret line="46" column="22" selection-start-line="46" selection-start-column="22" selection-end-line="46" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/app/components/Header/OptionsHeader.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="373">
@@ -783,52 +736,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/app/components/ReportIssue/ReportIssue.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="6" column="1" lean-forward="true" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/app/components/Header/TopHeader.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="71">
-          <caret line="11" column="3" lean-forward="true" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/app/components/SearchResults/SearchResults.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="22">
-          <caret line="205" column="5" lean-forward="true" selection-start-line="205" selection-start-column="5" selection-end-line="205" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/app/components/Header/SearchBar.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="44" column="5" lean-forward="true" selection-start-line="44" selection-start-column="5" selection-end-line="44" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/app/components/Home/Home.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="122" column="37" selection-start-line="122" selection-start-column="37" selection-end-line="122" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/node_modules/material-ui/SvgIcon/SvgIcon.d.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="437">
           <caret line="19" column="14" selection-start-line="19" selection-start-column="14" selection-end-line="19" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/app/components/Home/HomeComponents/CenterPromptForComments.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="25">
-          <caret line="38" column="9" lean-forward="true" selection-start-line="38" selection-start-column="9" selection-end-line="38" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -848,8 +759,81 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/client/app/components/Home/HomeComponents/ActiveCommentsModal.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="598">
-          <caret line="26" column="33" selection-start-line="24" selection-start-column="36" selection-end-line="26" selection-end-column="33" />
+        <state relative-caret-position="414">
+          <caret line="18" column="6" lean-forward="true" selection-start-line="18" selection-start-column="6" selection-end-line="18" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/app/components/Home/HomeComponents/CenterPromptForComments.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="38" column="9" lean-forward="true" selection-start-line="38" selection-start-column="9" selection-end-line="38" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/app/components/Home/Home.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="528">
+          <caret line="122" column="37" selection-start-line="122" selection-start-column="37" selection-end-line="122" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/app/components/ReportIssue/ReportIssue.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="6" column="1" lean-forward="true" selection-start-line="6" selection-start-column="1" selection-end-line="6" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/app/components/SearchResults/SearchResults.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="163">
+          <caret line="70" column="23" selection-start-line="70" selection-start-column="23" selection-end-line="70" selection-end-column="23" />
+          <folding>
+            <element signature="e#346#484#0" />
+            <element signature="e#515#560#0" />
+            <element signature="e#566#645#0" />
+            <element signature="e#707#758#0" />
+            <element signature="e#786#825#0" />
+            <element signature="e#839#1017#0" />
+            <element signature="e#1172#1346#0" />
+            <element signature="e#1380#1481#0" />
+            <element signature="e#1851#2397#0" />
+            <element signature="n#!!block;n#constructor#0;n#SearchResults#0" />
+            <element signature="n#!!block;n#componentDidMount#0;n#SearchResults#0" />
+            <element signature="n#!!block;n#performNewSearch#0;n#SearchResults#0" />
+            <element signature="n#!!block;n#componentDidUpdate#0;n#SearchResults#0" />
+            <element signature="n#!!block;n#handleSearchFromHeader#0;n#SearchResults#0" />
+            <element signature="n#!!block;n#fetchAllResults#0;n#SearchResults#0" />
+            <element signature="n#!!block;n#caseTwo#0;n#SearchResults#0" />
+            <element signature="n#!!block;n#caseThree#0;n#SearchResults#0" />
+            <element signature="n#!!block;n#caseFour#0;n#SearchResults#0" />
+            <element signature="n#!!block;n#initiateSearch#0;n#SearchResults#0" />
+            <element signature="n#!!block;n#searchTextChanged#0;n#SearchResults#0" />
+            <element signature="n#!!block;n#categoryTextChanged#0;n#SearchResults#0" />
+            <element signature="n#!!block;n#render#0;n#SearchResults#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/app/components/Header/TopHeader.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="17" column="2" lean-forward="true" selection-start-line="17" selection-start-column="2" selection-end-line="17" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/app/components/Header/SignInModal.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1058">
+          <caret line="46" column="22" selection-start-line="46" selection-start-column="22" selection-end-line="46" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/app/components/Header/SearchBar.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="763">
+          <caret line="114" column="23" selection-start-line="114" selection-start-column="23" selection-end-line="114" selection-end-column="23" />
         </state>
       </provider>
     </entry>
