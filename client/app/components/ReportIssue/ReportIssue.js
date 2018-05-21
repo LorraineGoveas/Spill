@@ -97,6 +97,7 @@ export class ReportIssue extends Component {
 
     handleDrop(acceptedFiles) {
         this.setState({photoFile: acceptedFiles[0]})
+
     }
 
 
