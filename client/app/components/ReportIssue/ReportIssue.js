@@ -31,7 +31,17 @@ export class ReportIssue extends Component {
         this.zipChanged = this.zipChanged.bind(this);
         this.postTitleChanged = this.postTitleChanged.bind(this);
         this.handleDrop = this.handleDrop.bind(this);
+        this.testChange = this.testChange.bind(this);
 	}
+
+    testChange() {
+        var obj = '5b025ab0143c0473719694d9'
+        var status = 'verified'
+
+        fetch(`/api/postRecords/${obj}/${status}/changeStatus`, {
+            method: 'POST',
+        })
+    }
 
     handleChange(event) {
         this.setState({damageType: event.target.value});
@@ -150,6 +160,7 @@ export class ReportIssue extends Component {
                 <br/>
                 <input type="submit" value="Submit" />
             </form>
+
 
             <Dropzone onDrop={(files) => this.handleDrop(files)}>
                 <div>Add an image to your post</div>
