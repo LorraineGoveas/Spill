@@ -114,15 +114,18 @@ class Home extends Component {
 				sm: 12,
 			}
 		};
+		const DisplayCenterPromptIfDesktop = () => {
+			if (this.props.width !== "xs") {
+				return(<CenterPromptForComments userFirstInitial={"F"} onClick={this.handlePostButtonClick}/>)
+			}
+		};
 
 		return (
 			<div {...MainContentAreaStyle}>
 				<Disclaimer/>
 				<Grid {...GridContentAreaStyles.container}>
-					<Grid {...GridContentAreaStyles.item}>
-						<CenterPromptForComments userFirstInitial={"F"} onClick={this.handlePostButtonClick}/>
-					</Grid>
-					<Grid {...GridContentAreaStyles.item}> <FetchedContent {...FetchedContentSettings}/></Grid>
+					<Grid {...GridContentAreaStyles.item}>{DisplayCenterPromptIfDesktop()}</Grid>
+					<Grid {...GridContentAreaStyles.item} style={{minWidth: "500px"}}> <FetchedContent {...FetchedContentSettings}/></Grid>
 					<Grid {...GridContentAreaStyles.item}> <hr/> </Grid>
 				</Grid>
 				<AddPostButton handlePostButtonClick={this.handlePostButtonClick} theme={theme}/>

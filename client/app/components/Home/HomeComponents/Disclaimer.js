@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import theme from "../../Theme/index";
 import { Card, Typography} from 'material-ui';
 

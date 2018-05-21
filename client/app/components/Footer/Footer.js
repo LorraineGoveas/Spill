@@ -1,33 +1,50 @@
 import React from 'react';
-import {BottomNavigation, BottomNavigationAction} from 'material-ui';
 import theme from '../Theme';
+import { withStyles } from 'material-ui/styles';
+import { Button, Toolbar, Grid } from 'material-ui';
+import { StyledLink} from "../utils/StyledLink";
+
+const styles = {
+	root: {
+		flexGrow: 1,
+		backgroundColor: theme.palette.primary.dark,
+	},
+	footerButton: {
+		color: "white",
+		textTransform: 'capitalize',
+	},
+};
+const AboutLink = props => <StyledLink to={{pathname: "/team/about"}} {...props}/>;
+
 class Footer extends React.Component {
-	constructor(props) {
-		super(props);
-	}
+	render() {
+		const {classes} = this.props;
+		const GridSettings = {
+			container: true,
+			direction: 'row',
+			justify: 'flex-start',
+			alignItems: 'center',
+		};
 
-	render(){
+		return (
+			<footer>
+				<Toolbar className={classes.root}>
+					<Grid {...GridSettings}>
+						<Grid item xs={6} sm={3} lg={2}>
+							<Button className={classes.footerButton} component={AboutLink}>
+								About the Team
+							</Button>
+						</Grid>
 
-		return(
-			<div>
-				<hr/>
-				<BottomNavigation value={0}
-								  showLabels
-								  style={{backgroundColor: theme.palette.primary.dark,}}>
-					<BottomNavigationAction label="About"
-											style={{color: theme.palette.secondary.main}}
-											href={"/team/about"}/>
-					<BottomNavigationAction label="Contact"
-											style={{color: "white"}}/>
-					<BottomNavigationAction href={"/report/issue"}
-											label="Report an Issue"
-											style={{color: "white"}}/>
-					<BottomNavigationAction label="Terms"
-											style={{color: "white"}}/>
-				</BottomNavigation>
-			</div>
+						<Grid item xs={5} sm={3} lg={2}>
+							<Button className={classes.footerButton}> Terms </Button>
+						</Grid>
+
+					</Grid>
+				</Toolbar>
+			</footer>
 		);
 	}
 }
 
-export default Footer;
+export default withStyles(styles)(Footer);
