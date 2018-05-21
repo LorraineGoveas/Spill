@@ -1,18 +1,13 @@
 import React from 'react';
 import { Grid, Button } from 'material-ui';
 import { AccountPopover } from "./AccountPopover";
+import {SignInModal} from "./SignInModal";
 import {StyledLink} from "../utils/StyledLink";
 import Tooltip from 'material-ui/Tooltip';
+
 /**
  * All props are passed down by Header
  */
-const SignInOption = (props) => {
-	return(
-		<div>
-			<Button color={"inherit"} onClick={props.handleSignInClick}> Sign In </Button>
-		</div>
-	)
-};
 const HomeLink = props => <StyledLink to={{pathname: "/",}} {...props} style={{color:"white"}}/>;
 const HazardLink = props => <StyledLink to={{pathname: "/report/issue"}} {...props} style={{color:"white"}}/>;
 const SearchLink = props => <StyledLink to={{pathname: "/search/results"}} {...props} style={{color:"white"}}/>;
@@ -39,13 +34,19 @@ const OptionsHeader = (props) => {
 	};
 	const {mobileItem, emptyItem, rightItem} = GridItemSettings;
 
-	const AccountOption = () => {
+	/*
+	If the user is signed in, the rightmost option displays the account menu when clicked
+	Otherwise, display the button that will display the sign in window on click
+	*/
+
+	const RightmostOption = () => {
 		return(
 			<div>
-				{props.isLoggedIn ? <AccountPopover/> : <SignInOption handleSignInClick={props.handleSignInClick}> Sign In </SignInOption>}
+				{props.isLoggedIn ? <AccountPopover/> : <SignInModal/>}
 			</div>
 		)
 	};
+
 	return(
 		<Grid
 			container
@@ -82,9 +83,9 @@ const OptionsHeader = (props) => {
 
 			<Grid {...emptyItem}>
 				{/*EMPTY. This is for right-aligning the Account Button*/}
-				</Grid>
+			</Grid>
 			<Grid {...rightItem}>
-				<AccountOption/>
+				<RightmostOption/>
 			</Grid>
 		</Grid>
 	)

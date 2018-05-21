@@ -103,7 +103,8 @@ class WrappedSearchBar extends React.Component {
 					<TextField {...searchField} error={this.state.invalidInput} onKeyPress={this.handleKeyPress} onChange={this.searchTextChanged}/>
 				</Grid>
 				<Grid {...searchIcon}>
-					<IconButton component={SearchLink}> <Search/> </IconButton>
+					{/*Disable when input is invalid*/}
+					<IconButton component={SearchLink} disabled={this.state.invalidInput}> <Search/> </IconButton>
 				</Grid>
 			</Grid>
 		)

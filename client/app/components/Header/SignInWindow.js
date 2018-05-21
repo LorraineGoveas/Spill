@@ -1,9 +1,50 @@
 import React from 'react';
-import {Card, CardHeader, Grid, Typography, Button, TextField} from 'material-ui';
+import {Card, CardHeader, Grid, Button, TextField} from 'material-ui';
 import {StyledLink} from "../utils/StyledLink";
 
-const SignInMenuItem = (props) => {
-	return(<Button size="small" style={{color: "black"}}>{props.label}</Button>)
+const SignInForm = () => {
+	const CreateAccountLink = props => <StyledLink to={{pathname: "/user/signUp",}} {...props}/>;
+	const GridContainer = {
+		container: true,
+		spacing: 8,
+		direction: "column",
+		justify: "flex-start",
+		alignItems: "flex-start",
+	};
+
+	const GridItem = {
+		item: true,
+		xs: 12,
+		style: {
+			margin: "15px",
+		}
+	};
+	const Fields = {
+		email: {
+			type: "text",
+			name: "logemail",
+			placeholder: "E-mail",
+		},
+		password: {
+			type: "password",
+			name: "logpassword",
+			placeholder: "Password",
+		},
+	};
+
+	return(
+		<form action="/api/registeredUsers" method="post">
+			<Grid {...GridContainer}>
+				<Grid {...GridItem}> <TextField {...Fields.email} /> </Grid>
+				<Grid {...GridItem}> <TextField {...Fields.password} /> </Grid>
+				<Grid {...GridItem}> <input type="submit" value="Log in"/> </Grid>
+
+				<Grid item xs={12}>
+					<Button size="small" component={CreateAccountLink} style={{color: "black"}}>Create Account</Button>
+				</Grid>
+			</Grid>
+		</form>
+	)
 };
 
 class SignInWindow extends React.Component {
@@ -18,6 +59,8 @@ class SignInWindow extends React.Component {
 		this.submitAll = this.submitAll.bind(this);
 		this.handleInputChange = this.handleInputChange.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
+		this.handleClick = this.handleClick.bind(this);
+
 	}
 
 	handleInputChange(event) {
@@ -36,59 +79,38 @@ class SignInWindow extends React.Component {
 		console.log("\tEmail: " + this.state.email);
 		console.log("\tPassword: " + this.state.password);
 	}
-	render() {
-		const GridContainer = {
-			container: true,
-			spacing: 8,
-			direction: "column",
-			justify: "flex-start",
-			alignItems: "flex-start",
-		};
 
-		const GridItem = {
-			item: true,
-			xs: 12,
-			style: {
-				margin: "15px",
+	handleClick(event) {
+		event.stopPropagation(); // Prevents modal from closing when this window is clicked
+	}
+
+	render() {
+		const Settings = {
+			windowPosition: {
+				style: {
+					position: "absolute",
+					right: "0",
+					width: "250px",
+					marginTop: "50px",
+					marginRight: "25px",
+				}
+			},
+			windowStyle: {
+				style: {
+					width: "100%",
+					height: "100%",
+					// backgroundColor: "yellow" // Debug purposes
+				}
 			}
 		};
 
 		return (
-			<Card style={{width: "100%", height: "100%",}}>
-				<CardHeader title={"Log in to Spill"}/>
-
-				<Grid {...GridContainer}>
-					<Grid {...GridItem}>
-						<Typography variant={"caption"}> Email </Typography>
-						<form onSubmit={this.handleSubmit} name={"email"}>
-							<TextField type={"text"}
-									   placeholder={"Email"}
-									   name={"email"}
-									   value={this.state.email}
-									   onChange={this.handleInputChange}/>
-						</form>
-					</Grid>
-
-					<Grid {...GridItem}>
-						<form onSubmit={this.handleSubmit} name={"password"}>
-							<Typography variant={"caption"}> Password </Typography>
-							<TextField type={"password"}
-									   placeholder={"Password"}
-									   name={"password"}
-									   value={this.state.password}
-									   onChange={this.handleInputChange}/>
-						</form>
-					</Grid>
-
-
-					<Grid item xs={12}>
-						<Button size="small" variant="flat" onClick={this.submitAll}>Next</Button>
-						{/*<StyledLink to={{pathname: "/user/signUp"}}>*/}
-						<SignInMenuItem label={"Create Account"} onClick={this.submitAll}/>
-						{/*</StyledLink>*/}
-					</Grid>
-				</Grid>
-			</Card>
+			<div {...Settings.windowPosition} onClick={this.handleClick}>
+				<Card {...Settings.windowStyle}>
+					<CardHeader title={"Log in to Spill"}/>
+					<SignInForm/>
+				</Card>
+			</div>
 		)
 	}
 }
