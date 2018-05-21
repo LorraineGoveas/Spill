@@ -115,7 +115,7 @@ class WrappedSearchBar extends React.Component {
 		const SearchLink = props => <Link to={{
 			pathname: "/search/results",
 			state: {
-				inputSearch: this.state.searchKey ,
+				inputSearch: this.state.searchKey ? this.state.searchKey : " " ,
 				shouldSearch: true,
 			}}} {...props}/>;
 
