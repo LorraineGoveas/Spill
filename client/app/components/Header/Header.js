@@ -16,7 +16,7 @@ class Header extends React.Component {
 		this.state = {
 			currentPage: "home",
 			open: false,
-			isLoggedIn: false
+			isLoggedIn: true
 		};
 		this.handlePageClick = this.handlePageClick.bind(this);
 	}
@@ -34,7 +34,7 @@ class Header extends React.Component {
 			<AppBar position="static">
 				<TopHeader currentPage={currentPage}/>
 				<OptionsHeader onClick={this.handlePageClick}
-							   // isLoggedIn={this.state.isLoggedIn}
+							   isLoggedIn={this.state.isLoggedIn}
 							   // handleSignInClick={this.beginSignInProcess}
 				/>
 			</AppBar>

@@ -2,30 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9a7ae2b6-8fd9-4e8c-9a88-8fd344aec828" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/client/public/assets/thumbs/1593239b6e321959ef3ba742de6466ae.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/public/assets/thumbs/b855f27ec6a28468ce67159326678ca3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/public/assets/thumbs/bb50b683d3572684589f22b5dfa750ac.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/assets/thumbs/0cb4a211e08e2de7362fa8635e55ac39.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/assets/thumbs/1593239b6e321959ef3ba742de6466ae.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/assets/thumbs/271dd0dc35c447ce860891fd035cfe6e.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/assets/thumbs/b855f27ec6a28468ce67159326678ca3.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/assets/thumbs/bb50b683d3572684589f22b5dfa750ac.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/assets/thumbs/e83a0637a467fa27ac51d5b10c3b02bd.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/uploads/0e55e4a82cb843e5a373299b5f553082" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/uploads/338f52ff773379fae92995ca20f1f06b" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/uploads/528f92934d6350b9ad4b053d17507d92" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/uploads/5f3bc687e784ca9ed6f15f85769aa664" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/uploads/721f97e0c59e935b0df67fff100c0340" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/uploads/bc116511fa48100c7b5af07a694c232d" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/uploads/ee806a9745ff87af9e3d68fff28c3149" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/app/components/ReportIssue/ReportIssue.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/app/components/ReportIssue/ReportIssue.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/app/components/Header/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/app/components/Header/Header.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/dist/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/dist/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/models/PostRecord.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/PostRecord.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routes/api/postRecord.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/api/postRecord.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/server.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -42,11 +20,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="ReportIssue.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ReportIssue.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/app/components/ReportIssue/ReportIssue.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="293">
-              <caret line="89" column="36" lean-forward="true" selection-start-line="89" selection-start-column="36" selection-end-line="89" selection-end-column="36" />
+            <state relative-caret-position="1840">
+              <caret line="80" column="26" lean-forward="true" selection-start-line="80" selection-start-column="26" selection-end-line="80" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SearchResults.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/app/components/SearchResults/SearchResults.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="31">
+              <caret line="35" column="22" lean-forward="true" selection-start-line="35" selection-start-column="22" selection-end-line="35" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="OptionsHeader.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/app/components/Header/OptionsHeader.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="373">
+              <caret line="48" lean-forward="true" selection-start-line="48" selection-end-line="48" />
             </state>
           </provider>
         </entry>
@@ -54,8 +50,26 @@
       <file leaf-file-name="SignInModal.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/app/components/Header/SignInModal.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="57">
-              <caret line="48" column="18" lean-forward="true" selection-start-line="48" selection-start-column="18" selection-end-line="48" selection-end-column="18" />
+            <state relative-caret-position="1058">
+              <caret line="46" column="22" selection-start-line="46" selection-start-column="22" selection-end-line="46" selection-end-column="22" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="SignInWindow.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/app/components/Header/SignInWindow.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="436">
+              <caret line="19" column="19" lean-forward="true" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Header.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/client/app/components/Header/Header.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="450">
+              <caret line="37" column="60" lean-forward="true" selection-start-line="37" selection-start-column="60" selection-end-line="37" selection-end-column="60" />
             </state>
           </provider>
         </entry>
@@ -158,11 +172,11 @@
         <option value="$PROJECT_DIR$/client/app/components/Login/login.js" />
         <option value="$PROJECT_DIR$/client/app/components/Header/SearchBar.js" />
         <option value="$PROJECT_DIR$/client/app/components/Header/OptionsHeader.js" />
-        <option value="$PROJECT_DIR$/client/app/components/Header/Header.js" />
         <option value="$PROJECT_DIR$/client/app/components/Header/SignInWindow.js" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/client/app/components/Header/SignInModal.js" />
         <option value="$PROJECT_DIR$/client/app/components/ReportIssue/ReportIssue.js" />
+        <option value="$PROJECT_DIR$/.gitignore" />
+        <option value="$PROJECT_DIR$/client/app/components/Header/Header.js" />
       </list>
     </option>
   </component>
@@ -296,6 +310,14 @@
               <item name="client" type="cbb8eebc:String" user="client" />
               <item name="app" type="cbb8eebc:String" user="app" />
               <item name="components" type="cbb8eebc:String" user="components" />
+              <item name="Header" type="cbb8eebc:String" user="Header" />
+            </path>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="csc648-team06" type="cbb8eebc:String" user="csc648-team06" />
+              <item name="client" type="cbb8eebc:String" user="client" />
+              <item name="app" type="cbb8eebc:String" user="app" />
+              <item name="components" type="cbb8eebc:String" user="components" />
               <item name="ReportIssue" type="cbb8eebc:String" user="ReportIssue" />
             </path>
             <path>
@@ -372,7 +394,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="170127000" />
+    <option name="totallyTimeSpent" value="171025000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -385,17 +407,18 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1280" y="23" width="1280" height="1348" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49451888" visible="true" weight="0.15806195" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49451888" weight="0.29308975" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32924837" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50039715" side_tool="true" weight="0.32924837" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32924837" />
       <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49960285" weight="0.32924837" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.49960285" visible="true" weight="0.32924837" />
       <window_info id="npm" order="2" sideWeight="0.502451" side_tool="true" weight="0.22081016" />
       <window_info id="Structure" order="1" sideWeight="0.5054811" side_tool="true" weight="0.22081016" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.49960285" visible="true" weight="0.22140522" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49960285" weight="0.22140522" />
       <window_info id="Favorites" order="3" sideWeight="0.502451" side_tool="true" weight="0.22081016" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="TypeScript" order="10" />
@@ -431,7 +454,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/client/app/components/UserPanel/RecentActivity/index.js" />
     <entry file="file://$PROJECT_DIR$/client/app/components/UserPanel/UserProfileDetails.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="115">
@@ -641,13 +663,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/app/components/SearchResults/SearchResults.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4071">
-          <caret line="177" column="4" selection-start-line="177" selection-start-column="4" selection-end-line="179" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/app/components/Map/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="115">
@@ -726,27 +741,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/app/components/Header/OptionsHeader.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="10" column="9" selection-start-line="10" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/app/components/Header/Header.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="506">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/app/components/Header/SignInWindow.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="19" column="19" lean-forward="true" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/routes/api/postRecord.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="368">
@@ -772,13 +766,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="5" column="33" lean-forward="true" selection-start-line="5" selection-start-column="33" selection-end-line="5" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/server.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="229">
@@ -789,17 +776,59 @@
     <entry file="file://$PROJECT_DIR$/server.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/app/components/Header/SignInModal.js">
+    <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="48" column="18" lean-forward="true" selection-start-line="48" selection-start-column="18" selection-end-line="48" selection-end-column="18" />
+        <state relative-caret-position="115">
+          <caret line="5" column="20" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/models/PostRecord.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="8" column="21" lean-forward="true" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/app/components/ReportIssue/ReportIssue.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="89" column="36" lean-forward="true" selection-start-line="89" selection-start-column="36" selection-end-line="89" selection-end-column="36" />
+        <state relative-caret-position="1840">
+          <caret line="80" column="26" lean-forward="true" selection-start-line="80" selection-start-column="26" selection-end-line="80" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/app/components/Header/SignInWindow.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="436">
+          <caret line="19" column="19" lean-forward="true" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/app/components/SearchResults/SearchResults.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="31">
+          <caret line="35" column="22" lean-forward="true" selection-start-line="35" selection-start-column="22" selection-end-line="35" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/app/components/Header/SignInModal.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1058">
+          <caret line="46" column="22" selection-start-line="46" selection-start-column="22" selection-end-line="46" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/app/components/Header/OptionsHeader.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="373">
+          <caret line="48" lean-forward="true" selection-start-line="48" selection-end-line="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/app/components/Header/Header.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="37" column="60" lean-forward="true" selection-start-line="37" selection-start-column="60" selection-end-line="37" selection-end-column="60" />
         </state>
       </provider>
     </entry>
